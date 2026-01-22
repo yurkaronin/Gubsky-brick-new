@@ -41,3 +41,8 @@ src/assets/styles/css/**/*.css
 src/assets/styles/css/*.css.map
 src/assets/styles/css/**/*.css.map
 # !src/assets/styles/css/*.min.css  # если нужно оставить минифицированные версии
+
+# Исключаем все HTML файлы кроме исходников
+*.html
+!html/**/*.html
+!assets/**/*.html
