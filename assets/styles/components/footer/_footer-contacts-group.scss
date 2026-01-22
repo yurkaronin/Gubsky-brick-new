@@ -1,0 +1,79 @@
+.footer-contacts-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -12px;
+  margin-bottom: -24px;
+  align-items: center;
+
+  @media (max-width: 1023px) {
+    margin-bottom: -16px;
+    justify-content: flex-end;
+    margin-left: auto;
+    max-width: 335px;
+  }
+  @media (max-width: 767px) {
+    max-width: 100%;
+    justify-content: space-between;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto 1fr 1fr;
+  }
+  @media (max-width: 650px) {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-left: 0;
+    margin-right: -12px;
+    margin-bottom: -20px;
+    align-items: center;
+  }
+  @media (max-width: 374px) {
+    gap: 12px;
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+
+  &__item {
+    margin-right: 12px;
+    margin-bottom: 24px;
+    justify-self: flex-end;
+    margin-left: auto;
+
+    @media (max-width: 1023px) {
+      margin-bottom: 16px;
+      max-width: max-content;
+    }
+    @media (max-width: 767px) {
+      justify-self: flex-start;
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+    @media (max-width: 650px) {
+      margin-right: 12px;
+      margin-bottom: 20px;
+      width: initial;
+      max-width: initial;
+      justify-self: flex-end;
+    }
+    @media (max-width: 374px) {
+      margin: 0;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &.-full {
+      @media (max-width: 650px) {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+  .button {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}

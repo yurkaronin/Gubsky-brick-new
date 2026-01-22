@@ -1,0 +1,136 @@
+.footer-right-group {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  text-align: right;
+
+  @media (max-width: 1379px) {
+    justify-content: initial;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    text-align: initial;
+    gap: 0;
+    margin-right: -16px;
+    margin-bottom: -24px;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+  }
+  @media (max-width: 767px) {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 0;
+  }
+  @media (max-width: 650px) {
+    gap: 20px;
+  }
+
+  &__item {
+    justify-self: flex-end;
+
+    @media (max-width: 1379px) {
+      justify-self: initial;
+      margin-right: 16px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      order: initial !important;
+    }
+
+    &.-logo {
+      @media (max-width: 1379px) {
+        order: 1;
+      }
+    }
+    &.-contacts {
+      justify-self: flex-end;
+
+      @media (max-width: 1379px) {
+        order: 2;
+        margin-left: auto;
+      }
+      @media (max-width: 1023px) {
+        justify-self: flex-end;
+        margin-left: auto;
+        // width: 46%;
+
+      }
+
+      @media (max-width: 767px) {
+        justify-self: initial;
+        margin-left: 0;
+        margin-left: 0;
+      }
+    }
+    &.-social {
+      justify-self: flex-end;
+
+      @media (max-width: 1379px) {
+        order: 3;
+      }
+      @media (max-width: 1023px) {
+        order: 4;
+      }
+
+      @media (max-width: 767px) {
+        justify-self: center;
+        width: 100%;
+        .button {
+          max-width: 100%;
+          width: 100%;
+          justify-content: center;
+        }
+      }
+    }
+    &.-copyright {
+      @media (max-width: 1379px) {
+        order: 4;
+        width: 50%;
+      }
+      @media (max-width: 1023px) {
+        order: 3;
+      }
+    }
+
+    &.-developers {
+      justify-self: flex-end;
+      @media (max-width: 1379px) {
+        order: 5;
+      }
+      @media (max-width: 1023px) {
+        justify-self: flex-end;
+        margin-left: auto;
+      }
+
+    }
+  }
+  .copyright {
+    @media (max-width: 1379px) {
+      max-width: 300px;
+    }
+
+     @media (max-width: 1023px) {
+      margin-top: -52px;
+     }
+     @media (max-width: 767px) {
+      margin: 0;
+      max-width: 100%;
+     }
+  }
+  .developers-info {
+    max-width: max-content;
+    margin-left: auto;
+  }
+}

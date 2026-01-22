@@ -55,10 +55,13 @@
 @use "components/header/header-menu";
 @use "components/header/header-navigation";
 
-@use "components/footer/footer";
+
 @use "components/desktop-navigation";
 @use "components/navigation-menu";
+
 @use "components/footer/navigation-sub-menu";
+@use "components/footer/footer-contacts-group";
+@use "components/footer/footer-right-group";
 
 @use "components/mobile-navigation/mobile-navigation-menu";
 
@@ -72,8 +75,7 @@
 
 @use "groups/services-group";
 @use "groups/simple-grid";
-@use "groups/footer-contacts-group";
-@use "groups/footer-right-group";
+
 @use "groups/social-buttons-group";
 
 
@@ -121,6 +123,7 @@
 @use "sections/services-group-section";
 @use "sections/home-hero";
 @use "sections/category-preview-section";
+@use "sections/footer";
 
 
 // интерактив

@@ -48,4 +48,14 @@
       padding: 0 20px;
     }
   }
+
+  .navigation-accordion::before {
+    border-bottom: 1px solid var(--border-color-2);
+
+  }
+
+  .navigation-accordion.is-open::before {
+    background-color: var(--white);
+    border-top: 1px solid var(--border-color-2);
+  }
 }
