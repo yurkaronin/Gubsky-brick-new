@@ -1,0 +1,22 @@
+.catalog-preview-group {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: 1379px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .catalog-preview-card {
+      max-width: 100%;
+      width: 100%;
+      @media (min-width: 1380px) {
+        min-height: 100%;
+      }
+    }
+  }
+}

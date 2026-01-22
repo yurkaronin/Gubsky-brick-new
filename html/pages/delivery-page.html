@@ -1,0 +1,20 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Доставка" %}
+{% set pageTitle = "Доставка" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/catalog.html', text: 'Доставка'}
+] %}
+
+{% block content %}
+
+    <section class="section tech-section">
+      <div class="wrapper">
+        <h2 class="title">Доставка</h2>
+      </div>
+    </section>
+    {% include "sections/promo-section.html" %}
+
+
+{% endblock %}

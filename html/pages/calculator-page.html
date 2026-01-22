@@ -1,0 +1,20 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Калькулятор" %}
+{% set pageTitle = "Калькулятор" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/catalog.html', text: 'Калькулятор'}
+] %}
+
+{% block content %}
+
+    <section class="section tech-section">
+      <div class="wrapper">
+        <h2 class="title">Каллкулятор</h2>
+      </div>
+    </section>
+    {% include "sections/promo-section.html" %}
+
+
+{% endblock %}

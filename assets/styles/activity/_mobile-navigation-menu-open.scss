@@ -1,0 +1,23 @@
+.mobile-navigation-menu-open {
+  overflow: hidden;
+
+  .button-menu span {
+    background-color: transparent !important;
+  }
+
+  .button-menu span:after {
+    transform: rotate(45deg);
+    width: 14px;
+  }
+
+  .button-menu span:before {
+    transform: rotate(-45deg);
+    width: 14px;
+  }
+
+  .mobile-navigation-menu {
+    opacity: 1;
+    visibility: initial;
+    pointer-events: initial;
+  }
+}

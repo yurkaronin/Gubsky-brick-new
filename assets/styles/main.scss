@@ -1,0 +1,158 @@
+// Базовые стили
+@use "base/fonts";
+@use "base/root";
+@use "base/global";
+@use "base/support";
+
+// декоративные повторяющиеся элементы
+@use "decorative-elements/lower-short-strip";
+
+// Компоненты
+@use "components/wrapper";
+@use "components/container";
+@use "components/title";
+@use "components/subtitle";
+@use "components/lead";
+@use "components/text";
+@use "components/image";
+@use "components/decorate";
+@use "components/border";
+@use "components/slide-photo";
+@use "components/main";
+
+@use "components/button/button";
+@use "components/button/button-with-icon";
+@use "components/button/button-play";
+@use "components/button/button-close";
+@use "components/button/swiper-button";
+@use "components/button/button-menu";
+@use "components/button/button-favorite";
+@use "components/button/button-social";
+@use "components/button/filter-button";
+@use "components/button/card-label";
+
+@use "components/phone";
+
+@use "components/slider-with-thumbnails";
+@use "components/slide-thumbnail";
+
+@use "components/simple-slider-one";
+@use "components/slider-thumbnails";
+
+@use "components/contact-form/contact-form";
+@use "components/contact-form/label";
+@use "components/contact-form/form-agree";
+@use "components/contact-form/input";
+
+@use "components/mobile-navigation";
+@use "components/navigation-accordion";
+
+@use "components/services-card-preview";
+
+@use "components/header/header";
+@use "components/header/header-buttons";
+@use "components/header/header-contacts";
+@use "components/header/header-menu";
+@use "components/header/header-navigation";
+
+@use "components/footer/footer";
+@use "components/desktop-navigation";
+@use "components/navigation-menu";
+@use "components/footer/navigation-sub-menu";
+
+@use "components/mobile-navigation/mobile-navigation-menu";
+
+@use "components/logo-company";
+@use "components/copyright";
+@use "components/developers-info";
+@use "components/content-table";
+@use "components/modal";
+@use "components/breadcrumbs";
+
+
+@use "groups/services-group";
+@use "groups/simple-grid";
+@use "groups/footer-contacts-group";
+@use "groups/footer-right-group";
+@use "groups/social-buttons-group";
+
+
+@use "components/home-hero/home-hero-card";
+
+
+@use "components/slider-navigation";
+
+
+@use "columns/two-columns";
+@use "columns/main-and-aside";
+
+
+@use "components/column-list-simple";
+@use "components/text-and-button";
+
+@use "components/catalog-preview/catalog-preview-group";
+@use "components/catalog-preview/catalog-preview-card";
+@use "components/catalog-preview/catalog-preview-button";
+
+@use "components/promo-section/promo-section";
+@use "components/promo-section/promo-section-header";
+@use "components/promo-section/promo-section-form";
+
+@use "components/reviews-slider";
+@use "components/reviews-preview";
+@use "components/review-preview-card";
+
+@use "components/product-card-preview";
+
+@use "components/why-choose-us/why-choose-us";
+@use "components/why-choose-us/why-choose-us-card";
+
+@use "components/category-filter";
+
+@use "components/catalog-products-preview";
+@use "components/catalog-card-preview";
+
+
+
+// секции
+@use "sections/section";
+@use "sections/promo";
+@use "sections/hero-inner-page";
+@use "sections/services-group-section";
+@use "sections/home-hero";
+@use "sections/category-preview-section";
+
+
+// интерактив
+@use "activity/image-hover";
+@use "activity/modal-open";
+@use "activity/desktop-sub-nav-open";
+@use "activity/mobile-navigation-menu-open";
+@use "activity/header-sticky";
+
+// используемые медиа запросы
+@media (max-width: 1650px) {
+}
+@media (max-width: 1599px) {
+}
+
+@media (max-width: 1439px) {
+}
+
+@media (max-width: 1379px) {
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 767px) {
+}
+
+@media (max-width: 555px) {
+}
+
+@media (max-width: 450px) {
+}
+
+@media (max-width: 374px) {
+}

@@ -1,0 +1,14 @@
+.lower-short-strip {
+  position: relative;
+  padding-bottom: 0.4em;
+  &::after {
+    content: "";
+    width: 48px;
+    height: 1px;
+    background: var(--dark);
+    opacity: 0.2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

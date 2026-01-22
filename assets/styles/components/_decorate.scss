@@ -1,0 +1,13 @@
+.decorate {
+  position: relative;
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    margin-left: 12px;
+    background-image: url(../svg/icon-title.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-position: left;
+  }
+}

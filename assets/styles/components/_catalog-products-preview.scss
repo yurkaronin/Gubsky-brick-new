@@ -1,0 +1,25 @@
+.catalog-products-preview {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 1379px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+
+    .catalog-card-preview {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}

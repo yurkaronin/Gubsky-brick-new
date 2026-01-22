@@ -1,0 +1,22 @@
+.reviews-preview {
+  &__list {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    @media (max-width: 1379px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .review-preview-card {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100%;
+    @media (max-width: 767px) {
+      min-height: initial;
+    }
+  }
+}

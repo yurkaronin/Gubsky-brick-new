@@ -1,0 +1,234 @@
+.button {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  max-width: max-content;
+  padding: 0px 32px;
+  border-radius: 32px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  align-items: center;
+  color: var(--white);
+  position: relative;
+  background: transparent;
+  border: none;
+  min-height: var(--button-size-small);
+  z-index: 2;
+  // line-height: 1;
+  // margin: auto;
+
+  @media (max-width: 1379px) {
+    font-size: 12px;
+  }
+  @media (max-width: 767px) {
+    min-height: 50px;
+    padding: 12px 20px;
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    border-radius: 32px;
+    background-color: var(--brand-color-1);
+    border: 1px solid transparent;
+  }
+  &__text {
+    position: relative;
+    transition: var(--transition);
+    align-self: initial;
+    small {
+      font-size: inherit;
+      font-weight: 600;
+      opacity: 0.8;
+    }
+  }
+  &__icon {
+    // height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    // overflow: hidden;
+    transition: var(--transition);
+    margin-left: 12px;
+    color: inherit;
+
+    path {
+      stroke: currentColor;
+    }
+
+    path:nth-child(2n) {
+      opacity: 0;
+      transition: var(--transition);
+    }
+    &.-mod {
+      // width: initial;
+      // height: initial;
+      // justify-content: center;
+      // align-items: center;
+      path:nth-child(2n) {
+        opacity: initial;
+      }
+    }
+  }
+
+  // Кнопка цвета как ТЕЛЕГРАМ
+  &.-telegram {
+    color: var(--white);
+    &::before {
+      background-color: #039be5;
+    }
+  }
+  &.-telegram &__icon {
+    color: inherit;
+
+    path {
+      stroke: currentColor;
+    }
+  }
+  // Красная кнопка
+  &.-red {
+    &::before {
+      background-color: var(--accent-color-1);
+    }
+  }
+  &.-red &__icon {
+    color: inherit;
+
+    path {
+      stroke: currentColor;
+    }
+  }
+  // Белая кнопка
+  &.-white {
+    color: var(--dark);
+    &::before {
+      background-color: var(--white);
+      border: 1px solid var(--grey-30);
+    }
+    &:hover {
+      color: var(--white);
+      &::before {
+        background-color: var(--brand-color-1);
+      }
+    }
+  }
+  &.-white &__icon {
+    color: var(--brand-color-1);
+    path {
+      stroke: currentColor;
+    }
+  }
+  // Стеклянная кнопка
+  &.-glass {
+    color: var(--white);
+    &::before {
+      background-color: var(--white-10);
+      backdrop-filter: blur(3px);
+      border: none !important;
+    }
+    &:hover {
+      color: var(--white);
+      &::before {
+        background-color: var(--brand-color-1);
+        box-shadow:
+          2px 2px 20px 0 rgba(0, 0, 0, 0.15),
+          0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  // Кнопка меньше чем обычная
+  &.-small {
+    min-height: 48px;
+    padding: 6px 24px;
+    line-height: 1;
+    @media (max-width: 1379px) {
+      min-height: 45px;
+      padding: 10px 15px;
+    }
+  }
+  // Совсем маленькая кнопка
+  &.-mini {
+    min-height: 32px;
+    padding: 6px 10px;
+    font-size: 12px;
+    line-height: 1;
+    &::before {
+      border-radius: 12px;
+    }
+    @media (max-width: 1379px) {
+      padding: 6px 10px;
+    }
+  }
+  &.-mini &__icon {
+    margin-left: 6px;
+  }
+  // Кнопка в которой нет текста, только иконка
+  &.-icon-solo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    max-width: initial;
+    min-height: initial;
+    letter-spacing: initial;
+    line-height: 1;
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
+    @media (max-width: 374px) {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  &.-icon-solo &__icon {
+    margin: 0;
+    flex-shrink: 0;
+    @media (max-width: 374px) {
+      scale: 0.8;
+    }
+  }
+  // Кнопка на всю ширину родительского блока
+  &.-full-wh {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+
+  &:hover &__icon,
+  &:active &__icon,
+  &:focus &__icon {
+    color: var(--white);
+
+    path:nth-child(2n) {
+      opacity: 1;
+    }
+  }
+}

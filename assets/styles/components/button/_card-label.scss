@@ -1,0 +1,54 @@
+.card-label {
+  display: flex;
+  max-width: max-content;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: transparent;
+  min-height: 32px;
+  text-decoration: none;
+  border: none;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    border-radius: 12px;
+    background-color: var(--brand-color-1);
+  }
+  span {
+    position: relative;
+  }
+
+  &.-red {
+    &::before {
+      background-color: var(--red);
+    }
+
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+}

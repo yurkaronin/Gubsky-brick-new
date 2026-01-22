@@ -1,0 +1,41 @@
+.why-choose-us-card {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: auto 1fr;
+  align-items: flex-start;
+  font-size: 16px;
+  @media (max-width: 1379px) {
+    gap: 40px;
+  }
+  @media (max-width: 1023px) {
+    gap: 16px;
+  }
+  @media (max-width: 767px) {
+    gap: 24px;
+    font-size: 14px;
+  }
+
+  &__icon {
+    width: 48px;
+    color: var(--brand-color-1);
+    transition: var(--transition);
+    @media (max-width: 767px) {
+      width: 44px;
+    }
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    path {
+      stroke: currentColor;
+    }
+  }
+  &__text {
+    margin: 0;
+  }
+
+  &:hover &__icon {
+    color: var(--accent-color-1);
+  }
+}

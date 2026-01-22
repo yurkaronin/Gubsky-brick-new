@@ -1,0 +1,10 @@
+.text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--dark);
+
+  @media (max-width: 767px) {
+    // font-size: inherit;
+  }
+}

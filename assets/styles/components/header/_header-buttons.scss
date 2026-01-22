@@ -1,0 +1,13 @@
+.header-buttons {
+  &__flex {
+    display: flex;
+    margin-right: -8px;
+    margin-bottom: -8px;
+    flex-wrap: wrap;
+  }
+  &__item {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    max-width: max-content;
+  }
+}

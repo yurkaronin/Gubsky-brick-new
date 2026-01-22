@@ -1,0 +1,58 @@
+.main-and-aside {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  @media (max-width: 555px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &__large {
+    grid-column: span 9;
+    .title,
+    .title-two {
+      margin: 0;
+    }
+
+    @media (max-width: 1023px) {
+      grid-column: span 4;
+    }
+    @media (max-width: 555px) {
+      grid-column: initial;
+    }
+  }
+
+  &__small {
+    grid-column: span 3;
+    .achievement {
+      width: 100%;
+      max-width: 100%;
+
+      @media (max-width: 555px) {
+        width: initial;
+        max-width: max-content;
+        margin: 0 auto;
+      }
+      img {
+        width: 100%;
+        @media (max-width: 555px) {
+          width: initial;
+        }
+      }
+    }
+
+    @media (max-width: 1023px) {
+      grid-column: span 2;
+    }
+    @media (max-width: 555px) {
+      grid-column: initial;
+    }
+  }
+
+  & + * {
+    margin-top: 2em;
+  }
+}

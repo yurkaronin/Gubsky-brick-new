@@ -1,0 +1,6 @@
+.image-hover {
+  transition: var(--transition);
+  &:hover {
+    scale: 1.014;
+  }
+}

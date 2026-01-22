@@ -1,0 +1,21 @@
+.phone {
+  text-decoration: none;
+  font-family: var(--second-family);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 125%;
+  color: var(--dark);
+
+
+
+  &.-size {
+    font-size: 32px;
+    @media (max-width: 767px) {
+    font-size: 30px;
+  }
+  }
+
+  &.-color  {
+    color: var(--white);
+  }
+}

@@ -1,0 +1,17 @@
+.border {
+  height: 1px;
+  margin: 48px 0;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  border: none;
+
+  background: var(--dark);
+  opacity: 0.1;
+  @media (max-width: 1379px) {
+    margin: 28px 0;
+  }
+  @media (max-width: 767px) {
+    margin: 18px 0;
+  }
+}

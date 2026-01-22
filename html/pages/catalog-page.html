@@ -1,0 +1,18 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Каталог продукции | Название компании" %}
+{% set pageTitle = "Каталог продукции" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/catalog.html', text: 'Каталог продукции'}
+] %}
+
+{% block content %}
+
+{% include "sections/hero-inner-page.html" %}
+
+{% include "sections/catalog-preview-section.html" %}
+
+{% include "sections/product-information-section.html" %}
+
+{% endblock %}

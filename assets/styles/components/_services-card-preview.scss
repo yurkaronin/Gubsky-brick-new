@@ -1,0 +1,107 @@
+.services-card-preview {
+  padding: 22px 28px;
+  background-color: var(--dark);
+  color: var(--white);
+  max-width: max-content;
+  text-decoration: none;
+  display: flex;
+
+  &.-mod-color-1 {
+    background-color: #6d6462;
+  }
+  &.-mod-color-2 {
+    background-color: #614b4b;
+  }
+  &.-mod-color-2 &__icon::before {
+    opacity: 0.4;
+  }
+  &.-mod-color-3 {
+    background-color: #b0a393;
+  }
+  &.-mod-color-3 &__icon::before {
+    opacity: 0.3;
+  }
+
+  @media (max-width: 767px) {
+    padding: 12px 20px;
+  }
+
+  &__body {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  &__name {
+    // display: block;
+    // margin: 0;
+    // font-family: var(--second-family);
+    // font-weight: 500;
+    // font-size: 18px;
+    // line-height: 133%;
+    // color: var(--white);
+    align-items: center;
+    gap: 10px;
+    min-width: 0; // allow text to wrap but keep the icon on the same line
+    display: inline;
+    margin: 0;
+    color: var(--white);
+    &::after {
+      // content: "";
+      // background-image: url(../svg/icon-button.svg);
+      // background-repeat: no-repeat;
+      // width: 10px;
+      // height: 10px;
+      // margin-left: 10px;
+      // display: inline-block;
+      content: "";
+      flex-shrink: 0;
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      background-image: url(../svg/icon-button.svg);
+      background-repeat: no-repeat;
+      vertical-align: middle;
+    }
+  }
+  &__description {
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white-70);
+  }
+  &__icon {
+    position: relative;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      z-index: 0;
+      // top: 0;
+      // left: 0;
+      background-color: #d9d9d9;
+      opacity: 0.2;
+      transition: var(--transition);
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      z-index: 2;
+    }
+  }
+  &:hover &__icon::before {
+    scale: 1.5;
+  }
+}

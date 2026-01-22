@@ -1,0 +1,101 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 48px;
+  z-index: 99;
+  transition: var(--transition);
+  @media (max-width: 767px) {
+    top: 10px;
+  }
+
+  &__body {
+    padding: 12px;
+    padding-left: 32px;
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    color: var(--dark);
+    border-radius: 40px;
+    @media (max-width: 1599px) {
+      padding-left: 12px;
+    }
+    @media (max-width: 1379px) {
+      padding-left: 32px;
+    }
+    @media (max-width: 767px) {
+      padding: 8px;
+      padding-left: 14px;
+    }
+    @media (max-width: 374px) {
+      padding-left: 8px;
+    }
+  }
+  &__footer {
+    margin-top: 12px;
+    padding: 32px 48px 48px;
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    color: var(--dark);
+    border-radius: 40px;
+    transition: var(--transition);
+    position: relative;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+
+    @media (max-width: 767px) {
+      padding: 8px;
+    }
+  }
+  &__footer-container {
+    max-height: 440px;
+    overflow-y: auto;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: -32px;
+    margin-bottom: -32px;
+    @media (max-width: 767px) {
+      margin-right: -8px;
+      margin-bottom: -8px;
+    }
+    @media (max-width: 374px) {
+      margin-right: -8px;
+      margin-bottom: -8px;
+    }
+  }
+  &__item {
+    margin-right: 32px;
+    margin-bottom: 32px;
+    @media (max-width: 767px) {
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    @media (max-width: 374px) {
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    &.-mod {
+      flex-grow: 2;
+    }
+  }
+  &__logo {
+    max-width: 186px;
+    @media (max-width: 767px) {
+      max-width: 117px;
+    }
+    @media (max-width: 374px) {
+      max-width: 110px;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.image {
+  width: 100%;
+  max-width: 100%;
+  & + * {
+    margin-top: 3em;
+  }
+  img {
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+  &.-full {
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+* + .image {
+  margin-top: 2.5em;
+}

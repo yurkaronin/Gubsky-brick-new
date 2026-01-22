@@ -1,0 +1,32 @@
+<!-- \html\components\navigation\breadcrumbs.html -->
+<div class="breadcrumbs">
+  <ul class="breadcrumbs__list list-reset">
+    {% if breadcrumbs %}
+    {% for item in breadcrumbs %}
+    <li class="breadcrumbs__item">
+      {% if item.url and not loop.last %}
+      <a href="{{ item.url }}" class="breadcrumbs__link">
+        <span class="breadcrumbs__text">{{ item.text }}</span>
+      </a>
+      {% else %}
+      <a class="breadcrumbs__link">
+        <span class="breadcrumbs__text">{{ item.text }}</span>
+      </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+    {% else %}
+    <!-- Дефолтные крошки если переменная breadcrumbs не задана -->
+    <li class="breadcrumbs__item">
+      <a href="/" class="breadcrumbs__link">
+        <span class="breadcrumbs__text">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a class="breadcrumbs__link">
+        <span class="breadcrumbs__text">{{ pageTitle|default("Текущая страница") }}</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</div>

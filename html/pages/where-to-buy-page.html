@@ -1,0 +1,20 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Где купить" %}
+{% set pageTitle = "Где купить" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/catalog.html', text: 'Где купить'}
+] %}
+
+{% block content %}
+
+    <section class="section tech-section">
+      <div class="wrapper">
+        <h2 class="title">Где купить</h2>
+      </div>
+    </section>
+    {% include "sections/promo-section.html" %}
+
+
+{% endblock %}

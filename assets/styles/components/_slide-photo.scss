@@ -1,0 +1,28 @@
+.slide-photo {
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+  border: 8px;
+  border-radius: 20px;
+  border: 8px solid var(--white);
+  overflow: hidden;
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
+    width: 100%;
+    position: relative;
+  }
+  img {
+    width: 100%;
+    max-width: 100%;
+
+  }
+
+  .button-play {
+    position: absolute;
+    z-index: 5;
+  }
+
+}

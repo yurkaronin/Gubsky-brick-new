@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ title | default("Мой сайт") }}</title>
+
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./favicon.ico">
+
+  <!-- Preload шрифтов Geologica -->
+  <link rel="preload" href="{{ assets }}/fonts/Geologica/Geologica-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Geologica/Geologica-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Geologica/Geologica-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Geologica/Geologica-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Preload шрифтов Inter -->
+  <link rel="preload" href="{{ assets }}/fonts/Inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Inter/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Inter/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ assets }}/fonts/Inter/Inter-Black.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- библиотеки -->
+  <link rel="stylesheet" href="{{ assets }}/libs/normalize.css" />
+  <link rel="stylesheet" href="{{ assets }}/libs/swiper-bundle.min.css" />
+
+  <!-- библиотеки -->
+  <link rel="stylesheet" href="{{ assets }}/libs/normalize.css" />
+  <link rel="stylesheet" href="{{ assets }}/libs/swiper-bundle.min.css" />
+
+  <!-- стили  -->
+  <link rel="stylesheet" href="{{ assets }}/styles/main.css">
+</head>
+
+<body>
+  {% include "sections/header.html" %}
+  {% include "components/mobile-navigation-menu.html" %}
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% include "sections/footer-big.html" %}
+  {% include "sections/modals.html" %}
+
+
+
+
+  <!-- библиотеки -->
+  <script src="{{ assets }}/libs/swiper-bundle.min.js"></script>
+  <script src="{{ assets }}/libs/fslightbox.js"></script>
+  <script src="{{ assets }}/libs/imask.js"></script>
+
+  <!--подключение скриптов -->
+
+  <script src="{{ assets }}/scripts/components/content-table.js"></script>
+  <script src="{{ assets }}/scripts/components/navigation-accordion.js"></script>
+  <script src="{{ assets }}/scripts/components/modals.js"></script>
+  <script src="{{ assets }}/scripts/components/desktop-sub-navigation.js"></script>
+  <script src="{{ assets }}/scripts/components/mobile-navigation-menu.js"></script>
+  <script src="{{ assets }}/scripts/components/header-sticky.js"></script>
+
+
+  <script src="{{ assets }}/scripts/sliders/slider-group.js"></script>
+  <script src="{{ assets }}/scripts/sliders/reviews-slider.js"></script>
+
+  <script src="{{ assets }}/scripts/main.js"></script>
+
+</body>
+
+</html>

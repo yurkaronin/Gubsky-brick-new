@@ -1,0 +1,80 @@
+.button-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 0;
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  &::before {
+    content: "";
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    background-color: var(--brand-color-1);
+  }
+
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media (max-width: 374px) {
+    width: 35px;
+    height: 35px;
+  }
+
+  // Линии бургера
+  &__icon,
+  &__icon::before,
+  &__icon::after {
+    position: relative;
+    flex-shrink: 0;
+    width: 14px;
+    height: 2px;
+    background-color: currentColor;
+    z-index: 2;
+    border-radius: 8px;
+  }
+
+  // Псевдоэлементы линий
+  &__icon::before,
+  &__icon::after {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: var(--transition);
+  }
+
+  // Верхняя линия
+  &__icon::before {
+    transform: translateY(-6px);
+    width: 8px;
+    right: 0;
+  }
+
+  // Нижняя линия
+  &__icon::after {
+    transform: translateY(6px);
+    width: 8px;
+  }
+
+  &:hover {
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+}

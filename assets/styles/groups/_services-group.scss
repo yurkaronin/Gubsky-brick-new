@@ -1,0 +1,51 @@
+.services-group {
+  &__list {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 1379px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  &__item {
+    border-radius: 40px;
+    overflow: hidden;
+    transition: var(--transition);
+  &:hover {
+    scale: 1.05;
+  }
+    @media (max-width: 1379px) {
+      &:nth-child(4n + 1) {
+        // 1, 5, 9, 13...
+        border-radius: 40px 40px 0 40px;
+      }
+
+      &:nth-child(4n + 2) {
+        // 2, 6, 10, 14...
+        border-radius: 40px 40px 40px 0;
+      }
+
+      &:nth-child(4n + 3) {
+        // 3, 7, 11, 15...
+        border-radius: 40px 0 40px 40px;
+      }
+
+      &:nth-child(4n + 4),
+      &:nth-child(4n) {
+        // 4, 8, 12, 16... (оба варианта для надежности)
+        border-radius: 0 40px 40px 40px;
+      }
+    }
+    @media (max-width: 767px) {
+      border-radius: 0 !important;
+    }
+  }
+  .services-card-preview {
+    max-width: 100%;
+    width: 100%;
+    min-height: 100%;
+  }
+}

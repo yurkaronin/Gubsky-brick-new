@@ -1,0 +1,13 @@
+.content-table {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; // smooth inertial scroll on touch devices
+  padding-bottom: 4px; // keeps the bottom border visible above the scrollbar
+
+  table:not([class]) {
+    width: max-content; // allow the table to grow to its natural width
+    min-width: 100%; // but not shrink below the container on wide screens
+  }
+}

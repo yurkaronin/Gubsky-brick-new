@@ -1,0 +1,31 @@
+<article class="review-preview-card">
+  <!-- Ссылка с data-target -->
+  <a class="review-preview-card__link" href="@@dataTarget" data-target="@@dataTarget">
+
+    <div class="review-preview-card__header">
+      <div class="review-preview-card__header-left">
+        <div class="review-preview-card__meta">
+          <time class="review-preview-card__date" datetime="@@date">@@formattedDate</time>
+          <p class="review-preview-card__author lower-short-strip">@@name</p>
+        </div>
+      </div>
+      <div class="review-preview-card__header-right">
+        <div class="review-preview-card__plug @@iconColor">
+          <span>@@firstLetter</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-preview-card__content">
+      <p class="review-preview-card__text">@@text
+        <span class="review-preview-card__icon">
+          <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L1 9" stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 1L10 5L6 9" stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </p>
+    </div>
+  </a>
+</article>
+

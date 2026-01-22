@@ -1,0 +1,652 @@
+<style>
+  /* Основной контейнер компонента */
+  .developer-duck {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    z-index: 1000;
+    pointer-events: none;
+  }
+
+  /* Стили кнопки */
+  .developer-duck__button {
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    width: 60px;
+    padding: 0;
+    margin: 0;
+    animation: duckFloat 3s ease-in-out infinite;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+    position: relative;
+    z-index: 3;
+    /* Добавляем для правильного определения кликов */
+    display: block;
+    outline: none;
+  }
+
+  .developer-duck__button:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
+  }
+
+  /* Активное состояние кнопки (когда меню открыто) */
+  .developer-duck__button.active {
+    animation: none;
+    transform: scale(1.1);
+  }
+
+  .developer-duck__button.active:hover {
+    transform: scale(1.15);
+  }
+
+
+  /* Анимация плавающего движения */
+  @keyframes duckFloat {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+      transform: translateY(-5px) rotate(-2deg);
+    }
+
+    50% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+      transform: translateY(-5px) rotate(2deg);
+    }
+  }
+
+  /* Анимация смены иконки */
+  @keyframes iconSwitch {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    50% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Стили для иконки внутри кнопки */
+  .developer-duck__icon {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .developer-duck__icon img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Эффект переключения иконки */
+  .developer-duck__button.active .developer-duck__icon img {
+    animation: iconSwitch 0.4s ease;
+  }
+
+  /* Стили для облачка подсказки */
+  .developer-duck__tooltip {
+    position: absolute;
+    left: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #333;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-size: 14px;
+    line-height: 1.4;
+    width: 185px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .developer-duck__tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) translateX(5px);
+    pointer-events: auto;
+  }
+
+  /* Стрелочка облачка */
+  .developer-duck__tooltip-arrow {
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #fff;
+  }
+
+  /* Текст подсказки */
+  .developer-duck__tooltip-text {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    word-wrap: break-word;
+  }
+
+  /* Стили для списка страниц */
+  .developer-duck__pages {
+    position: absolute;
+    left: 70px;
+    top: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    width: 280px;
+    max-height: 400px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-20px);
+    transition: all 0.4s ease;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .developer-duck__pages.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* Заголовок списка страниц */
+  .developer-duck__pages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f8f9fa;
+  }
+
+  .developer-duck__pages-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .developer-duck__pages-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    color: #666;
+    padding: 0 4px;
+    transition: color 0.2s;
+    border-radius: 4px;
+  }
+
+  .developer-duck__pages-close:hover {
+    color: #333;
+    background-color: #eee;
+  }
+
+  /* Список страниц */
+  .developer-duck__pages-list {
+    margin: 0;
+    padding: 16px 20px;
+    list-style-position: inside;
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: 300px;
+  }
+
+  .developer-duck__pages-list li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 14px;
+  }
+
+  .developer-duck__pages-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .developer-duck__pages-list a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: inline-block;
+    padding: 2px 0;
+  }
+
+  .developer-duck__pages-list a:hover {
+    color: #004499;
+    text-decoration: underline;
+  }
+
+  /* Футер списка */
+  .developer-duck__pages-footer {
+    padding: 12px 20px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+    font-size: 12px;
+    color: #666;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .developer-duck__pages-count {
+    font-weight: 600;
+    color: #333;
+  }
+
+  /* Полоса прокрутки */
+  .developer-duck__pages-list::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .developer-duck__pages-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  .developer-duck__pages-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+
+  .developer-duck__pages-list::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+  }
+</style>
+
+<!-- Компонент для навигации по страницам проекта -->
+<div class="developer-duck" id="developerDuck">
+
+  <!-- Кнопка утки -->
+  <button class="developer-duck__button" type="button" aria-label="Показать список страниц проекта">
+    <div class="developer-duck__icon">
+      <img src="./duck.png" alt="Иконка утки" data-default="./duck.png" data-active="./duck-active.png" />
+    </div>
+  </button>
+
+  <!-- Облачко подсказки -->
+  <div class="developer-duck__tooltip">
+    <div class="developer-duck__tooltip-text">
+      Кря!<br>
+      Я покажу список всех страниц проекта!<br>
+      <hr />
+      <b>Кликни на меня</b>
+    </div>
+    <div class="developer-duck__tooltip-arrow"></div>
+  </div>
+
+  <!-- Список страниц проекта (скрыт по умолчанию) -->
+  <div class="developer-duck__pages">
+    <div class="developer-duck__pages-header">
+      <h3 class="developer-duck__pages-title">Страницы проекта</h3>
+      <button class="developer-duck__pages-close" type="button" aria-label="Закрыть список">
+        ×
+      </button>
+    </div>
+    <ol class="developer-duck__pages-list">
+      <!-- Список страниц будет генерироваться JavaScript -->
+      <!-- Здесь по умолчанию можно оставить базовые страницы -->
+    </ol>
+    <div class="developer-duck__pages-footer">
+      <small>Всего страниц: <span class="developer-duck__pages-count">0</span></small>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const developerDuck = document.getElementById('developerDuck');
+    const duckButton = developerDuck.querySelector('.developer-duck__button');
+    const duckIcon = developerDuck.querySelector('.developer-duck__icon img');
+    const tooltip = developerDuck.querySelector('.developer-duck__tooltip');
+    const pagesContainer = developerDuck.querySelector('.developer-duck__pages');
+    const pagesList = developerDuck.querySelector('.developer-duck__pages-list');
+    const pagesCount = developerDuck.querySelector('.developer-duck__pages-count');
+    const closeButton = developerDuck.querySelector('.developer-duck__pages-close');
+
+    // Получаем пути к иконкам из data-атрибутов
+    const defaultIcon = duckIcon.getAttribute('data-default');
+    const activeIcon = duckIcon.getAttribute('data-active');
+
+    // Конфигурация компонента
+    const config = {
+      autoShowTooltip: true,
+      tooltipInterval: 30000, // 30 секунд
+      tooltipDuration: 5000,  // 5 секунд
+      defaultPages: [
+        { name: 'Главная', path: './home-page.html' },
+        { name: 'Каталог продукции', path: './catalog-page.html' },
+        { name: 'Категория каталога', path: './category-page.html' },
+        { name: 'Производство', path: './production-page.html' }
+      ],
+      additionalPages: []
+    };
+
+    // Флаг для отслеживания авто-показа подсказки
+    let isAutoShowEnabled = config.autoShowTooltip;
+    let autoShowInterval;
+
+    // Инициализация компонента
+    function init() {
+      // Загружаем страницы
+      loadPages();
+
+      // Показываем подсказку сразу при загрузке
+      if (config.autoShowTooltip) {
+        showTooltip();
+      }
+
+      // Запускаем интервал для подсказки
+      if (config.autoShowTooltip) {
+        startAutoShowInterval();
+      }
+
+      // Назначаем обработчики событий
+      setupEventListeners();
+    }
+
+    // Загрузка и отображение списка страниц
+    function loadPages() {
+      const allPages = [...config.defaultPages, ...config.additionalPages];
+
+      // Очищаем список
+      pagesList.innerHTML = '';
+
+      // Добавляем страницы в список
+      allPages.forEach((page, index) => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = page.path;
+        link.textContent = page.name;
+        link.title = `Перейти на страницу: ${page.name}`;
+
+        // Открывать в новой вкладке, если это не текущая страница
+        if (page.path !== window.location.pathname) {
+          link.target = '_blank';
+        }
+
+        listItem.appendChild(link);
+        pagesList.appendChild(listItem);
+      });
+
+      // Обновляем счетчик
+      pagesCount.textContent = allPages.length;
+    }
+
+    // Настройка обработчиков событий
+    function setupEventListeners() {
+      // Клик по кнопке утки
+      duckButton.addEventListener('click', function (event) {
+        event.stopPropagation(); // Предотвращаем всплытие
+        togglePagesList();
+        hideTooltip();
+
+        // Временно отключаем авто-показ после клика пользователя
+        isAutoShowEnabled = false;
+        setTimeout(() => {
+          isAutoShowEnabled = true;
+        }, 60000);
+      });
+
+      // Клик по кнопке закрытия
+      closeButton.addEventListener('click', function (e) {
+        e.stopPropagation();
+        hidePagesList();
+      });
+
+      // Клик по ссылкам в списке страниц (позволяет кликнуть без закрытия списка)
+      pagesList.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          // Даём время для перехода перед закрытием списка
+          setTimeout(() => {
+            hidePagesList();
+          }, 100);
+        }
+        e.stopPropagation(); // Предотвращаем всплытие до document
+      });
+
+      // Клик на самом контейнере списка (предотвращает закрытие при клике внутри)
+      pagesContainer.addEventListener('click', function (e) {
+        e.stopPropagation();
+      });
+
+      // Скрываем подсказку при клике вне компонента
+      document.addEventListener('click', function (event) {
+        // Проверяем, был ли клик вне компонента
+        if (!developerDuck.contains(event.target)) {
+          hideTooltip();
+
+          // Закрываем список страниц только если он открыт
+          if (pagesContainer.classList.contains('show')) {
+            hidePagesList();
+          }
+        }
+      });
+
+      // Показываем подсказку при наведении на кнопку
+      duckButton.addEventListener('mouseenter', function () {
+        if (!tooltip.classList.contains('show') && !pagesContainer.classList.contains('show')) {
+          showTooltip();
+        }
+      });
+
+      // Скрываем подсказку при уходе мыши с компонента
+      developerDuck.addEventListener('mouseleave', function (event) {
+        if (!tooltip.classList.contains('hover') && !duckButton.matches(':hover')) {
+          setTimeout(() => {
+            hideTooltip();
+          }, 300);
+        }
+      });
+
+      // Обработка наведения на подсказку
+      tooltip.addEventListener('mouseenter', function () {
+        tooltip.classList.add('hover');
+      });
+
+      tooltip.addEventListener('mouseleave', function () {
+        tooltip.classList.remove('hover');
+        if (!duckButton.matches(':hover')) {
+          setTimeout(() => {
+            hideTooltip();
+          }, 300);
+        }
+      });
+
+      // Закрытие по Escape
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          if (pagesContainer.classList.contains('show')) {
+            hidePagesList();
+          }
+          hideTooltip();
+        }
+      });
+    }
+
+    // Запуск интервала авто-показа подсказки
+    function startAutoShowInterval() {
+      if (autoShowInterval) {
+        clearInterval(autoShowInterval);
+      }
+
+      autoShowInterval = setInterval(() => {
+        if (isAutoShowEnabled &&
+          !tooltip.classList.contains('show') &&
+          !pagesContainer.classList.contains('show')) {
+          showTooltip();
+        }
+      }, config.tooltipInterval);
+    }
+
+    // Показать/скрыть список страниц
+    function togglePagesList() {
+      if (pagesContainer.classList.contains('show')) {
+        hidePagesList();
+      } else {
+        showPagesList();
+      }
+    }
+
+    function showPagesList() {
+      hideTooltip();
+
+      // Меняем иконку на активную
+      switchIcon(activeIcon);
+
+      // Добавляем активный класс
+      duckButton.classList.add('active');
+
+      // Показываем список страниц
+      pagesContainer.classList.add('show');
+      duckButton.setAttribute('aria-expanded', 'true');
+
+      // Меняем aria-label для доступности
+      duckButton.setAttribute('aria-label', 'Скрыть список страниц проекта');
+    }
+
+    function hidePagesList() {
+      // Возвращаем обычную иконку
+      switchIcon(defaultIcon);
+
+      // Убираем активный класс
+      duckButton.classList.remove('active');
+
+      // Скрываем список страниц
+      pagesContainer.classList.remove('show');
+      duckButton.setAttribute('aria-expanded', 'false');
+
+      // Возвращаем aria-label
+      duckButton.setAttribute('aria-label', 'Показать список страниц проекта');
+    }
+
+    // Функция переключения иконки
+    function switchIcon(newIconSrc) {
+      // Если текущий src уже совпадает с новым, не меняем
+      if (duckIcon.src === newIconSrc ||
+        duckIcon.src.endsWith(newIconSrc) ||
+        duckIcon.getAttribute('src') === newIconSrc) {
+        return;
+      }
+
+      // Создаём эффект плавной смены иконки
+      duckIcon.style.opacity = '0';
+      duckIcon.style.transform = 'scale(0.8)';
+
+      setTimeout(() => {
+        duckIcon.src = newIconSrc;
+
+        // Плавное появление новой иконки
+        setTimeout(() => {
+          duckIcon.style.opacity = '1';
+          duckIcon.style.transform = 'scale(1)';
+        }, 50);
+      }, 150);
+    }
+
+    // Функции показа/скрытия подсказки
+    function showTooltip() {
+      tooltip.classList.add('show');
+
+      // Автоматически скрываем через указанное время
+      setTimeout(() => {
+        if (!duckButton.matches(':hover') && !tooltip.classList.contains('hover')) {
+          hideTooltip();
+        }
+      }, config.tooltipDuration);
+    }
+
+    function hideTooltip() {
+      tooltip.classList.remove('show');
+    }
+
+    // API для добавления страниц извне
+    function addPage(pageName, pagePath) {
+      config.additionalPages.push({
+        name: pageName,
+        path: pagePath
+      });
+
+      loadPages();
+    }
+
+    function addPages(pagesArray) {
+      config.additionalPages.push(...pagesArray);
+      loadPages();
+    }
+
+    function clearAdditionalPages() {
+      config.additionalPages = [];
+      loadPages();
+    }
+
+    function updateDefaultPages(newDefaultPages) {
+      config.defaultPages = newDefaultPages;
+      loadPages();
+    }
+
+    // Функция для обновления иконок
+    function updateIcons(newDefaultIcon, newActiveIcon) {
+      duckIcon.setAttribute('data-default', newDefaultIcon);
+      duckIcon.setAttribute('data-active', newActiveIcon);
+
+      // Если список открыт, показываем активную иконку
+      if (pagesContainer.classList.contains('show')) {
+        duckIcon.src = newActiveIcon;
+      } else {
+        duckIcon.src = newDefaultIcon;
+      }
+    }
+
+    // Инициализируем компонент
+    init();
+
+    // Экспортируем API компонента для внешнего использования
+    window.developerDuck = {
+      showTooltip: showTooltip,
+      hideTooltip: hideTooltip,
+      showPagesList: showPagesList,
+      hidePagesList: hidePagesList,
+      togglePagesList: togglePagesList,
+      addPage: addPage,
+      addPages: addPages,
+      clearAdditionalPages: clearAdditionalPages,
+      updateDefaultPages: updateDefaultPages,
+      updateIcons: updateIcons,
+      getPagesCount: () => config.defaultPages.length + config.additionalPages.length,
+      config: config
+    };
+  });
+</script>

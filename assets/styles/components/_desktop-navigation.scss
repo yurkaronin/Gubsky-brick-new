@@ -1,0 +1,49 @@
+.desktop-navigation {
+  @media (max-width: 767px) {
+    display: none;
+  }
+  &__grid {
+    display: grid;
+    gap: 24px 32px;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
+
+    @media (max-width: 1379px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto auto; // 3 строки
+
+      // Определяем grid-areas
+      grid-template-areas:
+        "area1 area2 area3"
+        "area4 area5 area6"
+        "area7 area7 area8";
+    }
+  }
+  &__group {
+    @media (max-width: 1379px) {
+      &.-catalog-group {
+        grid-area: area1;
+      }
+      &.-about-us-group {
+        grid-area: area2;
+      }
+      &.-info-group {
+        grid-area: area3;
+      }
+      &.-calculation-group {
+        grid-area: area4;
+      }
+      &.-architecture-group {
+        grid-area: area5;
+      }
+      &.-building-group {
+        grid-area: area6;
+      }
+      &.-documents-group {
+        grid-area: area7;
+      }
+      &.-other-group {
+        grid-area: area8;
+      }
+    }
+  }
+}

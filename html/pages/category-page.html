@@ -1,0 +1,19 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Лицевой керамический кирпич" %}
+{% set pageTitle = "Лицевой керамический кирпич" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/', text: 'Каталог'},
+    {url: '/catalog.html', text: 'Лицевой керамический кирпич'}
+] %}
+
+{% block content %}
+    {% include "sections/hero-inner-page.html" %}
+    {% include "sections/category-preview-section.html" %}
+    {% include "sections/reviews-preview-section.html" %}
+    {% include "sections/reviews-slider-section.html" %}
+    {% include "sections/promo-section.html" %}
+    {% include "sections/product-information-section.html" %}
+
+{% endblock %}

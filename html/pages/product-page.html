@@ -1,0 +1,22 @@
+{% extends "layouts/big-footer.html" %}
+
+{% set title = "Песчаная дюна" %}
+{% set pageTitle = "Песчаная дюна" %}
+{% set breadcrumbs = [
+    {url: '/', text: 'Главная'},
+    {url: '/', text: 'Каталог'},
+    {url: '/', text: 'Лицевой керамический кирпич'},
+    {url: '/catalog.html', text: 'Песчаная дюна'}
+] %}
+
+{% block content %}
+
+    <section class="section tech-section">
+      <div class="wrapper">
+        <h2 class="title">Карточка товара детальная</h2>
+      </div>
+    </section>
+    {% include "sections/promo-section.html" %}
+
+
+{% endblock %}

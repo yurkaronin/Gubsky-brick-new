@@ -1,0 +1,74 @@
+.button-favorite {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media (max-width: 374px) {
+    width: 35px;
+    height: 35px;
+  }
+
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--grey-30);
+  }
+
+  svg {
+    position: relative;
+  }
+
+  path {
+    stroke: currentColor;
+  }
+
+  &:hover {
+    color: var(--white);
+    &:hover {
+      color: var(--white);
+
+      &::before {
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+        background-color: var(--red);
+        border: 1px solid var(--red);
+      }
+    }
+  }
+  &.-inActive {
+    color: var(--red);
+    path {
+      fill: currentColor;
+    }
+    &:hover {
+      color: var(--white);
+
+      &::before {
+        background-color: var(--red);
+        border: 1px solid var(--red);
+      }
+    }
+  }
+}

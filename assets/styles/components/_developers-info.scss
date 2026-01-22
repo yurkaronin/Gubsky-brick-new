@@ -1,0 +1,66 @@
+.developers-info {
+  &__link {
+    text-decoration: none;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 171%;
+    text-align: right;
+    color: rgba(38, 40, 42, 0.7);
+    max-width: max-content;
+  }
+  &__text {
+    margin: 0;
+    span {
+      color: var(--red);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--white);
+    position: relative;
+    &::before {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: var(--transition);
+      border-radius: 50%;
+      background-color: var(--red);
+      z-index: -1;
+    }
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      position: relative;
+      z-index: 2;
+    }
+    path {
+      fill: currentColor;
+    }
+    &:hover::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
+  }
+}

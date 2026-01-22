@@ -1,0 +1,9 @@
+.column-list-simple {
+  li + li {
+    margin-top: 24px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

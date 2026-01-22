@@ -1,0 +1,87 @@
+<!-- модальное окно с формой обратной связи-->
+<section class="modal js-modal" id="modal-get-consultation">
+  <div class="wrapper">
+
+    <div class="modal__body">
+
+      <h2 class="title-two">Заказать звонок</h2>
+      <p class="text">Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время и проконсультируют по
+        всем интересующим вопросам! </p>
+
+      {% include "components/forms/contact-form-2.html" %}
+
+      <button class="button-close js-close-modal" type="button" title="Закрыть окно"></button>
+    </div>
+  </div>
+</section>
+
+<!-- модальное окно с формой обратной связи-->
+<section class="modal js-modal" id="modal-write-review">
+  <div class="wrapper">
+
+    <div class="modal__body">
+
+      <h2 class="title-two">Написать отзыв</h2>
+      <p class="text">Заполните простую форму и в ближайшее время Ваш отзыв отобразится на сайте.</p>
+
+      {% include "components/forms/contact-form-3.html" %}
+
+      <button class="button-close js-close-modal" type="button" title="Закрыть окно"></button>
+    </div>
+  </div>
+</section>
+
+<!-- модальное окно с отзывом-->
+<section class="modal js-modal" id="modal-review-details">
+  <div class="wrapper">
+
+    <div class="modal__body">
+
+      <article class="review-preview-card">
+        <a class="review-preview-card__link" href="#" data-target="modal-review-details">
+          <div class="review-preview-card__header">
+            <div class="review-preview-card__header-left">
+              <div class="review-preview-card__meta">
+                <time class="review-preview-card__date" datetime="2025-10-18">18 \ 10 \ 2025</time>
+                <p class="review-preview-card__author">Людмила Прокофьевна</p>
+              </div>
+            </div>
+            <div class="review-preview-card__header-right">
+              <div class="review-preview-card__avatar">
+                <img src="./assets/img/review-preview-card/1.jpg" alt="#">
+              </div>
+            </div>
+
+
+
+
+          </div>
+          <div class="review-preview-card__content">
+
+            <div class="review-preview-card__text">
+              <p>Отдыхали в Мостовском на термоисточниках. Узнали, что на Губском кирпичном заводе проводятся экскурсии.
+                Договорились, нас очень тепло и радушно встретили, как дорогих гостей! Хочется отметить прекрасную
+                подготовку-выдали жилеты, защитные каски, респираторы для безопасного и комфортного нахождения в цехах,
+                аудиогиды с наушниками, чтобы лучше было слышно экскурсовода.</p>
+              <p>Посмотрели фильм-презентацию, посетили Музей завода, производственные цеха, лабораторию.</p>
+              <p>Мы даже не ожидали, что будет так интересно! Столько производятся видов кирпичей, с рисунком и без,
+                разного цвета, разного размера!
+                По окончании экскурсии мы сфотографировались на фотозоне, и нашим семьям подарили по кирпичику на
+                память))</p>
+              <p>Благодарим Наталью Владимировну и руководство Губского кирпичного завода за интереснейшую экскурсию!
+                Хочется пожелать дальнейшего развития промышленного туризма, развития строящейся собственной базы отдыха
+                «Кирпичная слобода», всем очень рекомендуем к посещению!</p>
+            </div>
+          </div>
+        </a>
+
+      </article>
+
+
+
+
+
+      <button class="button-close js-close-modal" type="button" title="Закрыть окно"></button>
+    </div>
+  </div>
+</section>

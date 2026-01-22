@@ -1,0 +1,12 @@
+.text-and-button {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+
+  &__left {
+  }
+  &__right {
+  }
+}

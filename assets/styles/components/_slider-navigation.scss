@@ -1,0 +1,28 @@
+.slider-navigation {
+  &__grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    max-width: max-content;
+  }
+
+  .swiper-button {
+    position: relative;
+    transform: none;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial;
+    margin: 0;
+  }
+  .swiper-pagination {
+    position: relative;
+    transform: none;
+    top: initial;
+    right: initial;
+    bottom: initial;
+    left: initial;
+    margin: 0;
+  }
+}

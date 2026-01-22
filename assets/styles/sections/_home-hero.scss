@@ -1,0 +1,45 @@
+.home-hero {
+  position: relative;
+  &__navigation {
+    background-color: transparent;
+    position: absolute;
+    bottom: calc(112px + 48px + 48px);
+    left: 0;
+    right: 0;
+
+
+    @media (max-width: 1379px) {
+      bottom: 48px;
+    }
+    @media (max-width: 767px) {
+      bottom: 20px;
+    }
+
+  }
+  &__footer {
+    background-color: transparent;
+    position: absolute;
+    bottom: 48px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    @media (max-width: 767px) {
+      bottom: 20px;
+    }
+  }
+  .slider-navigation {
+    margin-left: auto;
+    max-width: max-content;
+  }
+
+  .home-hero-card__details {
+    padding-top: 180px;
+    padding-bottom: calc(112px + 48px + 48px);
+    @media (max-width: 1379px) {
+      padding-bottom: 48px;
+    }
+    @media (max-width: 767px) {
+      padding-bottom: calc(20px + 50px + 20px);
+    }
+  }
+}

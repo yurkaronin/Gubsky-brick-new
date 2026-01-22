@@ -1,0 +1,40 @@
+.contact-form {
+  &__row {
+    position: relative;
+    & + & {
+      margin-top: 24px;
+      @media (max-width: 767px) {
+        margin-top: 16px;
+      }
+    }
+    &:has(.button) {
+      margin-top: 32px;
+      @media (max-width: 767px) {
+        margin-top: 16px;
+      }
+    }
+  }
+  &__grid {
+    display: grid;
+    gap: 24px 32px;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+  }
+  &__flex {
+    display: grid;
+    align-items: center;
+    gap: 24px 32px;
+    grid-template-columns: 1fr auto;
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .button {
+      @media (max-width: 767px) {
+        margin-left: auto;
+      }
+    }
+  }
+}

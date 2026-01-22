@@ -1,0 +1,47 @@
+.simple-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+
+  .form-agree {
+    max-width: 282px;
+    align-items: center;
+    @media (max-width: 1379px) {
+      max-width: 100%;
+    }
+    label {
+      color: var(--white-70);
+      opacity: 1;
+    }
+
+    a:not([class]) {
+      color: var(--white);
+    }
+  }
+
+  .form-agree label:before {
+    top: 15px;
+    background-color: #ffffff;
+    @media (max-width: 1379px) {
+      top: 6px;
+    }
+  }
+
+  .form-agree label:after {
+    top: 23px;
+    @media (max-width: 1379px) {
+      top: 14px;
+    }
+  }
+
+  .button {
+    @media (max-width: 767px) {
+      max-width: max-content;
+      margin-left: auto;
+    }
+  }
+}

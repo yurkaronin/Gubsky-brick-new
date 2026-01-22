@@ -1,0 +1,17 @@
+.label {
+  display: block;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  // color: var(--white);
+  &.-mod {
+    &::after {
+      content: "*";
+      color: var(--brand-color-1);
+    }
+  }
+  & + * {
+    margin-top: 12px;
+  }
+}

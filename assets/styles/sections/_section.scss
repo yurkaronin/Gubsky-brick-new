@@ -1,0 +1,34 @@
+.section {
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  @media (max-width: 1379px) {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 767px) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  &.-bg-color {
+    background-color: #fff;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    @media (max-width: 1379px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.logo-company {
+  max-width: 224px;
+  @media (max-width: 767px) {
+    max-width: 153px;
+  }
+  &__link {
+    text-decoration: none;
+    display: flex;
+    transition: var(--transition);
+    &:hover {
+      scale: 1.04;
+    }
+  }
+}

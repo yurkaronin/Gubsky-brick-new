@@ -1,0 +1,21 @@
+.simple-slider-one {
+  position: relative;
+  .swiper {
+    padding: 20px; /* Добавляем воздух вокруг */
+    margin: -20px; /* Компенсируем, чтобы слайдер не съехал */
+  }
+
+  .swiper-slide {
+    width: 100%;
+  }
+
+  .swiper-button {
+    visibility: hidden;
+    opacity: 0;
+
+    @media (max-width: 767px) {
+      visibility: initial;
+      opacity: 1;
+    }
+  }
+}

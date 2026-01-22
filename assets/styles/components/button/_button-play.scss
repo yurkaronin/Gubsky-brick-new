@@ -1,0 +1,55 @@
+.button-play {
+  position: relative;
+  width: var(--button-size-base);
+  height: var(--button-size-base);
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  @media (max-width: 767px) {
+    width: var(--button-size-mobile);
+    height: var(--button-size-mobile);
+  }
+
+  &::before {
+    content: "";
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    background-color: var(--brand-color-1);
+  }
+
+  svg {
+    max-width: 22px;
+    max-height: 22px;
+    position: absolute;
+    left: calc(50% - 11px + 4px);
+    @media (max-width: 767px) {
+    left: calc(50% - 8px);
+  }
+  }
+
+  path {
+    stroke: currentColor;
+  }
+  &:hover {
+    color: var(--white);
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      background-color: var(--brand-color-1);
+    }
+  }
+}

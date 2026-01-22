@@ -1,0 +1,40 @@
+.navigation-menu {
+  @media (max-width: 767px) {
+    display: none;
+  }
+  &__list {
+    display: grid;
+    gap: 24px 32px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &__item {
+  }
+  &__link {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--dark);
+    position: relative;
+    text-decoration: none;
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 10px;
+      background-image: url(../svg/icon-footer-menu-link.svg);
+      width: 6px;
+      height: 10px;
+      background-repeat: repeat-x;
+      background-size: contain;
+      transition: var(--transition);
+    }
+    & + * {
+      margin-top: 10px;
+    }
+    &:hover {
+      &::after {
+        width: 12px;
+      }
+    }
+  }
+}

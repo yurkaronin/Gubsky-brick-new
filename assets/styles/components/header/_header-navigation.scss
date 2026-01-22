@@ -1,0 +1,23 @@
+.header-navigation {
+  &__flex {
+    display: flex;
+    margin-right: -32px;
+    margin-bottom: -32px;
+    flex-wrap: wrap;
+    align-items: center;
+    @media (max-width: 1599px) {
+      margin-right: -16px;
+      margin-bottom: -16px;
+    }
+  }
+  &__item {
+    margin-right: 32px;
+    margin-bottom: 32px;
+    max-width: max-content;
+    flex-shrink: 0;
+    @media (max-width: 1599px) {
+      margin-right: 16px;
+      margin-bottom: 16px;
+    }
+  }
+}

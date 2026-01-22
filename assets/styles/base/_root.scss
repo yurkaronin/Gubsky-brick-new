@@ -1,0 +1,65 @@
+// Функция для преобразования hex в rgba
+@function transparent-color($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+:root {
+  --font-family: "Inter", sans-serif;
+  --second-family: "Geologica", sans-serif;
+
+  --red: #c4161c;
+  --orange: #e67917;
+  --white: #fff;
+  --white-80: #{transparent-color(#ffffff, 0.8)};
+  --white-70: #{transparent-color(#ffffff, 0.7)};
+  --white-10: #{transparent-color(#ffffff, 0.1)};
+
+  --grey: #5d6873;
+  --grey-30: #{transparent-color(#5d6873, 0.3)};
+  --dark: #26282a;
+  --dark-30: #{transparent-color(#26282a, 0.3)};
+  --dark-20: #{transparent-color(#26282a, 0.2)};
+  --dark-15: #{transparent-color(#26282a, 0.15)};
+  --dark-10: #{transparent-color(#26282a, 0.1)};
+
+  --title-color: #26282a;
+
+  --text-font-size: 16px;
+  --text-line-height: 1.5;
+
+  --text-color-1: #5d6873;
+  --text-color-2: #26282a;
+  --text-color-70: #{transparent-color(#26282a, 0.7)};
+
+  --background-1: #ffffff;
+  --background-2: #f8f2f1;
+
+  --background-3: #b0a393;
+  --background-4: #{transparent-color(#b0a393, 0.3)};
+  --background-5: #dfe5eb;
+  --background-6: #f8f2f0;
+
+  --button-size-big: 96px;
+  --button-size-base: 72px;
+  --button-size-small: 64px;
+
+  --button-size-tablet: 56px;
+
+  --button-size-mobile: 50px;
+  --button-size-mobile-2: 48px;
+
+  --brand-color-1: #e67917;
+  --accent-color-1: #c4161c;
+  --telegram-color: #039BE5;
+  --border-color: #DFDFDF;
+
+  --transition: all 0.3s ease-in-out;
+
+  --swiper-navigation-sides-offset: -32px;
+
+  @media (max-width: 767px) {
+    --swiper-navigation-sides-offset: -16px;
+  }
+
+  --swiper-theme-color: #e67917;
+}

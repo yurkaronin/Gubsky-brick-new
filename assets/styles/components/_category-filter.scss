@@ -1,0 +1,36 @@
+.category-filter {
+  &__body {
+    padding: 12px;
+    border-radius: 40px;
+    background: rgba(176, 163, 147, 0.2);
+  }
+  &__grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  &__label {
+    margin: 0;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 133%;
+    color: var(--dark);
+    padding-left: 20px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -12px;
+    margin-bottom: -12px;
+    justify-content: flex-end;
+  }
+  &__list-item {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}

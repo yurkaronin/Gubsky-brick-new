@@ -1,0 +1,102 @@
+.visually-hidden:not(:focus),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
+// скрываем на ширине от 1380 и больше
+.desktop-hide {
+  @media (min-width: 1380px) {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: initial !important;
+  }
+}
+
+// скрываем на ширине от 1024 до 1379px
+.laptop-hide {
+  @media (min-width: 1024px) and (max-width: 1379px) {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: initial !important;
+  }
+}
+
+// скрываем на ширине от 768 до 1023px
+.tablet-hide {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: initial !important;
+  }
+}
+
+// скрываем на малых разрешениях до 767px и меньше
+.mobile-hide {
+  @media (max-width: 767px) {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: initial !important;
+  }
+}
+
+.list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-transform {
+  margin-top: 0;
+  @media (min-width: 1651px) {
+    margin-top: -128px;
+  }
+}
+
+.hover-scale {
+  transition: scale 0.3s;
+  &:hover {
+    scale: 1.02;
+  }
+}
+
+.move-to-right {
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  max-width: max-content;
+  &__content {
+    max-width: max-content;
+  }
+}
+
+.tech-section {
+  padding-top: 130px;
+}
+
+.simple-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -12px;
+  margin-bottom: -12px;
+  align-items: center;
+  &__item {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}

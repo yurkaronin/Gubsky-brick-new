@@ -1,0 +1,59 @@
+.button-close {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+  }
+  @media (max-width: 374px) {
+    width: 35px;
+    height: 35px;
+  }
+
+  &::before {
+    content: "";
+    border-radius: 50%;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+    background-color: var(--brand-color-1);
+  }
+  &::after {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-image: url(../svg/icon-cross.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+    position: relative;
+  }
+
+  &:hover {
+    color: var(--white);
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      background-color: var(--brand-color-1);
+    }
+  }
+}

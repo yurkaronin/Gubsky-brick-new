@@ -1,0 +1,8 @@
+.header-sticky {
+  .header {
+    top: 16px;
+    @media (max-width: 767px) {
+      top: 10px;
+    }
+  }
+}

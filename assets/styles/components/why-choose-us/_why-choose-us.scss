@@ -1,0 +1,14 @@
+.why-choose-us {
+  & + * {
+    margin-top: 24px;
+  }
+  &__list {
+    display: grid;
+    gap: 20px 32px;
+    grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+}

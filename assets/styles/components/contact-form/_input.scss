@@ -1,0 +1,67 @@
+.input {
+  input,
+  textarea {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+
+    border-radius: 32px;
+    padding: 16px 24px;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+
+    color: var(--text-color-70);
+
+    border: 2px solid transparent; // чтобы не прыгало при focus
+    background: #fff; // если фон нужен белый
+    outline: none;
+
+    height: 56px;
+
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      color 0.2s ease,
+      background-color 0.2s ease;
+    box-shadow: none;
+
+    @media (max-width: 767px) {
+      height: 50px;
+      padding: 10px 20px;
+    }
+
+    &::placeholder {
+      color: var(--text-color-70);
+    }
+
+    // ACTIVE / FOCUS
+    &:hover {
+      border-color: var(--brand-color-1);
+    }
+
+    // “состояние ввода” (не пустое поле)
+    // работает пока placeholder есть (у тебя есть)
+    &:focus,
+    &:focus-visible {
+      border: 4px solid var(--brand-color-1);
+      box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  textarea {
+    height: 104px;
+    @media (max-width: 767px) {
+      height: 120px;
+      padding: 10px 20px;
+    }
+  }
+
+  // Ошибка (опционально): красная рамка если поле невалидно после ввода
+  // Чтобы не подсвечивало пустое required-поле сразу, используем :not(:placeholder-shown)
+  input:invalid:not(:placeholder-shown),
+  textarea:invalid:not(:placeholder-shown) {
+    border-color: var(--accent-color-1);
+  }
+}
