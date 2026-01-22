@@ -1,7 +1,58 @@
+// файл tasks\build.js ---------------------------------
 const fs = require('fs-extra');
 const path = require('path');
 const nunjucks = require('nunjucks');
 const { minify } = require('html-minifier-terser');
+
+// Функция для безопасного рендеринга шаблонов
+async function safeRender(env, templatePath, context) {
+  return new Promise((resolve, reject) => {
+    // Используем колбэк для обработки ошибок
+    env.render(templatePath, context, (err, res) => {
+      if (err) {
+        // Преобразуем ошибку nunjucks в более читаемый формат
+        const enhancedError = enhanceNunjucksError(err, templatePath);
+        reject(enhancedError);
+      } else {
+        resolve(res);
+      }
+    });
+  });
+}
+
+// Функция для улучшения сообщений об ошибках nunjucks
+function enhanceNunjucksError(error, templatePath) {
+  if (!error.message) return error;
+
+  const newError = new Error(error.message);
+  newError.name = error.name || 'TemplateRenderError';
+  newError.stack = error.stack;
+  newError.template = templatePath;
+
+  // Извлекаем информацию о строке из сообщения об ошибке
+  const lineMatch = error.message.match(/Line (\d+), Column (\d+)/i);
+  if (lineMatch) {
+    newError.line = parseInt(lineMatch[1]);
+    newError.column = parseInt(lineMatch[2]);
+    newError.message = `Ошибка в шаблоне ${templatePath}:${lineMatch[1]}:${lineMatch[2]} - ${error.message.replace(/Template render error:\s*/i, '')}`;
+  } else if (error.message.includes('Template render error')) {
+    newError.message = `Ошибка в шаблоне ${templatePath}: ${error.message.replace(/Template render error:\s*/i, '')}`;
+  }
+
+  return newError;
+}
+
+// Проверка синтаксиса шаблонов перед рендерингом
+function validateTemplateSyntax(env, templatePath) {
+  try {
+    // Пытаемся загрузить и скомпилировать шаблон
+    const template = env.getTemplate(templatePath, true);
+    return { isValid: true, error: null };
+  } catch (error) {
+    const enhancedError = enhanceNunjucksError(error, templatePath);
+    return { isValid: false, error: enhancedError };
+  }
+}
 
 async function build() {
   const startTime = Date.now();
@@ -16,6 +67,16 @@ async function build() {
   console.log(isProduction
     ? '🚀 Запуск PRODUCTION сборки...\n'
     : '🚀 Запуск DEVELOPMENT сборки...\n');
+
+  // Флаг для принудительной остановки при ошибках
+  let shouldStopOnError = true;
+
+  // Проверяем аргументы командной строки
+  const args = process.argv.slice(2);
+  if (args.includes('--continue')) {
+    shouldStopOnError = false;
+    console.log('⚠️  Режим: продолжаем при ошибках (--continue)\n');
+  }
 
   try {
     // Проверяем существование папки с страницами
@@ -88,7 +149,9 @@ async function build() {
       trimBlocks: true,
       lstripBlocks: true,
       noCache: !isProduction,
-      watch: false
+      watch: false,
+      throwOnUndefined: false, // Не бросать ошибку при undefined переменных
+      autoReload: false
     });
 
     // Глобальные переменные для шаблонов
@@ -151,6 +214,76 @@ async function build() {
     let errorCount = 0;
     const errors = [];
 
+    // Шаг 1: Предварительная проверка всех шаблонов
+    console.log('🔍 Проверка синтаксиса шаблонов...');
+    let hasSyntaxErrors = false;
+
+    for (const pageFile of pages) {
+      const relativePath = path.relative(htmlDir, pageFile).replace(/\\/g, '/');
+
+      try {
+        const validation = validateTemplateSyntax(env, relativePath);
+        if (!validation.isValid) {
+          hasSyntaxErrors = true;
+          errorCount++;
+
+          const error = validation.error;
+          errors.push({
+            file: path.basename(pageFile),
+            path: relativePath,
+            error: error.message,
+            line: error.line,
+            column: error.column
+          });
+
+          console.log(`   ❌ Ошибка синтаксиса в ${relativePath}:`);
+          console.log(`      ${error.message}`);
+
+          if (error.line && error.column) {
+            try {
+              const content = await fs.readFile(pageFile, 'utf8');
+              const lines = content.split('\n');
+              const errorLine = lines[error.line - 1];
+              if (errorLine) {
+                console.log(`      Строка ${error.line}: ${errorLine.trim()}`);
+                console.log(`      ${' '.repeat(`Строка ${error.line}: `.length + (error.column - 1))}^`);
+              }
+            } catch (readError) {
+              // Не смогли прочитать файл, игнорируем
+            }
+          }
+
+          // Если нужно остановиться при первой же ошибке
+          if (shouldStopOnError) {
+            console.log('\n🚨 Остановка из-за ошибки синтаксиса. Исправьте ошибку и перезапустите.');
+            console.log('   Чтобы продолжить несмотря на ошибки, используйте: npm run build:continue\n');
+            return false;
+          }
+        }
+      } catch (error) {
+        console.log(`   ⚠️  Не удалось проверить ${relativePath}: ${error.message}`);
+      }
+    }
+
+    if (hasSyntaxErrors && shouldStopOnError) {
+      console.log('\n🚨 Обнаружены ошибки синтаксиса. Сборка прервана.');
+      return false;
+    }
+
+    if (!hasSyntaxErrors) {
+      console.log('   ✅ Синтаксис всех шаблонов корректен');
+    } else if (!shouldStopOnError) {
+      console.log(`   ⚠️  Обнаружены ошибки в ${errorCount} шаблонах, продолжаю...`);
+    }
+    console.log('');
+
+    // Шаг 2: Рендеринг шаблонов
+    console.log('🏗️  Рендеринг шаблонов...');
+
+    // Сбрасываем счетчик ошибок для этапа рендеринга
+    errorCount = 0;
+    errors.length = 0;
+
     // Обрабатываем каждую страницу
     for (const pageFile of pages) {
       const pageName = path.basename(pageFile, '.html');
@@ -173,8 +306,8 @@ async function build() {
           _depth: subDir === '.' ? 0 : subDir.split('/').length
         };
 
-        // Рендерим шаблон с контекстом
-        const html = env.render(relativePath, context);
+        // Рендерим шаблон с безопасной функцией
+        const html = await safeRender(env, relativePath, context);
 
         // Минифицируем в production режиме
         let finalHtml = html;
@@ -204,7 +337,7 @@ async function build() {
               conservativeCollapse: false,
               preserveLineBreaks: false,
               caseSensitive: false,
-              continueOnParseError: true,
+              continueOnParseError: false, // Не продолжаем при ошибках парсинга
               decodeEntities: true,
               html5: true,
               keepClosingSlash: false,
@@ -269,18 +402,45 @@ async function build() {
         errors.push({
           file: pageName,
           path: relativePath,
-          error: error.message
+          error: error.message,
+          line: error.line,
+          column: error.column
         });
 
-        console.log(`   ❌ Ошибка в ${relativePath}:`);
+        console.log(`   ❌ Ошибка рендеринга ${relativePath}:`);
         console.log(`      ${error.message}`);
 
-        // Показываем больше деталей для отладки
-        if (error.stack && error.message.includes('Template render error')) {
+        // Показываем детали для отладки
+        if (error.line && error.column) {
+          try {
+            const content = await fs.readFile(pageFile, 'utf8');
+            const lines = content.split('\n');
+            const errorLine = lines[error.line - 1];
+            if (errorLine) {
+              console.log(`      Строка ${error.line}: ${errorLine.trim()}`);
+              console.log(`      ${' '.repeat(`      Строка ${error.line}: `.length + (error.column - 1))}^`);
+            }
+          } catch (readError) {
+            // Не смогли прочитать файл, показываем стек
+            if (error.stack) {
+              const lines = error.stack.split('\n');
+              if (lines[1]) {
+                console.log(`      ${lines[1].trim()}`);
+              }
+            }
+          }
+        } else if (error.stack && error.message.includes('Template render error')) {
           const lines = error.stack.split('\n');
           if (lines[1]) {
             console.log(`      ${lines[1].trim()}`);
           }
+        }
+
+        // Если нужно остановиться при первой же ошибке
+        if (shouldStopOnError) {
+          console.log('\n🚨 Остановка из-за ошибки рендеринга. Исправьте ошибку и перезапустите.');
+          console.log('   Чтобы продолжить несмотря на ошибки, используйте: npm run build:continue\n');
+          return false;
         }
       }
     }
@@ -301,7 +461,8 @@ async function build() {
       if (errors.length > 0) {
         console.log('\nДетали ошибок:');
         errors.forEach((err, index) => {
-          console.log(`  ${index + 1}. ${err.path}: ${err.error}`);
+          const location = err.line ? ` (строка ${err.line})` : '';
+          console.log(`  ${index + 1}. ${err.path}${location}: ${err.error}`);
         });
       }
       return false;
@@ -310,7 +471,8 @@ async function build() {
       if (errors.length > 0) {
         console.log('\nОшибки:');
         errors.forEach((err, index) => {
-          console.log(`  ${index + 1}. ${err.path}: ${err.error}`);
+          const location = err.line ? ` (строка ${err.line})` : '';
+          console.log(`  ${index + 1}. ${err.path}${location}: ${err.error}`);
         });
       }
       return false;
@@ -333,6 +495,7 @@ if (require.main === module) {
   // Парсим аргументы командной строки
   const args = process.argv.slice(2);
   const isProdArg = args.includes('--prod') || args.includes('production');
+  const isContinueArg = args.includes('--continue');
 
   if (isProdArg) {
     process.env.NODE_ENV = 'production';

@@ -1,3 +1,4 @@
+// tasks\watch.js
 const chokidar = require('chokidar');
 const path = require('path');
 const fs = require('fs-extra');

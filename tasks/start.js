@@ -1,3 +1,4 @@
+// ФАЙЛ tasks\start.js
 const { spawn } = require('child_process');
 const path = require('path');
 const readline = require('readline');
