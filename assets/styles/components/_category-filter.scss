@@ -2,13 +2,22 @@
   &__body {
     padding: 12px;
     border-radius: 40px;
-    background: rgba(176, 163, 147, 0.2);
+    background-color: rgba(176, 163, 147, 0.2);
+    @media (max-width: 1379px) {
+      background-color: transparent;
+      border-radius: none;
+      padding: 0;
+    }
   }
   &__grid {
     display: grid;
     gap: 24px;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1fr auto;
     align-items: center;
+    @media (max-width: 1379px) {
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
   }
   &__label {
     margin: 0;
@@ -18,7 +27,14 @@
     line-height: 133%;
     color: var(--dark);
     padding-left: 20px;
+    @media (max-width: 1379px) {
+      padding-left: 0;
+    }
   }
+  // &__options {
+  //   max-width: max-content;
+  //   margin-left: auto;
+  // }
   &__list {
     list-style: none;
     padding: 0;
@@ -27,7 +43,14 @@
     flex-wrap: wrap;
     margin-right: -12px;
     margin-bottom: -12px;
-    justify-content: flex-end;
+    @media (max-width: 1379px) {
+      padding: 12px;
+      padding-bottom: 0;
+      border-radius: 40px;
+      background-color: rgba(176, 163, 147, 0.2);
+      max-width: max-content;
+      // justify-content: space-between;
+    }
   }
   &__list-item {
     margin-right: 12px;

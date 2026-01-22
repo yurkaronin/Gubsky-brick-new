@@ -71,4 +71,13 @@
       }
     }
   }
+  &.-selected {
+    color: var(--white);
+
+      &::before {
+        background-color: var(--red);
+        border: 1px solid var(--red);
+      }
+  }
+
 }

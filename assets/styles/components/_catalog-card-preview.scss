@@ -72,6 +72,8 @@
 
     .button-favorite {
       opacity: 0;
+      justify-self: flex-end;
+      margin-left: auto;
     }
   }
   &__picture {
@@ -139,5 +141,9 @@
     // background-color: #ffffff;
     left: 0;
     right: 0;
+  }
+
+  .button-favorite::before {
+    border: none;
   }
 }

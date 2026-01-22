@@ -114,7 +114,7 @@
 @use "components/catalog-products-preview";
 @use "components/catalog-card-preview";
 
-
+@use "components/photo-slider";
 
 // секции
 @use "sections/section";
@@ -123,6 +123,7 @@
 @use "sections/services-group-section";
 @use "sections/home-hero";
 @use "sections/category-preview-section";
+
 @use "sections/footer";
 
 
