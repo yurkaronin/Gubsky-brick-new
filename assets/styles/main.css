@@ -4742,6 +4742,18 @@ input[type=radio].visually-hidden {
     margin-bottom: 32px;
   }
 }
+.section__top {
+  margin-bottom: 32px;
+}
+@media (max-width: 767px) {
+  .section__top {
+    margin-bottom: 20px;
+  }
+}
+.section.-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 .section.-bg-color {
   background-color: #fff;
   margin-top: 0;

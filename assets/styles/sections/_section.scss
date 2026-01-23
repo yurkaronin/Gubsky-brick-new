@@ -11,6 +11,18 @@
     margin-bottom: 32px;
   }
 
+  &__top {
+    margin-bottom: 32px;
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &.-bottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   &.-bg-color {
     background-color: #fff;
     margin-top: 0;
