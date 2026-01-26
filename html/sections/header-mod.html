@@ -1,0 +1,146 @@
+<header class="header -glass">
+  <div class="wrapper">
+    <div class="header__body">
+      <div class="header__flex">
+        <div class="header__item">
+          <div class="header__logo js-change-logo">
+            <a href="./index.html">
+              <img src="./assets/svg/logo-inverse.svg" alt="#" />
+            </a>
+          </div>
+        </div>
+
+        <div class="header__item -mod laptop-hide tablet-hide mobile-hide">
+
+          <div class="header-navigation">
+            <div class="header-navigation__flex">
+              <div class="header-navigation__item">
+                <button class="button-menu js-show-desktop-sub-nav" type="button">
+                  <span class="button-menu__icon"></span>
+                </button>
+              </div>
+              <div class="header-navigation__item">
+                <nav class="header-menu">
+                  <ul class="header-menu__list list-reset">
+                    <li class="header-menu__item">
+                      <a href="#" class="header-menu__link">каталог</a>
+                    </li>
+                    <li class="header-menu__item">
+                      <a href="#" class="header-menu__link">Акции</a>
+                    </li>
+                    <li class="header-menu__item">
+                      <a href="#" class="header-menu__link">Где купить</a>
+                    </li>
+                    <li class="header-menu__item">
+                      <a href="#" class="header-menu__link">Контакты</a>
+                    </li>
+                    <li class="header-menu__item">
+                      <a href="#" class="header-menu__link">Прайс-лист</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+
+
+
+
+
+
+          </div>
+        </div>
+        <div class="header__item">
+
+          <div class="header-contacts">
+            <div class="header-contacts__flex">
+              <div class="header-contacts__item">
+                <div class="header-buttons">
+                  <div class="header-buttons__flex">
+                    <div class="header-buttons__item">
+                      <!-- ВАЖНО!!  -->
+                      <!-- Если в избранном уже что то есть - сердце закрашенное. добавляется доп класс .-inActive  -->
+                      <a href="#" class="button-favorite">
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M17.7198 2.28339C19.3696 3.93722 19.4327 6.59844 17.8633 8.32907L9.99947 17L2.13666 8.32904C0.567246 6.59841 0.630451 3.93716 2.28021 2.28333C4.12225 0.436719 7.15598 0.605458 8.78334 2.6447L10 4.16873L11.2156 2.64452C12.843 0.605285 15.8778 0.436778 17.7198 2.28339Z"
+                            stroke="#C4161C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </a>
+                    </div>
+                    <div class="header-buttons__item">
+                      <a href="#" class="button -icon-solo -telegram" data-target="modal-get-consultation">
+                        <span class="button__icon">
+                          <svg width="20" height="18" viewBox="0 0 20 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M2.10237 7.96758L12.8265 3.21938C13.8844 2.72497 17.4739 1.14097 17.4739 1.14097C17.4739 1.14097 19.1315 0.448796 18.9918 2.13168C18.9458 2.82385 18.5796 5.24835 18.2098 7.8706L17.0599 15.6366C17.0599 15.6366 16.9679 16.7737 16.186 16.9715C15.4041 17.1693 14.1144 16.2793 13.8844 16.0797C13.7004 15.9313 10.4347 13.7065 9.23706 12.6188C8.91332 12.3222 8.54712 11.727 9.28306 11.0348C10.9407 9.40326 11.9185 8.37429 13.1126 7.08884C13.6664 6.49365 14.2165 5.10931 11.9167 6.79219L6.42953 10.4929C6.42953 10.4929 5.6936 10.9873 4.31195 10.5404C2.93207 10.0973 1.32221 9.50215 1.32221 9.50215C1.32221 9.50215 0.216533 8.75863 2.10237 7.96758Z"
+                              stroke="#039BE5" stroke-width="2" />
+                          </svg>
+
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="header-contacts__item mobile-hide">
+                <a class="phone" href="#">8 (800) 551-94-74</a>
+              </div>
+              <div class="header-contacts__item">
+                <div class="header-buttons">
+                  <div class="header-buttons__flex">
+                    <div class="header-buttons__item">
+                      <a href="#" class="button -small -red tablet-hide mobile-hide"
+                        data-target="modal-get-consultation">
+                        <span>Заказать звонок</span>
+                      </a>
+                      <a href="#" class="button -icon-solo -red desktop-hide laptop-hide"
+                        data-target="modal-get-consultation">
+                        <span class="button__icon">
+                          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M6.77982 2.11753C6.50984 1.44258 5.85616 1 5.12923 1H2.68417C1.75403 1 1 1.75386 1 2.68403C1 10.5904 7.40942 17 15.3156 17C16.2457 17 16.9996 16.2459 16.9996 15.3157L17 12.8702C17 12.1433 16.5575 11.4897 15.8826 11.2197L13.5392 10.2826C12.9329 10.0401 12.2426 10.1493 11.741 10.5673L11.1362 11.0717C10.4299 11.6604 9.39057 11.6135 8.74042 10.9634L7.03738 9.25872C6.38723 8.60856 6.33918 7.57008 6.9278 6.86372L7.43213 6.25894C7.85015 5.7573 7.96026 5.06681 7.71775 4.46053L6.77982 2.11753Z"
+                              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+
+                        </span>
+                      </a>
+                    </div>
+
+                    <div class="header-buttons__item desktop-hide">
+                      <button class="button-menu js-show-mobile-navigation-menu" type="button">
+                        <span class="button-menu__icon"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__footer laptop-hide tablet-hide mobile-hide">
+      <div class="header__footer-container">
+        {% include "components/navigation/desktop-navigation.html" %}
+
+      </div>
+    </div>
+
+  </div>
+
+</header>

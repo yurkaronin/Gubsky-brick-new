@@ -33,7 +33,7 @@
     border-color: var(--orange);
     top: -8px;
     right: -8px;
-    bottom: calc(-1 * (8px + 48px + 24px));
+    bottom: calc(-1 * (8px + 48px + 14px));
     left: -8px;
   }
   &:hover &__button {
@@ -131,9 +131,10 @@
     font-family: var(--second-family);
     font-size: 32px;
     font-weight: 400;
+    margin-bottom: 12px;
   }
   &__button {
-    margin-top: 16px;
+    // margin-top: 16px;
     margin-bottom: 24px;
     opacity: 0;
     position: absolute;

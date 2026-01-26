@@ -5,4 +5,15 @@
       top: 10px;
     }
   }
+
+  .header.-glass .header__body {
+    backdrop-filter: inherit;
+    background-color: var(--white);
+    color: var(--dark);
+  }
+  .header.-glass .header__footer {
+    backdrop-filter: inherit;
+    background-color: var(--white);
+    color: var(--dark);
+  }
 }

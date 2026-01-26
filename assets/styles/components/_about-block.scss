@@ -1,0 +1,32 @@
+.about-block {
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 5fr 2fr 5fr;
+
+    @media (max-width: 1379px) {
+      grid-template-columns: 8fr 4fr;
+    }
+    @media (max-width: 1023px) {
+      grid-template-columns: 4fr 2fr;
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  &__col.-right {
+    @media (max-width: 1379px) {
+      grid-column: span 2;
+    }
+    @media (max-width: 767px) {
+      grid-column: initial;
+    }
+  }
+
+  .achievement {
+    max-width: max-content;
+    margin: 0 auto;
+  }
+
+}

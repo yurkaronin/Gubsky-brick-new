@@ -15,6 +15,7 @@
     background: var(--white);
     color: var(--dark);
     border-radius: 40px;
+
     @media (max-width: 1599px) {
       padding-left: 12px;
     }
@@ -97,5 +98,29 @@
     img {
       max-width: 100%;
     }
+  }
+
+  // модификатор шапки
+  &.-glass {
+
+    .phone {
+      color: inherit;
+    }
+    .navigation-menu__link {
+      color: inherit;
+    }
+    .navigation-sub-menu__link {
+      color: inherit;
+    }
+  }
+  &.-glass &__body {
+    background-color: var(--white-10);
+    backdrop-filter: blur(3px);
+    color: var(--white);
+  }
+  &.-glass &__footer {
+    background-color: var(--white-10);
+    backdrop-filter: blur(4px);
+    color: var(--white);
   }
 }

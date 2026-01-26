@@ -1,3 +1,4 @@
+// mobile-menu.js (оставляем как есть)
 document.addEventListener("DOMContentLoaded", function () {
   var desktopButtons = document.querySelectorAll('.js-show-mobile-navigation-menu');
 
@@ -6,5 +7,4 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.toggle('mobile-navigation-menu-open');
     });
   });
-
 });

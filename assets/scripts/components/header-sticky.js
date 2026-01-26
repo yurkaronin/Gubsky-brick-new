@@ -1,3 +1,4 @@
+// stick-header.js (оставляем как есть)
 let lastKnownScrollY = 0;
 let ticking = false;
 
@@ -22,7 +23,6 @@ function requestTick() {
   if (!ticking) {
     requestAnimationFrame(headerChange);
   }
-
   ticking = true;
 }
 

@@ -20,4 +20,16 @@
     visibility: initial;
     pointer-events: initial;
   }
+
+  .header.-glass .header__body {
+    color: var(--dark);
+  }
+
+  .header .phone {
+    color: inherit;
+  }
+
+  .header {
+    top: 16px;
+  }
 }
