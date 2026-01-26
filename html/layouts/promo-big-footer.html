@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="{{ assets }}/styles/main.css">
 </head>
 
-<body class="home">
+<body {% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   {% include "sections/header-mod.html" %}
   {% include "components/mobile-navigation-menu.html" %}
 
@@ -48,7 +48,7 @@
     {% block content %}{% endblock %}
   </main>
 
-  {% include "sections/footer.html" %}
+  {% include "sections/footer-big.html" %}
   {% include "sections/modals.html" %}
 
 

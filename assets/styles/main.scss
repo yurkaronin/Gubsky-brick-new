@@ -32,6 +32,12 @@
 @use "components/button/card-label";
 
 @use "components/phone";
+@use "components/contacts-card";
+@use "components/contacts-block";
+
+
+@use "components/portfolio-list";
+@use "components/portfolio-card";
 
 @use "components/slider-with-thumbnails";
 @use "components/slide-thumbnail";
@@ -110,6 +116,12 @@
 @use "components/why-choose-us/why-choose-us-card";
 
 @use "components/category-filter";
+@use "components/category-sorter";
+
+@use "components/pagination";
+
+
+@use "components/custom-select";
 
 @use "components/catalog-products-preview";
 @use "components/catalog-card-preview";
@@ -128,6 +140,9 @@
 @use "sections/category-preview-section";
 
 @use "sections/footer";
+
+// Шаблоны страниц
+@use "pages/promo-small";
 
 
 // интерактив

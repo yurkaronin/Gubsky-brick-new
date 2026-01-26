@@ -66,7 +66,7 @@
       stroke: currentColor;
     }
 
-    path:nth-child(2n) {
+    path:nth-child(2) {
       opacity: 0;
       transition: var(--transition);
     }
@@ -75,10 +75,18 @@
       // height: initial;
       // justify-content: center;
       // align-items: center;
-      path:nth-child(2n) {
+      path:nth-child(2) {
         opacity: initial;
       }
     }
+  }
+
+
+  &.-prev &__icon {
+    order: -1;
+    transform: rotate(180deg);
+    margin-right: 12px;
+    margin-left: 0;
   }
 
   // Кнопка цвета как ТЕЛЕГРАМ
@@ -229,7 +237,7 @@
   &:focus &__icon {
     color: var(--white);
 
-    path:nth-child(2n) {
+    path:nth-child(2) {
       opacity: 1;
     }
   }

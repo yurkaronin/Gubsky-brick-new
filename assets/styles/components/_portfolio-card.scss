@@ -1,0 +1,42 @@
+.portfolio-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 8px;
+
+  &__photo {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  &__info {
+    padding-top: 12px;
+    padding-inline: 16px;
+    padding-bottom: 40px;
+  }
+  &__title {
+    margin-top: 0;
+    color: var(--dark);
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+  }
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--dark-70);
+  }
+}

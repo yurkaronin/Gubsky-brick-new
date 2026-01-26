@@ -1,0 +1,86 @@
+.custom-select {
+  label {
+    display: block;
+    margin-bottom: 12px;
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark-70);
+  }
+
+  &__wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    &::after {
+      content: "";
+      position: absolute;
+      display: flex;
+      top: 8px;
+      right: 8px;
+      bottom: 8px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--brand-color-1);
+      pointer-events: none; /* Чтобы не мешала клику */
+      z-index: 2;
+      border-radius: 50%;
+      background-image: url(../svg/custom-select-button.svg);
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  select {
+    border-radius: 32px;
+    padding: 0 24px;
+    width: 100%;
+    height: 56px;
+    background-color: var(--white);
+    border: none;
+    color: var(--dark-90);
+    cursor: pointer;
+    appearance: none; /* Убираем стандартную стрелку */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    @media (max-width: 767px) {
+      height: 50px;
+    }
+  }
+
+  /* Кастомная стрелка */
+
+  /* Для фокуса */
+  select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+
+  /* Стили для опций в выпадающем списке */
+  select option {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  /* Для выделенных опций (если multiple) */
+  select option:checked {
+    background-color: var(--brand-color-1);
+    color: white;
+  }
+
+  /* Ховер состояние */
+  select:hover {
+    background-color: var(--light-bg, #f8f9fa);
+  }
+
+  /* Если нужно скрыть стандартную стрелку в IE */
+  select::-ms-expand {
+    display: none;
+  }
+
+  option {
+    display: flex;
+    align-items: center;
+  }
+}

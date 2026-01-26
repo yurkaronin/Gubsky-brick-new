@@ -40,15 +40,15 @@
   <link rel="stylesheet" href="{{ assets }}/styles/main.css">
 </head>
 
-<body>
-  {% include "sections/header.html" %}
+<body {% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  {% include "sections/header-mod.html" %}
   {% include "components/mobile-navigation-menu.html" %}
 
   <main class="main">
     {% block content %}{% endblock %}
   </main>
 
-  {% include "sections/footer-big.html" %}
+  {% include "sections/footer.html" %}
   {% include "sections/modals.html" %}
 
 
@@ -72,6 +72,7 @@
 
   <script src="{{ assets }}/scripts/sliders/slider-group.js"></script>
   <script src="{{ assets }}/scripts/sliders/reviews-slider.js"></script>
+  <script src="{{ assets }}/scripts/sliders/photo-slider-full.js"></script>
 
   <script src="{{ assets }}/scripts/main.js"></script>
 
