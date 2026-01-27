@@ -2,7 +2,18 @@
 const fs = require('fs-extra');
 const path = require('path');
 const nunjucks = require('nunjucks');
+const readline = require('readline');
 const { minify } = require('html-minifier-terser');
+const { execSync } = require('child_process');
+
+// Windows: переключаем кодировку консоли на UTF-8 для корректного вывода
+if (process.platform === 'win32' && !process.env.NO_CHCP) {
+  try {
+    execSync('chcp 65001 >nul');
+  } catch (error) {
+    // Игнорируем, если не удалось сменить кодировку
+  }
+}
 
 // Функция для безопасного рендеринга шаблонов
 async function safeRender(env, templatePath, context) {
@@ -18,6 +29,36 @@ async function safeRender(env, templatePath, context) {
       }
     });
   });
+}
+
+async function removeEmptyDirs(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      await removeEmptyDirs(path.join(dir, entry.name));
+    }
+  }
+
+  const remaining = await fs.readdir(dir);
+  if (remaining.length === 0) {
+    await fs.remove(dir);
+  }
+}
+
+async function stripCssSourceMaps(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      await stripCssSourceMaps(fullPath);
+    } else if (entry.isFile() && entry.name.endsWith('.css')) {
+      const content = await fs.readFile(fullPath, 'utf8');
+      const cleaned = content.replace(/\n?\/\*# sourceMappingURL=.*?\*\/\s*$/s, '');
+      if (cleaned !== content) {
+        await fs.writeFile(fullPath, cleaned);
+      }
+    }
+  }
 }
 
 // Функция для улучшения сообщений об ошибках nunjucks
@@ -54,14 +95,56 @@ function validateTemplateSyntax(env, templatePath) {
   }
 }
 
+function normalizeBaseHref(input) {
+  const trimmed = (input || '').trim();
+  if (!trimmed) return null;
+  return trimmed.endsWith('/') ? trimmed : `${trimmed}/`;
+}
+
+async function promptBaseHref() {
+  return new Promise((resolve) => {
+    if (!process.stdin.isTTY || !process.stdout.isTTY) {
+      resolve(null);
+      return;
+    }
+
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout
+    });
+
+    const question = 'Base URL for deploy (blank = relative paths): ';
+    rl.question(question, (answer) => {
+      rl.close();
+      resolve(normalizeBaseHref(answer));
+    });
+  });
+}
+
 async function build() {
   const startTime = Date.now();
   const htmlDir = path.join(__dirname, '../html');
   const pagesDir = path.join(htmlDir, 'pages');
-  const outputDir = path.join(__dirname, '..');
+  const rootDir = path.join(__dirname, '..');
+  const distDir = path.join(rootDir, 'dist');
+
+  // Проверяем аргументы командной строки
+  const args = process.argv.slice(2);
+  const showBaseExample = args.includes('--base');
 
   // Определяем режим сборки
   const isProduction = process.env.NODE_ENV === 'production';
+  let baseHref = null;
+
+  if (isProduction) {
+    baseHref = normalizeBaseHref(process.env.BASE_HREF);
+    if (!baseHref) {
+      if (showBaseExample) {
+        console.log('Пример: https://demo.very-good.ru/demo-sites/Gubsky-brick-new/');
+      }
+      baseHref = await promptBaseHref();
+    }
+  }
 
   // Показываем правильное сообщение о запуске
   console.log(isProduction
@@ -71,8 +154,6 @@ async function build() {
   // Флаг для принудительной остановки при ошибках
   let shouldStopOnError = true;
 
-  // Проверяем аргументы командной строки
-  const args = process.argv.slice(2);
   if (args.includes('--continue')) {
     shouldStopOnError = false;
     console.log('⚠️  Режим: продолжаем при ошибках (--continue)\n');
@@ -86,61 +167,96 @@ async function build() {
       return false;
     }
 
-    // Очищаем старые HTML файлы (кроме папки html/)
-    console.log('🧹 Очистка старых HTML файлов...');
-    const files = await fs.readdir(outputDir);
-    let cleanedCount = 0;
+    // Определяем папку вывода
+    const outputDir = isProduction ? distDir : rootDir;
 
-    for (const file of files) {
-      const filePath = path.join(outputDir, file);
+    if (isProduction) {
+      // Очищаем dist целиком
+      console.log('🧹 Очистка папки dist...');
+      await fs.remove(distDir);
+      await fs.ensureDir(distDir);
 
-      try {
-        const stat = await fs.stat(filePath);
-
-        // Удаляем только HTML файлы в корне (не папки и не файлы в html/)
-        if (stat.isFile() && file.endsWith('.html') && file !== '.gitignore') {
-          await fs.remove(filePath);
-          console.log(`   Удалён: ${file}`);
-          cleanedCount++;
+      // Копируем assets без исходников scss и map
+      console.log('📦 Копирование assets...');
+      const assetsDir = path.join(rootDir, 'assets');
+      await fs.copy(assetsDir, path.join(distDir, 'assets'), {
+        filter: (src) => {
+          const lower = src.toLowerCase();
+          if (lower.endsWith('.scss') || lower.endsWith('.map')) {
+            return false;
+          }
+          return true;
         }
+      });
 
-        // Также удаляем пустые папки, созданные для вложенных страниц
-        if (stat.isDirectory() && file !== 'html' && file !== 'assets' &&
-            file !== 'tasks' && file !== 'node_modules' && !file.startsWith('.')) {
+      // Удаляем пустые папки после фильтрации
+      await removeEmptyDirs(path.join(distDir, 'assets'));
 
-          try {
-            const dirFiles = await fs.readdir(filePath);
-            const htmlFiles = dirFiles.filter(f => f.endsWith('.html'));
+      // Удаляем sourceMappingURL из CSS в dist
+      await stripCssSourceMaps(path.join(distDir, 'assets'));
 
-            if (htmlFiles.length > 0) {
-              // Удаляем HTML файлы в папке
-              for (const htmlFile of htmlFiles) {
-                await fs.remove(path.join(filePath, htmlFile));
+      // Копируем favicon если есть
+      const faviconPath = path.join(rootDir, 'favicon.ico');
+      if (await fs.pathExists(faviconPath)) {
+        await fs.copy(faviconPath, path.join(distDir, 'favicon.ico'));
+      }
+    } else {
+      // Очищаем старые HTML файлы (кроме папки html/)
+      console.log('🧹 Очистка старых HTML файлов...');
+      const files = await fs.readdir(outputDir);
+      let cleanedCount = 0;
+
+      for (const file of files) {
+        const filePath = path.join(outputDir, file);
+
+        try {
+          const stat = await fs.stat(filePath);
+
+          // Удаляем только HTML файлы в корне (не папки и не файлы в html/)
+          if (stat.isFile() && file.endsWith('.html') && file !== '.gitignore') {
+            await fs.remove(filePath);
+            console.log(`   Удалён: ${file}`);
+            cleanedCount++;
+          }
+
+          // Также удаляем пустые папки, созданные для вложенных страниц
+          if (stat.isDirectory() && file !== 'html' && file !== 'assets' &&
+              file !== 'tasks' && file !== 'node_modules' && !file.startsWith('.')) {
+
+            try {
+              const dirFiles = await fs.readdir(filePath);
+              const htmlFiles = dirFiles.filter(f => f.endsWith('.html'));
+
+              if (htmlFiles.length > 0) {
+                // Удаляем HTML файлы в папке
+                for (const htmlFile of htmlFiles) {
+                  await fs.remove(path.join(filePath, htmlFile));
+                }
+                console.log(`   Удалено ${htmlFiles.length} файлов из папки ${file}/`);
+                cleanedCount += htmlFiles.length;
+
+                // Проверяем, стала ли папка пустой
+                const remainingFiles = await fs.readdir(filePath);
+                if (remainingFiles.length === 0) {
+                  await fs.remove(filePath);
+                  console.log(`   Удалена пустая папка: ${file}/`);
+                }
               }
-              console.log(`   Удалено ${htmlFiles.length} файлов из папки ${file}/`);
-              cleanedCount += htmlFiles.length;
-
-              // Проверяем, стала ли папка пустой
-              const remainingFiles = await fs.readdir(filePath);
-              if (remainingFiles.length === 0) {
-                await fs.remove(filePath);
-                console.log(`   Удалена пустая папка: ${file}/`);
-              }
+            } catch (dirError) {
+              // Игнорируем ошибки чтения папок
             }
-          } catch (dirError) {
-            // Игнорируем ошибки чтения папок
+          }
+        } catch (error) {
+          // Игнорируем ошибки доступа к некоторым файлам
+          if (process.env.DEBUG) {
+            console.log(`   Пропущен: ${file} (${error.message})`);
           }
         }
-      } catch (error) {
-        // Игнорируем ошибки доступа к некоторым файлам
-        if (process.env.DEBUG) {
-          console.log(`   Пропущен: ${file} (${error.message})`);
-        }
       }
-    }
 
-    if (cleanedCount === 0) {
-      console.log('   Нет файлов для очистки');
+      if (cleanedCount === 0) {
+        console.log('   Нет файлов для очистки');
+      }
     }
 
     // Настраиваем Nunjucks с пользовательскими фильтрами для правильных путей
@@ -155,7 +271,8 @@ async function build() {
     });
 
     // Глобальные переменные для шаблонов
-    env.addGlobal('assets', '/assets'); // Абсолютный путь лучше
+    env.addGlobal('assets', '/assets'); // fallback, переопределяется на странице
+    env.addGlobal('baseHref', baseHref || '');
     env.addGlobal('isProduction', isProduction);
     env.addGlobal('timestamp', Date.now());
 
@@ -302,75 +419,22 @@ async function build() {
         const relativePath = path.relative(htmlDir, pageFile).replace(/\\/g, '/');
 
         // Создаем контекст с информацией о глубине вложенности
+        const depth = subDir === '.' ? 0 : subDir.split('/').length;
+        const assetsPath = baseHref
+          ? `${baseHref}assets`
+          : (depth === 0 ? './assets' : '../'.repeat(depth) + 'assets');
+
         const context = {
-          _depth: subDir === '.' ? 0 : subDir.split('/').length
+          _depth: depth,
+          assets: assetsPath,
+          baseHref: baseHref || ''
         };
 
         // Рендерим шаблон с безопасной функцией
         const html = await safeRender(env, relativePath, context);
 
-        // Минифицируем в production режиме
+        // Минификация отключена
         let finalHtml = html;
-        if (isProduction) {
-          try {
-            finalHtml = await minify(html, {
-              collapseWhitespace: true,
-              collapseBooleanAttributes: true,
-              collapseInlineTagWhitespace: true,
-              removeComments: true,
-              removeEmptyAttributes: true,
-              removeEmptyElements: false,
-              removeRedundantAttributes: true,
-              removeScriptTypeAttributes: true,
-              removeStyleLinkTypeAttributes: true,
-              removeTagWhitespace: true,
-              useShortDoctype: true,
-              minifyCSS: {
-                level: 2
-              },
-              minifyJS: {
-                compress: {
-                  drop_console: true
-                },
-                mangle: true
-              },
-              conservativeCollapse: false,
-              preserveLineBreaks: false,
-              caseSensitive: false,
-              continueOnParseError: false, // Не продолжаем при ошибках парсинга
-              decodeEntities: true,
-              html5: true,
-              keepClosingSlash: false,
-              preventAttributesEscaping: false,
-              processConditionalComments: true,
-              processScripts: ["text/html"],
-              quoteCharacter: '"',
-              removeAttributeQuotes: true,
-              removeOptionalTags: true,
-              sortAttributes: true,
-              sortClassName: true,
-              trimCustomFragments: true
-            });
-          } catch (minifyError) {
-            console.log(`   ⚠️  Ошибка минификации ${relativePath}: ${minifyError.message}`);
-            // Пробуем более простую минификацию
-            try {
-              finalHtml = await minify(html, {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeRedundantAttributes: true,
-                removeScriptTypeAttributes: true,
-                removeStyleLinkTypeAttributes: true,
-                useShortDoctype: true,
-                minifyCSS: true,
-                minifyJS: true
-              });
-            } catch (simpleMinifyError) {
-              console.log(`   ⚠️  Простая минификация тоже не удалась, продолжаю без минификации`);
-              finalHtml = html;
-            }
-          }
-        }
 
         // Исправляем возможные двойные слеши в путях (после минификации)
         finalHtml = finalHtml.replace(/([^:])\/\//g, '$1/');
@@ -388,11 +452,7 @@ async function build() {
         const savings = originalSize > 0 ? ((originalSize - minifiedSize) / originalSize * 100).toFixed(1) : 0;
 
         console.log(`   ✅ ${relativePath} → ${relativeOutput}`);
-        if (isProduction && originalSize > 0 && minifiedSize > 0) {
-          console.log(`      Размер: ${(minifiedSize / 1024).toFixed(2)} KB (экономия: ${savings}%)`);
-        } else {
-          console.log(`      Размер: ${(minifiedSize / 1024).toFixed(2)} KB`);
-        }
+        console.log(`      Размер: ${(minifiedSize / 1024).toFixed(2)} KB`);
 
         successCount++;
 
@@ -452,9 +512,6 @@ async function build() {
     console.log('\n' + '='.repeat(50));
     if (errorCount === 0 && successCount > 0) {
       console.log(`✅ Успешно собрано ${successCount} страниц (${duration}с)`);
-      if (isProduction) {
-        console.log('📦 Все файлы минифицированы');
-      }
       return true;
     } else if (successCount > 0) {
       console.log(`⚠️  Собрано ${successCount} страниц, ошибок: ${errorCount} (${duration}с)`);

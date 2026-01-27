@@ -10,6 +10,7 @@
     "clean": "node tasks/clean.js",
     "build": "node tasks/build.js",
     "build:prod": "cross-env NODE_ENV=production node tasks/build.js",
+    "build:prod:base": "cross-env NODE_ENV=production node tasks/build.js --base",
     "build:continue": "node tasks/build.js --continue",
     "build:prod:continue": "cross-env NODE_ENV=production node tasks/build.js --continue",
     "test:build": "npm run build && echo '✅ Development сборка завершена'",

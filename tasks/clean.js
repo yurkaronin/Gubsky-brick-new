@@ -4,6 +4,7 @@ const path = require('path');
 
 async function clean() {
   const outputDir = path.join(__dirname, '..');
+  const distDir = path.join(outputDir, 'dist');
   console.log('🧹 Очистка собранных файлов...\n');
 
   let cleanedCount = 0;
@@ -11,6 +12,12 @@ async function clean() {
 
   try {
     const files = await fs.readdir(outputDir);
+
+    // Удаляем dist целиком
+    if (await fs.pathExists(distDir)) {
+      await fs.remove(distDir);
+      console.log('   📦 Удалена папка dist/');
+    }
 
     for (const file of files) {
       const filePath = path.join(outputDir, file);

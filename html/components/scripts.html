@@ -1,43 +1,21 @@
-<!-- библиотеки -->
-<script src="./assets/libs/swiper-bundle.min.js"></script>
-<script src="./assets/libs/fslightbox.js"></script>
-<script src="./assets/libs/imask.js"></script>
+<!-- Libraries -->
+<script src="{{ assets }}/libs/swiper-bundle.min.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/libs/fslightbox.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/libs/imask.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
 
-<!--подключение скриптов -->
+<!-- Components -->
+<script src="{{ assets }}/scripts/components/content-table.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/navigation-accordion.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/modals.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/desktop-sub-navigation.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/mobile-navigation-menu.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/header-sticky.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/components/logo-manager.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
 
-<script src="./assets/js/components/content-table.js"></script>
-<script src="./assets/js/components/navigation-accordion.js"></script>
-<script src="./assets/js/components/modals.js"></script>
-<script src="./assets/js/components/desktop-sub-navigation.js"></script>
-<script src="./assets/js/components/mobile-navigation-menu.js"></script>
-<script src="./assets/js/components/header-sticky.js"></script>
+<!-- Sliders -->
+<script src="{{ assets }}/scripts/sliders/slider-group.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/sliders/reviews-slider.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
+<script src="{{ assets }}/scripts/sliders/photo-slider-full.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
 
-
-<script src="./assets/js/sliders/slider-group.js"></script>
-<script src="./assets/js/sliders/reviews-slider.js"></script>
-<script src="./assets/js/sliders/photo-slider-full.js"></script>
-
-
-<script>
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('click', e => console.log(e.target));
-  });
-
-  document.addEventListener('DOMContentLoaded', function () {
-    // Получаем все элементы input с типом "tel"
-    var phoneInputs = document.querySelectorAll('input[type="tel"]');
-
-    // Проходим по каждому из найденных элементов
-    phoneInputs.forEach(function (input) {
-      // Настройки маски
-      var maskOptions = {
-        mask: '+{7}(000)000-00-00'
-      };
-
-      // Инициализация маски
-      var mask = IMask(input, maskOptions);
-
-    });
-  });
-</script>
+<!-- Main -->
+<script src="{{ assets }}/scripts/main.js{% if isProduction %}?v={{ timestamp }}{% endif %}"></script>
