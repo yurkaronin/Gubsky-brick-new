@@ -1,5 +1,6 @@
 # Исключения для Node.js
 node_modules/
+package-lock.json  # <-- добавлено исключение
 
 # Файлы окружения
 .env*
