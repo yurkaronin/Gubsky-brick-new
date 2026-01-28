@@ -80,14 +80,15 @@
 
 @use "groups/services-group";
 @use "groups/simple-grid";
-
+@use "groups/left-sidebar-and-main";
 @use "groups/social-buttons-group";
 
 
 @use "components/home-hero/home-hero-card";
-
-
 @use "components/slider-navigation";
+@use "components/city-accordion";
+@use "components/shop-preview-group";
+
 
 
 @use "columns/two-columns";

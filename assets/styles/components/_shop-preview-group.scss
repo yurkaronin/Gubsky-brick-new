@@ -1,0 +1,114 @@
+.shop-preview-group {
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shop-preview-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  @media (max-width: 767px) {
+    &__grid {
+      gap: 16px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
+.shop-preview-card {
+  max-width: max-content;
+  border-radius: 20px;
+  padding: 26px 24px 20px;
+  &__title {
+    display: block;
+    font-weight: 400;
+    margin-top: 0;
+    font-family: var(--second-family);
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--dark);
+  }
+  &__address {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--dark);
+    margin: 0;
+    margin-bottom: 12px;
+  }
+  &__icon {
+    width: 14px;
+    height: 18px;
+    margin-right: 6px;
+    display: inline-block;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__schedule {
+    margin: 0;
+    opacity: 0.7;
+    font-size: 16px;
+    margin-top: 18px;
+  }
+  &__center {
+    padding-bottom: 40px;
+  }
+  &__bottom {
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+
+    // padding: 24px;
+
+    ul {
+      font-size: 14px;
+      color: var(--dark);
+      opacity: 0.7;
+    }
+  }
+  &__bottom.-active {
+    position: relative;
+    border-top: 1px solid transparent;
+    opacity: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -24px;
+      bottom: -24px;
+      left: -24px;
+      border-radius: 0 0 20px 20px;
+      background: #e6b617;
+    }
+  }
+  &__bottom-container {
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  &:hover &__bottom {
+    border-top: 1px solid var(--border-color);
+  }
+  &:hover &__bottom::before {
+    opacity: 0;
+  }
+
+  @media (max-width: 767px) {
+    padding: 20px;
+
+    &__bottom.-active {
+    &::before {
+      right: -20px;
+      bottom: -20px;
+      left: -20px;
+    }
+  }
+  }
+
+
+}

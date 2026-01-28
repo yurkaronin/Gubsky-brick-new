@@ -4,18 +4,879 @@
 {% set title = "Где купить" %}
 {% set pageTitle = "Где купить" %}
 {% set breadcrumbs = [
-    {url: '/', text: 'Главная'},
-    {url: '/catalog.html', text: 'Где купить'}
+{url: '/', text: 'Главная'},
+{url: '/catalog.html', text: 'Где купить'}
 ] %}
 
 {% block content %}
 
-    <section class="section tech-section">
-      <div class="wrapper">
-        <h2 class="title">Где купить</h2>
+{% include "sections/hero-inner-page.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="left-sidebar-and-main">
+      <div class="left-sidebar-and-main__grid">
+        <div class="left-sidebar-and-main__col -sidebar">
+
+          <div class="aside-group laptop-hide tablet-hide mobile-hide">
+
+            <!-- Accordion: выбор региона/города -->
+            <div class="city-accordion" role="region" aria-label="Выбор региона и города">
+
+              <!-- группа аккордеон -->
+              <div class="city-accordion__item city-accordion__item--open">
+                <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                  aria-controls="city-accordion-panel-krasnodar-krai" id="city-accordion-trigger-krasnodar-krai">
+                  <span class="city-accordion__title">Краснодарский край</span>
+                  <span class="city-accordion__icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="city-accordion__panel" id="city-accordion-panel-krasnodar-krai" role="region"
+                  aria-labelledby="city-accordion-trigger-krasnodar-krai">
+                  <div class="city-accordion__content">
+                    <ul class="city-accordion__list" role="list">
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="all" checked />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Все</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="anapa" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Анапа</span>
+                        </label>
+                      </li>
+
+                      <!-- ...остальные города без изменений... -->
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="armavir" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Армавир</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="belorechensk" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Белореченск</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="krasnodar" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Краснодар</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="kurganinsk" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Курганинск</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="labinsk" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Лабинск</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="afipskiy" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">п. Афипский</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="mostovskoy" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">п. Мостовской</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="sochi" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Сочи</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="ladogskaya" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">ст-ца Ладожская</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="tbilisskaya" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">ст. Тбилисская</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="ust-labinsk" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">Усть Лабинск</span>
+                        </label>
+                      </li>
+
+                      <li class="city-accordion__option">
+                        <label class="city-accordion__label">
+                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                            value="krasnaya-polyana" />
+                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                          <span class="city-accordion__text">х. Красная поляна</span>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="left-sidebar-and-main__col -main">
+
+          <!-- группа  с анонсами карточек  -->
+          <div class="shop-preview-group">
+
+            <div class="shop-preview-group__grid">
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom -active">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom -active">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Карточка с анонсом  -->
+              <article class="shop-preview-card outline-and-zoom">
+                <div class="outline-and-zoom__container">
+
+                  <div class="shop-preview-card__top">
+                    <p class="shop-preview-card__address">
+                      <span class="shop-preview-card__icon">
+                        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                            stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <span>г. Краснодар, ул. Ростовское шоссе, 22</span>
+                    </p>
+                    <h2 class="shop-preview-card__title lower-short-strip">«СУПЕРМАРКЕТ КИРПИЧА И ФАСАДОВ»</h2>
+                  </div>
+                  <div class="shop-preview-card__center">
+                    <ul class="contacts-list list-reset">
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                        </p>
+                      </li>
+                      <li class="contacts-list__item">
+                        <p class="contact">
+                          <span class="contact__icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path
+                                d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                          </span>
+                          <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                        </p>
+                      </li>
+                    </ul>
+
+                    <p class="shop-preview-card__schedule">Режим работы: пн-пт 09:00 — 18:00; сб 10:00 — 15:00;вс —
+                      выходной</p>
+                  </div>
+
+                  <div class="shop-preview-card__bottom">
+                    <div class="shop-preview-card__bottom-container">
+                      <ul class="list-reset">
+                        <li>Сертифицированная торговая точка</li>
+                        <li>Класс торговой точки: Стандарт+Менеджер сертифицирован</li>
+                        <li>Менеджер сертифицирован</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+          <div class="pagination">
+
+            <button class="button -red -prev">
+              <span class="button__text">Предыдущая</span>
+              <span class="button__icon">
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+
+            <div class="pagination__pages">
+              <a class="pagination__button" href="#">1</a>
+              <a class="pagination__button -active">2</a>
+              <a class="pagination__button" href="#">3</a>
+            </div>
+
+            <button class="button -red -next">
+              <span class="button__text">Следующая</span>
+              <span class="button__icon">
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
-    </section>
-    {% include "sections/promo-section.html" %}
+    </div>
+
+  </div>
+</section>
+{% include "sections/promo.html" %}
 
 
 {% endblock %}

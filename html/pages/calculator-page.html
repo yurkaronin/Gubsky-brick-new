@@ -4,18 +4,156 @@
 {% set title = "Калькулятор" %}
 {% set pageTitle = "Калькулятор" %}
 {% set breadcrumbs = [
-    {url: '/', text: 'Главная'},
-    {url: '/catalog.html', text: 'Калькулятор'}
+{url: '/', text: 'Главная'},
+{url: '/catalog.html', text: 'Калькулятор'}
 ] %}
 
 {% block content %}
 
-    <section class="section tech-section">
-      <div class="wrapper">
-        <h2 class="title">Каллкулятор</h2>
+{% include "sections/hero-inner-page.html" %}
+
+<!-- Расчет стоимости доставки  -->
+<section class="section -bg-color-grey">
+  <div class="wrapper">
+
+    <div class="calculator">
+      <div class="calculator__group">
+        <h2 class="title-three">Расчет стоимости доставки</h2>
+
+        <div class="calculator-options">
+          <div class="calculator-options__grid">
+            <!-- Количество кирпичей  -->
+            <div class="calculator-options__item -quantity">
+              <div class="calculator-field">
+                <div class="calculator-field__body">
+                  <label class="calculator-field__label" for="calculator-quantity">Количество кирпичей</label>
+                  <div class="input">
+                    <input class="calculator__input" type="number" id="calculator-quantity" min="0" placeholder="0" />
+                  </div>
+                  <span class="calculator-field__sub-label">штук</span>
+                </div>
+              </div>
+            </div>
+            <!-- Адрес доставки  -->
+            <div class="calculator-options__item -address">
+              <div class="calculator-field">
+                <div class="calculator-field__body">
+                  <label class="calculator-field__label" for="calculator-address">Адрес доставки</label>
+                  <div class="input">
+                    <input class="calculator__input" type="text" id="calculator-address"
+                      placeholder="Введите Ваш адрес" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-options__item -variation">
+
+              <div class="calculator-variation">
+                <ul class="calculator-variation__list list-reset">
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-1" checked />
+                      <label class="label" for="brick-variation-1">Одинарный (1NF)</label>
+                    </div>
+                  </li>
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-2" />
+                      <label class="label" for="brick-variation-2">Полуторный (1,4NF)</label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <!-- кнопка  -->
+            <div class="calculator-options__item -button">
+              <button class="button -red" type="button ">
+                <span class="button__text">Рассчитать стоимость доставки</span>
+                <span class="button__icon -mod">
+                  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 4.2002V15.8002C1 16.9203 1 17.4801 1.21799 17.9079C1.40973 18.2842 1.71547 18.5905 2.0918 18.7822C2.5192 19 3.07899 19 4.19691 19H13.8031C14.921 19 15.48 19 15.9074 18.7822C16.2837 18.5905 16.5905 18.2842 16.7822 17.9079C17 17.4805 17 16.9215 17 15.8036V4.19691C17 3.07899 17 2.5192 16.7822 2.0918C16.5905 1.71547 16.2837 1.40973 15.9074 1.21799C15.4796 1 14.9203 1 13.8002 1H4.2002C3.08009 1 2.51962 1 2.0918 1.21799C1.71547 1.40973 1.40973 1.71547 1.21799 2.0918C1 2.51962 1 3.08009 1 4.2002Z"
+                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="5" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+        </div>
       </div>
-    </section>
-    {% include "sections/promo-section.html" %}
+
+      <div class="calculator__group">
+        <h2 class="title-three">Результаты расчета</h2>
+
+        <div class="calculator-result">
+          <div class="calculator-result__grid">
+            <div class="calculator-result__col">
+              <ul class="calculator-result__list list-reset">
+                <li class="calculator-result__item">расчетное количество поддонов, шт: <b>51</b> </li>
+                <li class="calculator-result__item">расчетное расстояние, км: <b>432 000 000</b></li>
+                <li class="calculator-result__item">расчетная стоимость доставки, руб.: <b
+                    class="calculator-result__summ">68 144 ₽</b></li>
+              </ul>
+              <p class="calculator__subtitle">Расчетная стоимость достаки кирпича приведена по состоянию на дату
+                проведения
+                расчета: <b>06.11.2025</b><br>
+                Перед заказом итоговую стоимость уточните у наших менеджеров.</p>
+            </div>
+            <div class="calculator-result__col">
+              <div class="calculator-result__buttons">
+                <a class="button -red" type="button ">
+                  <span class="button__text">Сделать новый расчет</span>
+                  <span class="button__icon -mod">
+                    <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.41699 14H1.41699V19M10.417 6H15.417V1M1 7.0034C1.56068 5.61566 2.49943 4.41304 3.70954 3.53223C4.91965 2.65141 6.35385 2.12752 7.84675 2.02051C9.33964 1.9135 10.8317 2.2274 12.1551 2.92661C13.4785 3.62582 14.5782 4.68254 15.3311 5.97612M15.8345 12.9971C15.2739 14.3848 14.3351 15.5874 13.125 16.4682C11.9149 17.3491 10.4822 17.8723 8.98926 17.9793C7.49636 18.0863 6.00306 17.7725 4.67969 17.0732C3.35632 16.374 2.25581 15.3175 1.50293 14.0239"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+
+                <a class="button" type="button ">
+                  <span class="button__text">Заказать звонок</span>
+                  <span class="button__icon -mod">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.77982 2.11753C6.50984 1.44258 5.85616 1 5.12923 1H2.68417C1.75403 1 1 1.75386 1 2.68403C1 10.5904 7.40942 17 15.3156 17C16.2457 17 16.9996 16.2459 16.9996 15.3157L17 12.8702C17 12.1433 16.5575 11.4897 15.8826 11.2197L13.5392 10.2826C12.9329 10.0401 12.2426 10.1493 11.741 10.5673L11.1362 11.0717C10.4299 11.6604 9.39057 11.6135 8.74042 10.9634L7.03738 9.25872C6.38723 8.60856 6.33918 7.57008 6.9278 6.86372L7.43213 6.25894C7.85015 5.7573 7.96026 5.06681 7.71775 4.46053L6.77982 2.11753Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+{% include "sections/promo-2.html" %}
 
 
 {% endblock %}
