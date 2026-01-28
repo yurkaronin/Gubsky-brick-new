@@ -2,6 +2,11 @@
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(1, 1fr);
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
   &__item {
     position: relative;
     padding-left: calc(48px + 16px);
@@ -42,6 +47,13 @@
     font-size: 32px;
     color: var(--dark);
   }
+  &__text {
+    display: block;
+    margin: 0;
+    font-family: var(--second-family);
+    font-size: 18px;
+    color: var(--dark);
+  }
   &__address {
     display: block;
     margin: 0;
@@ -75,5 +87,27 @@
   .button {
     margin-top: 16px;
     margin-bottom: 16px;
+  }
+
+  @media (max-width: 1379px) {
+    &__grid {
+      gap: 16px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__address {
+      font-size: 16px;
+    }
+    &__text {
+      font-size: 16px;
+    }
+    &__email {
+      font-size: 16px;
+    }
+    &__phone {
+      font-size: 18px;
+    }
   }
 }

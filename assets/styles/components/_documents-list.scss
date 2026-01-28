@@ -1,0 +1,15 @@
+.documents-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 32px;
+  margin-bottom: 32px;
+  gap: 0;
+  &__item {
+    & + & {
+      border-top: 1px solid var(--border-color);
+    }
+  }
+}

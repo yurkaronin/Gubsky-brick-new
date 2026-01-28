@@ -1,0 +1,36 @@
+.outline-and-zoom {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    z-index: 0;
+    border-radius: 22px;
+    background-color: var(--white);
+    border: 4px solid transparent;
+    // opacity: 0;
+    transition: all 0.2s;
+  }
+  &:hover {
+    z-index: 3;
+  }
+  &:hover::before {
+    box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.15);
+    border-color: var(--orange);
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+  }
+}

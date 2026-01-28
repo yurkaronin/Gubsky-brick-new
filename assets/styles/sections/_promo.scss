@@ -15,6 +15,11 @@
   &.-two {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/2.jpg");
   }
+  &.-three {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/3.jpg");
+    background-position: left;
+
+  }
   &__grid {
     display: grid;
     gap: 32px;

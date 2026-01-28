@@ -131,6 +131,15 @@
 @use "components/video-block";
 
 @use "components/cookie-alert";
+@use "components/advantages-list";
+@use "components/contacts-list";
+@use "components/contact";
+@use "components/team-cards-group";
+@use "components/team-card-preview";
+@use "components/documents-list";
+@use "components/document-preview-card";
+@use "components/list-group";
+
 
 // секции
 @use "sections/section";
@@ -141,8 +150,12 @@
 @use "sections/home-hero";
 @use "sections/category-preview-section";
 @use "sections/error-section";
+@use "sections/delivery-details";
+@use "sections/calculator";
 
 @use "sections/footer";
+
+@use "hover-effect/outline-and-zoom";
 
 // Шаблоны страниц
 @use "pages/promo-small";

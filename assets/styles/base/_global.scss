@@ -107,6 +107,7 @@ ul:not([class]) {
   li {
     position: relative;
     margin-bottom: 10px;
+    padding-left: calc(8px + 10px);
     &::before {
       content: "";
       background-color: var(--white);
@@ -117,6 +118,9 @@ ul:not([class]) {
       border-radius: 50%;
       margin-right: 12px;
       transition: var(--transition);
+      position: absolute;
+      top: 8px;
+      left: 0;
 
       @media (max-width: 767px) {}
     }

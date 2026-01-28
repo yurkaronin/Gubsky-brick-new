@@ -1,0 +1,35 @@
+.delivery-details {
+  &__top {
+    margin-bottom: 40px;
+  }
+  &__top-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__bottom {
+    margin-top: 34px;
+    color: #666565;
+  }
+  &__bottom-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 1379px) {
+    &__top {
+      margin-bottom: 48px;
+    }
+    &__top-grid {
+      gap: 32px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__bottom-grid {
+      display: block;
+    }
+    .contacts-block {
+      margin-top: 32px;
+    }
+  }
+}

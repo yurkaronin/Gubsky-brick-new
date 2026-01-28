@@ -4,18 +4,634 @@
 {% set title = "Доставка" %}
 {% set pageTitle = "Доставка" %}
 {% set breadcrumbs = [
-    {url: '/', text: 'Главная'},
-    {url: '/catalog.html', text: 'Доставка'}
+{url: '/', text: 'Главная'},
+{url: '/catalog.html', text: 'Доставка'}
 ] %}
 
 {% block content %}
 
-    <section class="section tech-section">
-      <div class="wrapper">
-        <h2 class="title">Доставка</h2>
+{% include "sections/hero-inner-page.html" %}
+
+
+<section class="section">
+  <div class="wrapper">
+    <div class="delivery-details">
+      <div class="delivery-details__top">
+        <div class="delivery-details__top-grid">
+          <div class="delivery-details__top-col">
+            <h2 class="title-two">Доставка автотранспортом партнеров</h2>
+          </div>
+          <div class="delivery-details__top-col">
+
+            <ul class="advantages-list list-reset">
+              <li class="advantages-list__item">
+                <div class="advantages-list__icon">
+                  <svg width="48" height="45" viewBox="0 0 48 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M16 44C17.6569 44 19 42.6569 19 41C19 39.3431 17.6569 38 16 38C14.3431 38 13 39.3431 13 41C13 42.6569 14.3431 44 16 44Z"
+                      stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                    <path
+                      d="M4 44C5.65685 44 7 42.6569 7 41C7 39.3431 5.65685 38 4 38C2.34315 38 1 39.3431 1 41C1 42.6569 2.34315 44 4 44Z"
+                      stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                    <path d="M30 43H22V20" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1 36V34.592C1 33.16 2.16098 32 3.59198 32H8L11 35H22V41H19" stroke="#E67917"
+                      stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M19 35C18.352 30.463 16.889 25.889 13 22C11 22 6 22 6 22V32" stroke="#E67917"
+                      stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M13 41H7" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" />
+                    <path d="M6 22H4" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path d="M47 16H30V31H47V16Z" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M30 31H26" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M21 16V1H38V16" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M30 16H17V21" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <p class="advantages-list__text">Погрузим</p>
+              </li>
+              <li class="advantages-list__item">
+                <div class="advantages-list__icon">
+                  <svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 25H20" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path
+                      d="M22.51 6H6.48999C5.58099 6 4.78699 6.61001 4.55499 7.49001C4.28799 8.50201 4 10.859 4 12C4 14.125 4 17 4 17V30C4 31.104 4.896 32 6 32H23C24.104 32 25 31.104 25 30V17C25 17 25 14.125 25 12C25 10.859 24.712 8.50201 24.445 7.49001C24.213 6.61001 23.419 6 22.51 6Z"
+                      stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                    <path d="M4 20L1.72601 19.353C1.29601 19.23 1 18.838 1 18.391V14.479" stroke="white"
+                      stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path d="M25 20L27.274 19.353C27.704 19.23 28 18.838 28 18.391V14.479" stroke="white"
+                      stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                    <path d="M4 12H25" stroke="white" stroke-width="2" stroke-miterlimit="10" />
+                    <path d="M4 30V34.25C4 34.664 4.448 35 5 35H8C8.552 35 9 34.664 9 34.25V32" stroke="white"
+                      stroke-width="2" stroke-miterlimit="10" />
+                    <path d="M20 32V34.25C20 34.664 20.448 35 21 35H24C24.552 35 25 34.664 25 34.25V30" stroke="white"
+                      stroke-width="2" stroke-miterlimit="10" />
+                    <path d="M40 32V34.25C40 34.664 40.448 35 41 35H44C44.552 35 45 34.664 45 34.25V32" stroke="white"
+                      stroke-width="2" stroke-miterlimit="10" />
+                    <path d="M4 27L5.414 28.414C5.789 28.789 6.298 29 6.828 29H8" stroke="white" stroke-width="2"
+                      stroke-miterlimit="10" stroke-linecap="round" />
+                    <path d="M25 27L23.586 28.414C23.211 28.789 22.702 29 22.171 29H21" stroke="white" stroke-width="2"
+                      stroke-miterlimit="10" stroke-linecap="round" />
+                    <path d="M6 3V1H28V8" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M28 1H29L47 14V32H28" stroke="white" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M25 17C25 19.209 23.209 21 21 21H8C5.791 21 4 19.209 4 17" stroke="white" stroke-width="2"
+                      stroke-miterlimit="10" />
+                    <path d="M12 29H17" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" />
+                  </svg>
+                </div>
+                <p class="advantages-list__text">Доставим</p>
+              </li>
+              <li class="advantages-list__item">
+                <div class="advantages-list__icon">
+                  <svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 31H1V16H19V26" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M36 19V16H18" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M28 1H10V16H28V1Z" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M42.6585 19.063L28.1895 33.531L22.4025 27.744L18.0625 32.084L28.1895 42.212L46.9995 23.403L42.6585 19.063Z"
+                      stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <p class="advantages-list__text">Разгрузим</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
       </div>
-    </section>
-    {% include "sections/promo-section.html" %}
+      <div class="delivery-details__midle">
+        <div class="team-cards-group">
+          <div class="team-cards-group__grid">
+
+            <div class="team-cards-group__item">
+              <article class="team-card-preview outline-and-zoom">
+                <div class="outline-and-zoom__container">
+                  <p class="team-card-preview__name lower-short-strip">ИП Белевцов И.Г.</p>
+                  <ul class="contacts-list list-reset">
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                      </p>
+                    </li>
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="team-cards-group__item">
+              <article class="team-card-preview outline-and-zoom">
+                <div class="outline-and-zoom__container">
+                  <p class="team-card-preview__name lower-short-strip">ИП Михайлов Р.Н.</p>
+                  <ul class="contacts-list list-reset">
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                      </p>
+                    </li>
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <div class="team-cards-group__item">
+              <article class="team-card-preview outline-and-zoom">
+                <div class="outline-and-zoom__container">
+                  <p class="team-card-preview__name lower-short-strip">ИП Вакуленко М.В.</p>
+                  <ul class="contacts-list list-reset">
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M7.50246 2.25722C7.19873 1.4979 6.46332 1 5.64551 1H2.89474C1.8483 1 1 1.8481 1 2.89453C1 11.7892 8.21078 19 17.1055 19C18.1519 19 19 18.1516 19 17.1052L19.0005 14.354C19.0005 13.5361 18.5027 12.8009 17.7434 12.4971L15.1069 11.4429C14.4249 11.1701 13.6483 11.2929 13.0839 11.7632L12.4035 12.3307C11.6089 12.9929 10.4396 12.9402 9.7082 12.2088L7.79222 10.2911C7.06079 9.55962 7.00673 8.39134 7.66895 7.59668L8.23633 6.9163C8.70661 6.35195 8.83049 5.57516 8.55766 4.89309L7.50246 2.25722Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">+7 (918) 320-23-59</a>
+                      </p>
+                    </li>
+                    <li class="contacts-list__item">
+                      <p class="contact">
+                        <span class="contact__icon">
+                          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M2 7.6636L8.10764 12.4169L8.10967 12.4186C8.78785 12.9312 9.12714 13.1876 9.49876 13.2866C9.82723 13.3742 10.1725 13.3742 10.501 13.2866C10.8729 13.1875 11.2132 12.9303 11.8926 12.4169L18 7.6636M17.8002 6.67366L12.2012 2.05366C11.506 1.48002 11.1581 1.1933 10.7715 1.07944C10.4304 0.978971 10.0692 0.973649 9.72552 1.06434C9.33603 1.16712 8.98087 1.44372 8.27052 1.9973L2.26953 6.67389C1.8038 7.03684 1.57123 7.21843 1.40332 7.44779C1.2546 7.65094 1.14377 7.8807 1.07624 8.12548C1 8.40185 1 8.70276 1 9.30452V15.7023C1 16.8566 1 17.4341 1.21799 17.875C1.40973 18.2629 1.71547 18.578 2.0918 18.7756C2.5192 19 3.07899 19 4.19691 19H15.8031C16.921 19 17.48 19 17.9074 18.7756C18.2837 18.578 18.5905 18.2626 18.7822 17.8748C19 17.4343 19 16.8579 19 15.7058V9.23676C19 8.66257 19 8.3737 18.9287 8.10686C18.8651 7.86891 18.7595 7.64465 18.619 7.44478C18.4604 7.21917 18.2409 7.03728 17.8002 6.67366Z"
+                              stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <a class="contact__link" href="#">belevtsov.logistic@gmail.com</a>
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="delivery-details__bottom">
+        <div class="delivery-details__bottom-grid">
+          <div class="delivery-details__bottom-col">
+            <ul>
+              <li>Доставка автотранспортом партнера осуществляется 7 дней в неделю</li>
+              <li>Стоимость загрузки кирпича в автомобильный транспорт перевозчика включена в стоимость кирпича</li>
+            </ul>
+          </div>
+          <div class="delivery-details__bottom-col">
+            <ul>
+              <li>Регионы доставки автотранспортом партнера: ЮФО и СКФО</li>
+              <li>Стоимость доставки автотранспортом партнера зависит от удалённости объекта строительства от склада
+                готовой продукции завода-производителя.</li>
+            </ul>
+          </div>
+          <div class="delivery-details__bottom-col -mod">
+            <div class="contacts-block">
+              <div class="contacts-block__item">
+                <span class="contacts-block__icon">
+                  <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                      stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path
+                      d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                      stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+                <span class="contacts-block__label">Адрес производства:</span>
+                <address class="contacts-block__address">ООО “ГКЗ”, 352552, Краснодарский край, Мостовский район,
+                  станица
+                  Губская, тер. Промзона, д. 1</address>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section -bg-color-grey">
+  <div class="wrapper">
+
+    <div class="calculator">
+      <div class="calculator__group">
+        <h2 class="title-three">Расчет стоимости доставки</h2>
+
+        <div class="calculator-options">
+          <div class="calculator-options__grid">
+            <!-- Количество кирпичей  -->
+            <div class="calculator-options__item -quantity">
+              <div class="calculator-field">
+                <div class="calculator-field__body">
+                  <label class="calculator-field__label" for="calculator-quantity">Количество кирпичей</label>
+                  <div class="input">
+                    <input class="calculator__input" type="number" id="calculator-quantity" min="0" placeholder="0" />
+                  </div>
+                  <span class="calculator-field__sub-label">штук</span>
+                </div>
+              </div>
+            </div>
+            <!-- Адрес доставки  -->
+            <div class="calculator-options__item -address">
+              <div class="calculator-field">
+                <div class="calculator-field__body">
+                  <label class="calculator-field__label" for="calculator-address">Адрес доставки</label>
+                  <div class="input">
+                    <input class="calculator__input" type="text" id="calculator-address"
+                      placeholder="Введите Ваш адрес" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-options__item -variation">
+
+              <div class="calculator-variation">
+                <ul class="calculator-variation__list list-reset">
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-1" checked />
+                      <label class="label" for="brick-variation-1">Одинарный (1NF)</label>
+                    </div>
+                  </li>
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-2" />
+                      <label class="label" for="brick-variation-2">Полуторный (1,4NF)</label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <!-- кнопка  -->
+            <div class="calculator-options__item -button">
+              <button class="button -red" type="button ">
+                <span class="button__text">Рассчитать стоимость доставки</span>
+                <span class="button__icon -mod">
+                  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 4.2002V15.8002C1 16.9203 1 17.4801 1.21799 17.9079C1.40973 18.2842 1.71547 18.5905 2.0918 18.7822C2.5192 19 3.07899 19 4.19691 19H13.8031C14.921 19 15.48 19 15.9074 18.7822C16.2837 18.5905 16.5905 18.2842 16.7822 17.9079C17 17.4805 17 16.9215 17 15.8036V4.19691C17 3.07899 17 2.5192 16.7822 2.0918C16.5905 1.71547 16.2837 1.40973 15.9074 1.21799C15.4796 1 14.9203 1 13.8002 1H4.2002C3.08009 1 2.51962 1 2.0918 1.21799C1.71547 1.40973 1.40973 1.71547 1.21799 2.0918C1 2.51962 1 3.08009 1 4.2002Z"
+                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="5" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__group">
+        <h2 class="title-three">Результаты расчета</h2>
+
+        <div class="calculator-result">
+          <div class="calculator-result__grid">
+            <div class="calculator-result__col">
+              <ul class="calculator-result__list list-reset">
+                <li class="calculator-result__item">расчетное количество поддонов, шт: <b>51</b> </li>
+                <li class="calculator-result__item">расчетное расстояние, км: <b>432 000 000</b></li>
+                <li class="calculator-result__item">расчетная стоимость доставки, руб.: <b
+                    class="calculator-result__summ">68 144 ₽</b></li>
+              </ul>
+              <p class="calculator__subtitle">Расчетная стоимость достаки кирпича приведена по состоянию на дату
+                проведения
+                расчета: <b>06.11.2025</b><br>
+                Перед заказом итоговую стоимость уточните у наших менеджеров.</p>
+            </div>
+            <div class="calculator-result__col">
+              <div class="calculator-result__buttons">
+                <a class="button -red" type="button ">
+                  <span class="button__text">Сделать новый расчет</span>
+                  <span class="button__icon -mod">
+                    <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.41699 14H1.41699V19M10.417 6H15.417V1M1 7.0034C1.56068 5.61566 2.49943 4.41304 3.70954 3.53223C4.91965 2.65141 6.35385 2.12752 7.84675 2.02051C9.33964 1.9135 10.8317 2.2274 12.1551 2.92661C13.4785 3.62582 14.5782 4.68254 15.3311 5.97612M15.8345 12.9971C15.2739 14.3848 14.3351 15.5874 13.125 16.4682C11.9149 17.3491 10.4822 17.8723 8.98926 17.9793C7.49636 18.0863 6.00306 17.7725 4.67969 17.0732C3.35632 16.374 2.25581 15.3175 1.50293 14.0239"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+
+                <a class="button" type="button ">
+                  <span class="button__text">Заказать звонок</span>
+                  <span class="button__icon -mod">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.77982 2.11753C6.50984 1.44258 5.85616 1 5.12923 1H2.68417C1.75403 1 1 1.75386 1 2.68403C1 10.5904 7.40942 17 15.3156 17C16.2457 17 16.9996 16.2459 16.9996 15.3157L17 12.8702C17 12.1433 16.5575 11.4897 15.8826 11.2197L13.5392 10.2826C12.9329 10.0401 12.2426 10.1493 11.741 10.5673L11.1362 11.0717C10.4299 11.6604 9.39057 11.6135 8.74042 10.9634L7.03738 9.25872C6.38723 8.60856 6.33918 7.57008 6.9278 6.86372L7.43213 6.25894C7.85015 5.7573 7.96026 5.06681 7.71775 4.46053L6.77982 2.11753Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrapper">
+    <h2 class="title-two">Документы</h2>
+
+    <ul class="documents-list list-reset">
+      <li class="documents-list__item">
+        <a class="document-preview-card" href="#">
+          <span class="document-preview-card__icon">
+            <img src="./assets/img/document-preview-card/doc.svg" alt="" />
+          </span>
+          <p class="document-preview-card__name">Условия доставки и разгрузки <span>(cкачать DOC, 1.2 mb)</span></p>
+        </a>
+
+      </li>
+      <li class="documents-list__item">
+        <a class="document-preview-card" href="#">
+          <span class="document-preview-card__icon">
+            <img src="./assets/img/document-preview-card/pdf.svg" alt="" />
+          </span>
+          <p class="document-preview-card__name">Стоимость автотранспортной доставки ст. Губская – Пункт назначения
+            <span>(cкачать PDF, 1.2 mb)</span>
+          </p>
+        </a>
+
+      </li>
+    </ul>
+  </div>
+</section>
+
+{% include "sections/promo-2.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="section__top">
+      <h2 class="title-two">Самовывоз со склада готовой продукции завода производителя</h2>
+    </div>
+
+
+    <div class="contacts-block">
+      <div class="contacts-block__grid">
+
+        <div class="contacts-block__item">
+          <span class="contacts-block__icon">
+            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 8.02185C1 12.9431 5.2445 17.0127 7.12322 18.573C7.3921 18.7963 7.52815 18.9093 7.72875 18.9665C7.88495 19.0112 8.11484 19.0112 8.27104 18.9665C8.47201 18.9092 8.60711 18.7973 8.877 18.5731C10.7557 17.0128 15 12.9435 15 8.0223C15 6.15993 14.2625 4.37362 12.9498 3.05672C11.637 1.73982 9.85665 1 8.00012 1C6.1436 1 4.36303 1.73994 3.05026 3.05683C1.7375 4.37373 1 6.15948 1 8.02185Z"
+                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path
+                d="M6.00003 7.0858C6.00003 8.20617 6.89546 9.1144 8.00004 9.1144C9.10462 9.1144 10.0001 8.20617 10.0001 7.0858C10.0001 5.96544 9.10462 5.0572 8.00004 5.0572C6.89546 5.0572 6.00003 5.96544 6.00003 7.0858Z"
+                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </span>
+          <span class="contacts-block__label">Адрес склада готовой продукции:</span>
+          <address class="contacts-block__address">Краснодарский край, Мостовский район, ст-ца Губская, Промзона 1
+          </address>
+        </div>
+
+        <div class="contacts-block__item">
+          <span class="contacts-block__icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 5V10H15M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19Z"
+                stroke="#E67917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>
+          <span class="contacts-block__label">График работы:</span>
+          <address class="contacts-block__text">Пн.-Пт. с 8:00 до 17:00 (без перерыва)</address>
+        </div>
+      </div>
+
+    </div>
+    <br/>
+    <div class="list-group">
+      <div class="list-group__grid">
+        <div class="list-group__col">
+          <ul>
+            <li>Доставка автотранспортом партнера осуществляется 7 дней в неделю</li>
+            <li>Стоимость загрузки кирпича в автомобильный транспорт перевозчика включена в стоимость кирпича</li>
+          </ul>
+        </div>
+        <div class="list-group__col">
+          <ul>
+            <li>Загрузка продукции в автомобильный транспорт Покупателей со склада завода производителя производится вилочными автопогрузчиками</li>
+            <li>В целях недопущения превышения допустимой массы транспортного средства или нагрузки на ось, Губский кирпичный завод осуществляет весовой контроль транспортных средств.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section -bg-color-grey">
+  <div class="wrapper">
+
+    <div class="calculator">
+      <div class="calculator__group">
+        <h2 class="title-three">Расчет вместимости кузова</h2>
+
+        <div class="calculator-options">
+          <div class="calculator-options__grid">
+
+            <div class="calculator-options__item -variation">
+
+              <div class="calculator-variation">
+                <ul class="calculator-variation__list list-reset">
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-3" checked />
+                      <label class="label" for="brick-variation-3">Одинарный (1NF)</label>
+                    </div>
+                  </li>
+                  <li class="calculator-variation__item">
+                    <div class="calculator-radio">
+                      <input type="radio" name="calculator-brick-variation" id="brick-variation-4" />
+                      <label class="label" for="brick-variation-4">Полуторный (1,4NF)</label>
+                    </div>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+            <!-- Количество кирпичей  -->
+            <div class="calculator-options__item -quantity">
+              <div class="calculator-field">
+                <div class="calculator-field__body">
+                  <label class="calculator-field__label" for="calculator-quantity">Количество кирпичей</label>
+                  <div class="input">
+                    <input class="calculator__input" type="number" id="calculator-quantity" min="0" placeholder="0" />
+                  </div>
+                  <span class="calculator-field__sub-label">штук</span>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- кнопка  -->
+            <div class="calculator-options__item -centered">
+              <button class="button -red" type="button ">
+                <span class="button__text">Рассчитать стоимость доставки</span>
+                <span class="button__icon -mod">
+                  <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M1 4.2002V15.8002C1 16.9203 1 17.4801 1.21799 17.9079C1.40973 18.2842 1.71547 18.5905 2.0918 18.7822C2.5192 19 3.07899 19 4.19691 19H13.8031C14.921 19 15.48 19 15.9074 18.7822C16.2837 18.5905 16.5905 18.2842 16.7822 17.9079C17 17.4805 17 16.9215 17 15.8036V4.19691C17 3.07899 17 2.5192 16.7822 2.0918C16.5905 1.71547 16.2837 1.40973 15.9074 1.21799C15.4796 1 14.9203 1 13.8002 1H4.2002C3.08009 1 2.51962 1 2.0918 1.21799C1.71547 1.40973 1.40973 1.71547 1.21799 2.0918C1 2.51962 1 3.08009 1 4.2002Z"
+                      stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="5" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="7.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="11.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="5" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="9" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                    <circle cx="13" cy="15.5" r="0.5" stroke="white" stroke-width="2" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator__group">
+        <h2 class="title-three">Результаты расчета</h2>
+
+        <div class="calculator-result">
+          <div class="calculator-result__grid">
+            <div class="calculator-result__col">
+              <ul class="calculator-result__list list-reset">
+                <li class="calculator-result__item">расчетное количество поддонов, шт: <b>51</b> </li>
+                <li class="calculator-result__item">вес одного поддона, кг: <b>1100</b></li>
+                <li class="calculator-result__item">объем груза, м3: <b>2040</b></li>
+                <li class="calculator-result__item">вес груза, кг.:<b
+                    class="calculator-result__summ">56 100 кг</b></li>
+              </ul>
+            </div>
+            <div class="calculator-result__col">
+              <div class="calculator-result__buttons">
+                <a class="button -red" type="button ">
+                  <span class="button__text">Сделать новый расчет</span>
+                  <span class="button__icon -mod">
+                    <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.41699 14H1.41699V19M10.417 6H15.417V1M1 7.0034C1.56068 5.61566 2.49943 4.41304 3.70954 3.53223C4.91965 2.65141 6.35385 2.12752 7.84675 2.02051C9.33964 1.9135 10.8317 2.2274 12.1551 2.92661C13.4785 3.62582 14.5782 4.68254 15.3311 5.97612M15.8345 12.9971C15.2739 14.3848 14.3351 15.5874 13.125 16.4682C11.9149 17.3491 10.4822 17.8723 8.98926 17.9793C7.49636 18.0863 6.00306 17.7725 4.67969 17.0732C3.35632 16.374 2.25581 15.3175 1.50293 14.0239"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+
+                <a class="button" type="button ">
+                  <span class="button__text">Заказать звонок</span>
+                  <span class="button__icon -mod">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.77982 2.11753C6.50984 1.44258 5.85616 1 5.12923 1H2.68417C1.75403 1 1 1.75386 1 2.68403C1 10.5904 7.40942 17 15.3156 17C16.2457 17 16.9996 16.2459 16.9996 15.3157L17 12.8702C17 12.1433 16.5575 11.4897 15.8826 11.2197L13.5392 10.2826C12.9329 10.0401 12.2426 10.1493 11.741 10.5673L11.1362 11.0717C10.4299 11.6604 9.39057 11.6135 8.74042 10.9634L7.03738 9.25872C6.38723 8.60856 6.33918 7.57008 6.9278 6.86372L7.43213 6.25894C7.85015 5.7573 7.96026 5.06681 7.71775 4.46053L6.77982 2.11753Z"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
 
 
 {% endblock %}

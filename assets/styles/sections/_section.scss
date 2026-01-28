@@ -43,4 +43,25 @@
       padding-bottom: 32px;
     }
   }
+
+  &.-bg-color-grey {
+    background-color: var(--grey-15);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    @media (max-width: 1379px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @media (max-width: 767px) {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
 }

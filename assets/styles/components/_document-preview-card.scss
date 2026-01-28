@@ -1,0 +1,36 @@
+.document-preview-card {
+  color: var(--dark);
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  transition: var(--transition);
+  &:hover {
+    color: var(--accent-color-1);
+  }
+  &__icon {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__name {
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+
+    span {
+      font-family: var(--font-family);
+      font-size: 14px;
+      color: #666566;
+    }
+  }
+}

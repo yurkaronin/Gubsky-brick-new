@@ -1,0 +1,19 @@
+.team-card-preview {
+  background: var(--white);
+  border-radius: 20px;
+  max-width: max-content;
+  padding: 18px 24px 30px;
+  color: var(--dark);
+  &__name {
+    display: block;
+    margin-top: 0;
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    color: var(--dark);
+  }
+  @media (max-width: 767px) {
+    padding: 17px 20px 20px;
+  }
+}
