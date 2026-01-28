@@ -86,4 +86,21 @@
     max-height: 70svh;
     overflow-y: auto;
   }
+
+  &.-cookie {
+    align-items: flex-end;
+  }
+  &.-cookie &__body {
+    max-width: 752px;
+    padding: 32px 22px;
+    @media (max-width: 767px) {
+      padding: 24px 19px 19px;
+    }
+  }
+
+  &.-cookie .wrapper {
+    margin-top: auto;
+    align-items: flex-end;
+    margin-bottom: 16px;
+  }
 }

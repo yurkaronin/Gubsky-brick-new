@@ -75,7 +75,6 @@
 @use "components/copyright";
 @use "components/developers-info";
 @use "components/content-table";
-@use "components/modal";
 @use "components/breadcrumbs";
 
 
@@ -131,8 +130,11 @@
 @use "components/about-block";
 @use "components/video-block";
 
+@use "components/cookie-alert";
+
 // секции
 @use "sections/section";
+@use "sections/modal";
 @use "sections/promo";
 @use "sections/hero-inner-page";
 @use "sections/services-group-section";
