@@ -1,21 +1,39 @@
-{% extends "layouts/base-big-footer.html" %}
+{% extends "layouts/base.html" %}
 
 {% set bodyClass = "error-page" %}
 {% set title = "404 ошибка" %}
 {% set pageTitle = "404 ошибка" %}
 {% set breadcrumbs = [
-    {url: '/', text: 'Главная'},
-    {url: '/catalog.html', text: '404 ошибка'}
+{url: '/', text: 'Главная'},
+{url: '/catalog.html', text: '404 ошибка'}
 ] %}
 
 {% block content %}
 
-    <section class="section tech-section">
-      <div class="wrapper">
-        <h2 class="title">404 ошибка</h2>
-      </div>
-    </section>
-    {% include "sections/promo-section.html" %}
+<section class="error-section">
+  <div class="wrapper">
+    <div class="error-section__picture">
+      <img src="./assets/img/error-section/1.jpg" alt="#" />
+    </div>
+    <div class="error-section__group">
+      <h2 class="title">Ай! Ошибка 404.</h2>
+      <p class="text">Что-то случилось с данной страницей, но это не причина быстро покидать сайт. Вы можете перейти на главную
+        страницу.</p>
+      <a href="#" class="button -red" data-target="modal-get-consultation">
+        <span class="button__text -red">перейти на главную</span>
+        <span class="button__icon">
+          <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </a>
+
+      {% include "components/services-group.html" %}
+    </div>
+
+  </div>
+</section>
 
 
 {% endblock %}

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "HTML сборщик с Nunjucks",
   "scripts": {
-
     "start": "node tasks/start.js",
     "dev": "node tasks/start.js",
     "watch": "node tasks/watch.js",
@@ -18,14 +17,15 @@
   },
   "dependencies": {
     "chokidar": "^3.5.3",
+    "cross-env": "^7.0.3",
     "fs-extra": "^11.1.1",
     "html-minifier-terser": "^7.2.0",
     "live-server": "^1.2.2",
-    "nunjucks": "^3.2.4",
-    "cross-env": "^7.0.3"
+    "nunjucks": "^3.2.4"
   },
   "devDependencies": {
-    "@types/node": "^20.0.0"
+    "@types/node": "^20.0.0",
+    "stylelint-config-standard-scss": "^17.0.0"
   },
   "engines": {
     "node": ">=14.0.0"
