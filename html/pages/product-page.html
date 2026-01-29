@@ -12,7 +12,7 @@
 
 {% block content %}
 <!-- Первый экран карточки товара  -->
-<div class="product-card-hero">
+<section class="product-card-hero">
   <div class="wrapper">
     <div class="product-card-hero__top">
       {% include "components/navigation/breadcrumbs.html" %}
@@ -166,6 +166,54 @@
 
     </div>
 
+  </div>
+</section>
+<!-- характеристики товара  -->
+
+
+<div class="product-card-short-options">
+  <div class="wrapper">
+    <ul class="product-card-short-options__list list-reset">
+      <li class="product-card-short-options__item">
+        <span class="product-card-short-options__title">Типоразмер 1NF</span>
+        <p class="product-card-short-options__text">также в наличии 0.7, 1.4 NF</p>
+      </li>
+      <li class="product-card-short-options__item">
+        <p class="product-card-short-options__label">Габариты:</p>
+        <span class="product-card-short-options__title">250×120×65 см</span>
+      </li>
+      <li class="product-card-short-options__item">
+        <p class="product-card-short-options__label">Марка прочности:</p>
+        <span class="product-card-short-options__title">М125/М150</span>
+      </li>
+      <li class="product-card-short-options__item">
+        <p class="product-card-short-options__label">Кол-во на поддоне:</p>
+        <span class="product-card-short-options__title">480 шт.</span>
+      </li>
+      <li class="product-card-short-options__item -big">
+        <b class="product-card-short-options__bolder">28 ₽ / шт.</b>
+        <p class="product-card-short-options__text">При покупке от 5 поддонов</p>
+      </li>
+      <li class="product-card-short-options__item">
+        <ul class="product-card-price-list list-reset">
+          <li>0.7 NF<b>цена по запросу</b></li>
+          <li>1.4 NF<b>32 ₽ / шт.</b></li>
+        </ul>
+      </li>
+      <li class="product-card-short-options__item -button">
+        <a href="#" class="button -red -small">
+          <span class="button__text">Заказать</span>
+          <span class="button__icon">
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+              <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </svg>
+          </span>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
 

@@ -1,0 +1,112 @@
+.product-card-short-options {
+  padding: 40px 0;
+  background-color: var(--white);
+  &__list {
+    list-style: none;
+    display: flex;
+    margin-right: -32px;
+    margin-bottom: -24px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1379px) {
+      margin: 0;
+      display: grid;
+      gap: 32px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 767px) {
+      gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: flex-start;
+    }
+  }
+  &__item {
+    margin-right: 32px;
+    margin-bottom: 24px;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: repeat(1, 1fr);
+    flex-grow: 1;
+    @media (max-width: 1379px) {
+      margin: 0;
+    }
+  }
+  &__item.-big {
+    flex-grow: 2;
+    @media (max-width: 1379px) {
+      flex-grow: 1;
+    }
+  }
+  &__item.-button {
+    @media (max-width: 1379px) {
+      grid-column: span 2;
+    }
+    @media (max-width: 1023px) {
+      grid-column: span 3;
+      margin: 0 auto;
+    }
+    @media (max-width: 1023px) {
+      grid-column: span 2;
+    }
+    .button {
+      padding: 10px 32px;
+      text-align: center;
+      justify-content: center;
+      @media (max-width: 1379px) {
+        max-width: max-content;
+      }
+    }
+  }
+  &__label {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--black-60);
+    margin: 0;
+  }
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--black-60);
+    margin: 0;
+  }
+  &__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    color: var(--dark);
+  }
+  &__bolder {
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    color: var(--dark);
+  }
+}
+
+.product-card-price-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    margin-bottom: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--black-60);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    align-items: baseline;
+    gap: 12px;
+    max-width: max-content;
+  }
+  b {
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+  }
+}

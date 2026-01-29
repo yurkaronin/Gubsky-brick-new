@@ -71,6 +71,8 @@
       },
       768: {
         spaceBetween: 16,
+        direction: 'horizontal',
+        slidesPerView: 'auto',
       },
       1380: {
         direction: 'vertical',
