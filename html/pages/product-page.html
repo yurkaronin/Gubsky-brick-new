@@ -4,20 +4,164 @@
 {% set title = "Песчаная дюна" %}
 {% set pageTitle = "Песчаная дюна" %}
 {% set breadcrumbs = [
-    {url: '/', text: 'Главная'},
-    {url: '/', text: 'Каталог'},
-    {url: '/', text: 'Лицевой керамический кирпич'},
-    {url: '/catalog.html', text: 'Песчаная дюна'}
+{url: '/', text: 'Главная'},
+{url: '/', text: 'Каталог'},
+{url: '/', text: 'Лицевой керамический кирпич'},
+{url: '/catalog.html', text: 'Песчаная дюна'}
 ] %}
 
 {% block content %}
+<!-- Первый экран карточки товара  -->
+<div class="product-card-hero">
+  <div class="wrapper">
+    <div class="product-card-hero__top">
+      {% include "components/navigation/breadcrumbs.html" %}
+      <div class="product-card-hero__top-grid">
+        <div class="product-card-hero__col">
 
-    <section class="section tech-section">
-      <div class="wrapper">
-        <h2 class="title">Карточка товара детальная</h2>
+          <div class="title-and-label">
+            <h1 class="title">Песчаная дюна</h1>
+            <a class="card-label" href="#"><span>хит продаж</span></a>
+          </div>
+
+        </div>
+        <div class="product-card-hero__col">
+
+          <div class="favorite-and-button">
+            <a class="button-favorite" href="#">
+              <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M17.7198 2.28339C19.3696 3.93722 19.4327 6.59844 17.8633 8.32907L9.99947 17L2.13666 8.32904C0.567246 6.59841 0.630451 3.93716 2.28021 2.28333C4.12225 0.436719 7.15598 0.605458 8.78334 2.6447L10 4.16873L11.2156 2.64452C12.843 0.605285 15.8778 0.436778 17.7198 2.28339Z"
+                  stroke="#C4161C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+            <button class="button -small -white -prev">
+              <span class="button__text">Назад к списку</span>
+              <span class="button__icon">
+                <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  </path>
+                  <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                  </path>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+
+
+        </div>
       </div>
-    </section>
-    {% include "sections/promo-section.html" %}
+    </div>
+
+    <!-- Слайдер детальной карточки товара  -->
+    <div class="product-card-slider">
+      <div class="product-card-slider__grid">
+        <div class="product-card-slider__col -main">
+          <!-- основной слайдер -->
+          <div class="product-card-main-slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <!-- цвет фона у фото в слайде соответствует фону секции  -->
+                <div class="swiper-slide" data-bg-color="default">
+                  <img src="./assets/img/product-card-main-slider/video.jpg" alt="#" />
+                  <!-- тут может быть видео вместо картинки -->
+
+                </div>
+                <!-- цвет фона у фото дугой. у секции product-card-hero удаляем все доп классы и добавляем  -bg-mod-1 -->
+                <div class="swiper-slide" data-bg-color="mod-1">
+                  <img src="./assets/img/product-card-main-slider/1.jpg" alt="#" />
+                </div>
+                <!-- цвет фона у фото дугой. у секции product-card-hero удаляем все доп классы и добавляем  -bg-mod-1 -->
+                <div class="swiper-slide" data-bg-color="mod-1">
+                  <img src="./assets/img/product-card-main-slider/2.jpg" alt="#" />
+                </div>
+                <!-- цвет фона у фото дугой. у секции product-card-hero удаляем все доп классы и добавляем  -bg-mod-1 -->
+                <div class="swiper-slide" data-bg-color="mod-1">
+                  <img src="./assets/img/product-card-main-slider/3.jpg" alt="#" />
+                </div>
+                <!-- цвет фона у фото дугой. у секции product-card-hero удаляем все доп классы и добавляем  -bg-mod-2 -->
+                <div class="swiper-slide" data-bg-color="mod-2">
+                  <img src="./assets/img/product-card-main-slider/4.jpg" alt="#" />
+                </div>
+
+              </div>
+
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
+
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button swiper-button-prev">
+                <span class="swiper-button__icon">
+                  <svg width="22" height="10" viewBox="0 0 22 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.875 1L21 5M21 5L16.875 9M21 5H1" stroke="#E67917" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </div>
+              <div class="swiper-button swiper-button-next">
+                <span class="swiper-button__icon">
+                  <svg width="22" height="10" viewBox="0 0 22 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.875 1L21 5M21 5L16.875 9M21 5H1" stroke="#E67917" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="product-card-slider__col -aside">
+          <!-- вспомогательный слайдер  -->
+          <div class="product-card-aside-slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <button class="product-card-aside-slider__card" type="button" data-bg-color="default">
+                    <img src="./assets/img/product-card-main-slider/video.jpg" alt="#" />
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button class="product-card-aside-slider__card" type="button" data-bg-color="mod-1">
+                    <img src="./assets/img/product-card-main-slider/1.jpg" alt="#" />
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button class="product-card-aside-slider__card" type="button" data-bg-color="mod-1">
+                    <img src="./assets/img/product-card-main-slider/2.jpg" alt="#" />
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button class="product-card-aside-slider__card" type="button" data-bg-color="mod-1">
+                    <img src="./assets/img/product-card-main-slider/3.jpg" alt="#" />
+                  </button>
+                </div>
+                <div class="swiper-slide">
+                  <button class="product-card-aside-slider__card" type="button" data-bg-color="mod-2">
+                    <img src="./assets/img/product-card-main-slider/4.jpg" alt="#" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+  </div>
+</div>
+
+<section class="section tech-section">
+  <div class="wrapper">
+    <h2 class="title">Карточка товара детальная</h2>
+  </div>
+</section>
+{% include "sections/promo-section.html" %}
 
 
 {% endblock %}

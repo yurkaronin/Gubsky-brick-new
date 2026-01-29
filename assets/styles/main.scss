@@ -140,6 +140,8 @@
 @use "components/documents-list";
 @use "components/document-preview-card";
 @use "components/list-group";
+@use "components/title-and-label";
+@use "components/favorite-and-button";
 
 
 // секции
@@ -153,6 +155,7 @@
 @use "sections/error-section";
 @use "sections/delivery-details";
 @use "sections/calculator";
+@use "sections/product-card-hero";
 
 @use "sections/footer";
 
