@@ -57,12 +57,26 @@
   }
 
   const asideSlider = new Swiper('.product-card-aside-slider .swiper', {
-    direction: 'vertical',
     loop: true,
     spaceBetween: 16,
     slidesPerView: 5,
     watchSlidesProgress: true,
     centeredSlides: false,
+    direction: 'vertical',
+    breakpoints: {
+      0: {
+        direction: 'horizontal',
+        slidesPerView: 'auto',
+        spaceBetween: 10,
+      },
+      768: {
+        spaceBetween: 16,
+      },
+      1380: {
+        direction: 'vertical',
+        slidesPerView: 5,
+      }
+    },
   });
 
   const mainSlider = new Swiper('.product-card-main-slider .swiper', {

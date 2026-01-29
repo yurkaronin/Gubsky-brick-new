@@ -1,0 +1,39 @@
+.product-card-slider {
+  position: relative;
+  &__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 11fr 1fr;
+    @media (max-width: 1379px) {
+      display: block;
+    }
+  }
+  &__col {
+    min-width: 0;
+  }
+
+  .swiper-button {
+    box-shadow:
+      2px 2px 20px 0 rgba(0, 0, 0, 0.15),
+      0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .swiper-button-next {
+    right: 0;
+    @media (max-width: 1379px) {
+      right: -32px;
+    }
+    @media (max-width: 767px) {
+      right: -10px;
+    }
+  }
+  .swiper-button-prev {
+    left: 0;
+    @media (max-width: 1379px) {
+      left: -32px;
+    }
+    @media (max-width: 767px) {
+      left: -10px;
+    }
+  }
+}
