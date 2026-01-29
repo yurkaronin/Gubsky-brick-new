@@ -1,6 +1,9 @@
 .product-card-short-options {
   padding: 40px 0;
   background-color: var(--white);
+  @media (max-width: 767px) {
+    padding: 24px 0 30px;
+  }
   &__list {
     list-style: none;
     display: flex;
@@ -49,7 +52,7 @@
       grid-column: span 3;
       margin: 0 auto;
     }
-    @media (max-width: 1023px) {
+    @media (max-width: 767px) {
       grid-column: span 2;
     }
     .button {
@@ -79,6 +82,9 @@
     font-size: 18px;
     line-height: 133%;
     color: var(--dark);
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
   &__bolder {
     margin: 0;
@@ -86,6 +92,9 @@
     font-size: 24px;
     line-height: 100%;
     color: var(--dark);
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
   }
 }
 
