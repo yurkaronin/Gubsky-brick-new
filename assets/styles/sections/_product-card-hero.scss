@@ -1,7 +1,7 @@
 .product-card-hero {
   padding-top: 170px;
   padding-bottom: 64px;
-  background-color: #dfe5eb;
+  background-color: var(--hero-bg, #dfe5eb);
 
   &__top {
     margin-bottom: 36px;
@@ -62,6 +62,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    background-color: var(--hero-bg, #dfe5eb);
     img {
       object-fit: cover;
       width: 100%;
@@ -76,6 +77,8 @@
     left: 0;
     z-index: 0;
     pointer-events: none;
+    overflow: hidden;
+    background-color: var(--hero-bg, #dfe5eb);
 
     video {
       width: 100%;
@@ -83,6 +86,18 @@
       display: block;
       object-fit: cover;
       z-index: 0;
+      -webkit-mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%);
+      -webkit-mask-composite: destination-in;
+      mask-image:
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%),
+        linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.5) 8%, black 22%);
+      mask-composite: intersect;
     }
   }
 }

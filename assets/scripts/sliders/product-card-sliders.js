@@ -32,7 +32,9 @@
   function updateHeroBackground(slide) {
     if (!slide) return;
     const colorKey = slide.dataset.bgColor || 'default';
-    heroSection.style.backgroundColor = getColorByKey(colorKey);
+    const color = getColorByKey(colorKey);
+    heroSection.style.backgroundColor = color;
+    heroSection.style.setProperty('--hero-bg', color);
   }
 
   function applyAsideSlideBackgrounds() {
