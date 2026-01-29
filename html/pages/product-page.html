@@ -67,7 +67,8 @@
                 <div class="swiper-slide" data-bg-color="default">
                   <!-- тут может быть видео вместо картинки -->
                   <div class="product-card-main-slider__video-bg">
-                    <video autoplay loop muted playsinline preload poster="./assets/img/product-card-main-slider/video.jpg">
+                    <video autoplay loop muted playsinline preload
+                      poster="./assets/img/product-card-main-slider/video.jpg">
                       <source src="/assets/img/product-card-main-slider/1-1920.mp4" type="video/mp4">
                     </video>
                   </div>
@@ -124,6 +125,14 @@
                 <div class="swiper-slide">
                   <button class="product-card-aside-slider__card" type="button" data-bg-color="default">
                     <img src="./assets/img/product-card-main-slider/video.jpg" alt="#" />
+                    <!-- если карточка с видео файлом - добавляем элемент с иконкой play  -->
+                    <span class="product-card-aside-slider__icon">
+                      <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M1 18.2765V3.72445C1 2.52449 1 1.92385 1.25347 1.56881C1.47469 1.25894 1.81567 1.05549 2.19422 1.00685C2.62779 0.951142 3.15957 1.23368 4.22159 1.79797L17.9157 9.07402L17.9207 9.07621C19.0943 9.69981 19.6814 10.0118 19.874 10.4275C20.042 10.7902 20.042 11.2089 19.874 11.5716C19.6811 11.988 19.0927 12.3012 17.9157 12.9265L4.22159 20.2026C3.15881 20.7673 2.62795 21.0487 2.19422 20.993C1.81567 20.9444 1.47469 20.7409 1.25347 20.4311C1 20.076 1 19.4765 1 18.2765Z"
+                          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
                   </button>
                 </div>
                 <div class="swiper-slide">
