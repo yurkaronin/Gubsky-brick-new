@@ -1,35 +1,71 @@
-document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded', function () {
   const heroSection = document.querySelector('.product-card-hero');
+  const mainSliderEl = document.querySelector('.product-card-main-slider .swiper');
+  const asideSliderEl = document.querySelector('.product-card-aside-slider .swiper');
   const DURATION = 500;
 
-  // Все цвета здесь - ключи совпадают с data-bg-color
-  const COLORS = {
-    default: '#dfe5eb',     // базовый цвет
-    'mod-1': '#f1f0ee',     // первый вариант фона
-    'mod-2': '#ffffff',     // второй вариант фона
-    'mod-3': '#f5f5f5',     // третий вариант (если понадобится)
-    'video': '#000000'      // специальный цвет для видео
-  };
-
-  // Настраиваем плавный переход
-  heroSection.style.transition = `background-color ${DURATION}ms ease`;
-
-  // Функция для обновления фона
-  function updateBackground(slide) {
-    // Получаем значение data-атрибута
-    const colorKey = slide.dataset.bgColor || 'default';
-
-    // Получаем цвет из конфига или используем дефолтный
-    const color = COLORS[colorKey] || COLORS.default;
-
-    // Применяем цвет
-    heroSection.style.backgroundColor = color;
+  if (!heroSection || !mainSliderEl || !asideSliderEl) {
+    return;
   }
 
-  // Инициализация слайдера
-  const slider = new Swiper('.product-card-main-slider .swiper', {
+  // Centralized colors (keys match data-bg-color)
+  const COLORS = {
+    default: '#dfe5eb',
+    'mod-1': '#f1f0ee',
+    'mod-2': '#ffffff',
+    'mod-3': '#f5f5f5',
+    'video': '#000000'
+  };
+
+  heroSection.style.transition = `background-color ${DURATION}ms ease`;
+
+  function getColorByKey(colorKey) {
+    return COLORS[colorKey] || COLORS.default;
+  }
+
+  function applyBackgroundFromData(element) {
+    if (!element) return;
+    const colorKey = element.dataset.bgColor || 'default';
+    element.style.backgroundColor = getColorByKey(colorKey);
+  }
+
+  function updateHeroBackground(slide) {
+    if (!slide) return;
+    const colorKey = slide.dataset.bgColor || 'default';
+    heroSection.style.backgroundColor = getColorByKey(colorKey);
+  }
+
+  function applyAsideSlideBackgrounds() {
+    const asideCards = asideSliderEl.querySelectorAll('[data-bg-color]');
+    asideCards.forEach(applyBackgroundFromData);
+  }
+
+  function setAsideActiveByRealIndex(realIndex) {
+    const slides = asideSlider.slides;
+    if (!slides || Number.isNaN(realIndex)) return;
+
+    slides.forEach((slide) => {
+      const button = slide.querySelector('.product-card-aside-slider__card');
+      if (!button) return;
+      const isActive = Number(slide.dataset.swiperSlideIndex) === realIndex;
+      slide.classList.toggle('is-active', isActive);
+      button.classList.toggle('is-active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  const asideSlider = new Swiper('.product-card-aside-slider .swiper', {
+    direction: 'vertical',
     loop: true,
-    effect: "fade",
+    spaceBetween: 16,
+    slidesPerView: 5,
+    watchSlidesProgress: true,
+    centeredSlides: false,
+  });
+
+  const mainSlider = new Swiper('.product-card-main-slider .swiper', {
+    loop: true,
+    effect: 'fade',
     speed: DURATION,
 
     pagination: {
@@ -42,36 +78,38 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     on: {
-      // При инициализации
       init: function () {
-        updateBackground(this.slides[this.activeIndex]);
+        updateHeroBackground(this.slides[this.activeIndex]);
+        applyAsideSlideBackgrounds();
+        setAsideActiveByRealIndex(this.realIndex);
       },
 
-      // В начале перехода слайда
       slideChangeTransitionStart: function () {
-        updateBackground(this.slides[this.activeIndex]);
+        updateHeroBackground(this.slides[this.activeIndex]);
+        setAsideActiveByRealIndex(this.realIndex);
       },
 
-      // Для надежности - при завершении перехода
       slideChangeTransitionEnd: function () {
-        updateBackground(this.slides[this.activeIndex]);
+        updateHeroBackground(this.slides[this.activeIndex]);
       }
     }
   });
 
-  // Опционально: для отладки можно вывести объект в глобальную область
-  window.sliderColors = COLORS;
-  window.productSlider = slider;
-});
+  asideSliderEl.addEventListener('click', function (event) {
+    const button = event.target.closest('.product-card-aside-slider__card');
+    if (!button) return;
 
+    const slideEl = button.closest('.swiper-slide');
+    if (!slideEl) return;
 
-document.addEventListener('DOMContentLoaded', function () {
-  const productCardAsideSlider = new Swiper('.product-card-aside-slider .swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-    spaceBetween: 16,
-    slidesPerView: 5,
-
+    const realIndex = Number(slideEl.dataset.swiperSlideIndex);
+    if (!Number.isNaN(realIndex)) {
+      setAsideActiveByRealIndex(realIndex);
+      mainSlider.slideToLoop(realIndex);
+    }
   });
+
+  // Optional debug exports
+  window.sliderColors = COLORS;
+  window.productSlider = mainSlider;
 });
