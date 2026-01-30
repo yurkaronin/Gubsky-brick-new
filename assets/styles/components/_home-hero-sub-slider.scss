@@ -38,10 +38,7 @@
       transition: var(--transition);
     }
   }
-  .swiper-slide-active &__button::before {
-    border: 2px solid var(--white);
-  }
-  .is-active &__button::before {
+  .swiper-slide-thumb-active &__button::before {
     border: 2px solid var(--white);
   }
   &__image {
