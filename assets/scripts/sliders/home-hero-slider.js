@@ -17,3 +17,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.home-hero-sub-slider .swiper', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 7,
+  });
+});
