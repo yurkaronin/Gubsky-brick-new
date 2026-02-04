@@ -30,6 +30,179 @@
     </div>
   </div>
 </section>
+<!-- модальное окно с мобильным фильтром -->
+<section class="modal -full js-modal" id="modal-mobile-filter">
+
+
+  <div class="modal__body">
+    <div class="wrapper">
+      <h2 class="title-two">Фильтрация по региону</h2>
+
+      <div class="filter-group">
+        <div class="filter-group__body">
+          <div class="filter-group__grid">
+            <div class="filter-group__col">
+              <!-- Accordion: выбор региона/города -->
+              <div class="city-accordion" role="region-mobile" aria-label="Выбор региона и города">
+
+                <!-- группа аккордеон -->
+                <div class="city-accordion__item city-accordion__item--open">
+                  <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                    aria-controls="city-accordion-panel-krasnodar-krai" id="city-accordion-trigger-krasnodar-krai">
+                    <span class="city-accordion__title">Краснодарский край</span>
+                    <span class="city-accordion__icon" aria-hidden="true"></span>
+                  </button>
+
+                  <div class="city-accordion__panel" id="city-accordion-panel-krasnodar-krai" role="region"
+                    aria-labelledby="city-accordion-trigger-krasnodar-krai">
+                    <div class="city-accordion__content">
+                      <ul class="city-accordion__list" role="list">
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="all" checked />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Все</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="anapa" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Анапа</span>
+                          </label>
+                        </li>
+
+                        <!-- ...остальные города без изменений... -->
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="armavir" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Армавир</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="belorechensk" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Белореченск</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="krasnodar" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Краснодар</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="kurganinsk" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Курганинск</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="labinsk" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Лабинск</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="afipskiy" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">п. Афипский</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="mostovskoy" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">п. Мостовской</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="sochi" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Сочи</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="ladogskaya" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">ст-ца Ладожская</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="tbilisskaya" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">ст. Тбилисская</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="ust-labinsk" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">Усть Лабинск</span>
+                          </label>
+                        </li>
+
+                        <li class="city-accordion__option">
+                          <label class="city-accordion__label">
+                            <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
+                              value="krasnaya-polyana" />
+                            <span class="city-accordion__checkmark" aria-hidden="true"></span>
+                            <span class="city-accordion__text">х. Красная поляна</span>
+                          </label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <button class="button-close js-close-modal" type="button" title="Закрыть окно"></button>
+    </div>
+
+
+  </div>
+
+</section>
 
 <!-- модальное окно с длинным отзывом-->
 <section class="modal js-modal" id="modal-review-details">
@@ -100,7 +273,8 @@
             </div>
           </div>
           <div class="cookie-alert__col -text">
-            <p class="cookie-alert__text">Этот сайт использует cookie для хранения данных. Продолжая работать, вы даете согласие на работу с этими
+            <p class="cookie-alert__text">Этот сайт использует cookie для хранения данных. Продолжая работать, вы даете
+              согласие на работу с этими
               файлами и даете согласие на <a href="#">обработку персональных данных</a></p>
           </div>
           <div class="cookie-alert__col -button">

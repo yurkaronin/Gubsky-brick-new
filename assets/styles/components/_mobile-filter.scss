@@ -1,0 +1,122 @@
+.mobile-filter {
+  padding: 12px;
+  border-radius: 40px;
+  background-color: rgba(176, 163, 147, 0.2);
+  & + * {
+    margin-top: 32px;
+    @media (max-width: 767px) {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 767px) {
+    padding: 10px;
+  }
+}
+
+.mobile-filter-header {
+  &__grid {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    width: 100%;
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+  &__col {
+    &.-left {
+      display: flex;
+      align-items: center;
+      max-width: max-content;
+    }
+  }
+
+  .mobile-filter-selected-options {
+    margin-left: auto;
+  }
+}
+
+.mobile-filter-selected-options {
+  padding: 12px 12px;
+  border-radius: 40px;
+  background-color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: max-content;
+  &__grid {
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      display: block;
+      background-color: var(--border-color);
+      left: 50%;
+    }
+  }
+  &__col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 12px;
+  }
+  &__text {
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--grey);
+    b {
+      color: var(--dark);
+      font-weight: 700;
+    }
+  }
+}
+
+.mobile-filter-button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  max-width: max-content;
+  padding: 0;
+  transition: var(--transition);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--dark);
+  &:hover {
+    color: var(--brand-color-1);
+  }
+
+  &__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--brand-color-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__label {
+  }
+}

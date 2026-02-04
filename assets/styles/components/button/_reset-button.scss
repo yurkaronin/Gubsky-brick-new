@@ -1,0 +1,30 @@
+.reset-button {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 167%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--red);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  max-width: max-content;
+  padding: 0;
+  &__text {
+    position: relative;
+  }
+  &__icon {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    svg {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}

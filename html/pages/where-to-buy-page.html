@@ -16,10 +16,9 @@
   <div class="wrapper">
     <div class="left-sidebar-and-main">
       <div class="left-sidebar-and-main__grid">
-        <div class="left-sidebar-and-main__col -sidebar">
+        <div class="left-sidebar-and-main__col -sidebar laptop-hide tablet-hide mobile-hide">
 
-          <div class="aside-group laptop-hide tablet-hide mobile-hide">
-
+          <div class="aside-group">
             <!-- Accordion: выбор региона/города -->
             <div class="city-accordion" role="region" aria-label="Выбор региона и города">
 
@@ -171,6 +170,53 @@
           </div>
         </div>
         <div class="left-sidebar-and-main__col -main">
+
+          <!-- мобильный фильтр  -->
+          <div class="mobile-filter">
+            <div class="mobile-filter-header">
+              <div class="mobile-filter-header__grid">
+                <div class="mobile-filter-header__col -left">
+                  <!-- Кнопка вызова диалогового окна с параметрами фильтра  -->
+                  <button class="mobile-filter-button" type="button" data-target="modal-mobile-filter">
+                    <span class="mobile-filter-button__icon">
+                      <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M17 2.66087C17 2.07955 16.9996 1.78867 16.8906 1.56663C16.7948 1.37132 16.6423 1.21265 16.4542 1.11313C16.2403 1 15.9597 1 15.3996 1H2.59961C2.03956 1 1.75981 1 1.5459 1.11313C1.35774 1.21265 1.20487 1.37132 1.10899 1.56663C1 1.78867 1 2.07955 1 2.66087V3.42614C1 3.68002 1 3.80705 1.02763 3.92651C1.05213 4.03242 1.09263 4.13359 1.14746 4.22646C1.20928 4.33118 1.29591 4.4211 1.46875 4.6005L6.53149 9.85554C6.70443 10.0351 6.79044 10.1243 6.85228 10.2291C6.90711 10.3219 6.94816 10.4235 6.97266 10.5294C7 10.6476 7 10.7731 7 11.0219V15.9584C7 16.8481 7 17.2933 7.18054 17.5613C7.33819 17.7952 7.5814 17.9513 7.85352 17.993C8.16514 18.0408 8.54871 17.842 9.31543 17.4441L10.1154 17.0289C10.4365 16.8623 10.5966 16.7787 10.7139 16.6544C10.8176 16.5445 10.897 16.4125 10.9453 16.267C11 16.1025 11 15.9158 11 15.5432V11.0296C11 10.7757 11 10.6488 11.0276 10.5294C11.0521 10.4235 11.0926 10.3219 11.1475 10.2291C11.2089 10.125 11.2947 10.036 11.4653 9.85886L11.4688 9.85554L16.5315 4.6005C16.7044 4.42098 16.7904 4.33121 16.8523 4.22646C16.9071 4.13359 16.9482 4.03242 16.9727 3.92651C17 3.80827 17 3.6826 17 3.43386V2.66087Z"
+                          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+
+                    <span class="mobile-filter-button__label">Фильтрация по региону</span>
+                  </button>
+
+                </div>
+                <div class="mobile-filter-header__col -right mobile-hide">
+                  <!-- список выбранных параметров у фильтра  -->
+                  <div class="mobile-filter-selected-options">
+                    <div class="mobile-filter-selected-options__grid">
+                      <div class="mobile-filter-selected-options__col"><span
+                          class="mobile-filter-selected-options__text">Фильтров: <b>2</b></span></div>
+                      <div class="mobile-filter-selected-options__col">
+                        <button class="reset-button">
+                          <span class="reset-button__text">Очистить</span>
+                          <span class="reset-button__icon">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <path d="M16.9999 16.9999L9 9M9 9L1 1M9 9L17 1M9 9L1 17" stroke="#C4161C" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mobile-filter__header"></div>
+          </div>
 
           <!-- группа  с анонсами карточек  -->
           <div class="shop-preview-group">
