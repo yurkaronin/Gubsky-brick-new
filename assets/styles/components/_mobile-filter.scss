@@ -2,12 +2,11 @@
   padding: 12px;
   border-radius: 40px;
   background-color: rgba(176, 163, 147, 0.2);
-  & + * {
-    margin-top: 32px;
-    @media (max-width: 767px) {
-      margin-top: 20px;
-    }
+  margin-bottom: 32px;
+  @media (max-width: 767px) {
+    margin-bottom: 20px;
   }
+
   @media (max-width: 767px) {
     padding: 10px;
   }
@@ -118,5 +117,14 @@
     }
   }
   &__label {
+  }
+}
+
+#modal-mobile-filter {
+  .city-accordion__list {
+    max-height: 40svh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 }

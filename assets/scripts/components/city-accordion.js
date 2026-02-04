@@ -1,46 +1,72 @@
 (() => {
-  const item = document.querySelector('#city-accordion-trigger-krasnodar-krai')?.closest('.city-accordion__item');
-  if (!item) return;
+  const OPEN_FIRST_IN_FILTER_GROUP = true;
 
-  const trigger = item.querySelector('.city-accordion__trigger');
-  const panel = item.querySelector('.city-accordion__panel');
-  if (!trigger || !panel) return;
+  const accordions = document.querySelectorAll('.city-accordion');
+  if (!accordions.length) return;
 
-  // -------- accordion (только для этой группы) --------
-  const setOpen = (open) => {
-    item.classList.toggle('city-accordion__item--open', open);
-    trigger.setAttribute('aria-expanded', String(open));
+  accordions.forEach((accordion) => {
+    const items = accordion.querySelectorAll('.city-accordion__item');
+    if (!items.length) return;
 
-    if (open) panel.removeAttribute('hidden');
-    else panel.setAttribute('hidden', '');
-  };
+    const itemControllers = [];
 
-  // init from markup
-  setOpen(trigger.getAttribute('aria-expanded') === 'true');
+    items.forEach((item) => {
+      const trigger = item.querySelector('.city-accordion__trigger');
+      const panel = item.querySelector('.city-accordion__panel');
+      if (!trigger || !panel) return;
 
-  trigger.addEventListener('click', () => {
-    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-    setOpen(!isOpen);
-  });
+      // -------- accordion --------
+      const setOpen = (open) => {
+        item.classList.toggle('city-accordion__item--open', open);
+        trigger.setAttribute('aria-expanded', String(open));
 
-  // -------- checkbox logic (только для этой группы) --------
-  const checkboxes = Array.from(panel.querySelectorAll('.city-accordion__checkbox'));
-  const all = checkboxes.find((cb) => cb.value === 'all');
-  const cities = checkboxes.filter((cb) => cb !== all);
+        if (open) panel.removeAttribute('hidden');
+        else panel.setAttribute('hidden', '');
+      };
 
-  if (!all) return;
+      // init from markup
+      setOpen(trigger.getAttribute('aria-expanded') === 'true');
 
-  const setCitiesChecked = (checked) => {
-    cities.forEach((c) => (c.checked = checked));
-  };
+      trigger.addEventListener('click', () => {
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        setOpen(!isOpen);
+      });
 
-  panel.addEventListener('change', (e) => {
-    const cb = e.target.closest('.city-accordion__checkbox');
-    if (!cb) return;
+      // -------- checkbox logic --------
+      const checkboxes = Array.from(panel.querySelectorAll('.city-accordion__checkbox'));
+      const all = checkboxes.find((cb) => cb.value === 'all');
+      const cities = checkboxes.filter((cb) => cb !== all);
 
-    // Важно: "Все" меняет города, города "Все" НЕ трогают
-    if (cb === all) {
-      setCitiesChecked(all.checked);
+      if (!all) return;
+
+      const setCitiesChecked = (checked) => {
+        cities.forEach((c) => (c.checked = checked));
+      };
+
+      panel.addEventListener('change', (e) => {
+        const cb = e.target.closest('.city-accordion__checkbox');
+        if (!cb) return;
+
+        // Важно: "Все" меняет города, города "Все" НЕ трогают
+        if (cb === all) {
+          setCitiesChecked(all.checked);
+        }
+      });
+
+      itemControllers.push({ setOpen, trigger, panel });
+    });
+
+    if (!itemControllers.length) return;
+
+    const isInFilterGroup = Boolean(accordion.closest('.filter-group'));
+    if (isInFilterGroup) {
+      if (OPEN_FIRST_IN_FILTER_GROUP) {
+        itemControllers.forEach((ctrl, index) => {
+          ctrl.setOpen(index === 0);
+        });
+      } else {
+        itemControllers.forEach((ctrl) => ctrl.setOpen(false));
+      }
     }
   });
 })();
