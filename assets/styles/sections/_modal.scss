@@ -53,6 +53,17 @@
     .button-close {
       top: 48px;
       right: 48px;
+      @media (max-width: 1023px) {
+        top: 40px;
+        right: 40px;
+      }
+      @media (max-width: 767px) {
+        top: 20px;
+        right: 20px;
+      }
+    }
+    .title-two {
+      padding-right: 50px;
     }
   }
   &.-full &__body {
@@ -61,6 +72,12 @@
     height: 100%;
     display: block;
     padding: 48px;
+    @media (max-width: 1023px) {
+      padding: 40px;
+    }
+    @media (max-width: 767px) {
+      padding: 20px;
+    }
   }
   .title-two {
     margin-bottom: 12px;
@@ -120,5 +137,15 @@
     margin-top: auto;
     align-items: flex-end;
     margin-bottom: 16px;
+  }
+
+  .filter-group {
+    margin-bottom: 32px;
+  }
+
+  .mobile-filter-selected-options {
+    max-width: max-content;
+    margin: 0 auto;
+    margin-top: auto;
   }
 }

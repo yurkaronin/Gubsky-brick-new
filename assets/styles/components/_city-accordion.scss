@@ -8,11 +8,11 @@
   overflow: hidden;
 
   & + & {
-    border-top: 1px solid var(--border-color);
+    // border-top: 1px solid var(--border-color);
   }
 
   &--open {
-    border-color: rgba(230, 121, 23, 0.35);
+    // border-color: rgba(230, 121, 23, 0.35);
 
     .city-accordion__icon::before {
       transform: rotate(-135deg);
@@ -76,7 +76,7 @@
 
 /* panel/content */
 .city-accordion__panel {
-  border-top: 1px solid rgba(93, 104, 115, 0.15);
+  // border-top: 1px solid rgba(93, 104, 115, 0.15);
 }
 
 .city-accordion__content {
