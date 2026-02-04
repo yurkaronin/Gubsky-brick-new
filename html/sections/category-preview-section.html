@@ -7,53 +7,138 @@
         <div class="category-sorter__grid">
           <div class="category-sorter__col">
 
-            <div class="custom-select">
 
-              <label for="brick-color">Цвет кирпича:</label>
-              <div class="custom-select__wrapper">
-                <select id="brick-color" name="brick-colors" multiple multiple size="1">
-                  <option value="бежевый" selected>Бежевый</option>
-                  <option value="белый">Белый</option>
-                  <option value="бордовый">Бордовый</option>
-                  <option value="желтый">Желтый</option>
-                  <option value="зеленый">Зеленый</option>
-                  <option value="коричневый">Коричневый</option>
-                  <option value="красный" selected>Красный</option>
-                  <option value="оранжевый">Оранжевый</option>
-                  <option value="розовый">Розовый</option>
-                  <option value="серый">Серый</option>
-                  <option value="синий">Синий</option>
-                  <option value="фиолетовый">Фиолетовый</option>
-                  <option value="черный">Черный</option>
-                </select>
+
+            <div class="custom-select" data-custom-select>
+              <button class="custom-select__control" type="button" aria-haspopup="listbox" aria-expanded="false"
+                data-custom-select-control>
+                <span class="custom-select__label" data-custom-select-label>Выберите цвет</span>
+
+                <span class="custom-select__icon" aria-hidden="true">
+                  <svg class="custom-select__chevron" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </button>
+
+              <div class="custom-select__dropdown" role="listbox" tabindex="-1" aria-label="Выберите цвет"
+                data-custom-select-dropdown>
+                <!-- Скролл только тут -->
+                <div class="custom-select__list" data-custom-select-list>
+                  <button class="custom-select__option is-selected" type="button" role="option"
+                    data-custom-select-option data-value="">
+                    Любой цвет
+                  </button>
+
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="black">Чёрный</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="red">Красный</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="brown">Коричневый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="sand">Песочный</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="gray">Серый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="graphite">Графит</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="beige">Бежевый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="yellow">Жёлтый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="blue">Синий</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="green">Зелёный</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="olive">Оливковый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="terracotta">Терракотовый</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="coffee">Кофейный</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="chocolate">Шоколад</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="mint">Мятный</button>
+                </div>
               </div>
+
+              <!-- Для форм (опционально) -->
+              <input type="hidden" name="color" value="" data-custom-select-input />
             </div>
           </div>
           <div class="category-sorter__col">
-            <div class="custom-select">
-              <label for="brick-size">Выберите размер кирпича:</label>
-              <div class="custom-select__wrapper">
-                <select id="brick-size" name="size" multiple multiple size="1">
-                  <option value="">Выберите размер</option>
-                  <option value="single">Одинарный (250×120×65 мм)</option>
-                  <option value="one-and-a-half">Полуторный (250×120×88 мм)</option>
-                  <option value="double">Двойной (250×120×138 мм)</option>
-                  <option value="euro">Евро (250×85×65 мм)</option>
-                  <option value="modular">Модульный (288×138×65 мм)</option>
-                  <option value="thin">Тонкий (250×60×65 мм)</option>
-                </select>
+
+
+
+            <div class="custom-select" data-custom-select>
+              <button class="custom-select__control" type="button" aria-haspopup="listbox" aria-expanded="false"
+                data-custom-select-control>
+                <span class="custom-select__label" data-custom-select-label>Выберите размер кирпича:</span>
+
+                <span class="custom-select__icon" aria-hidden="true">
+                  <svg class="custom-select__chevron" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </button>
+
+              <div class="custom-select__dropdown" role="listbox" tabindex="-1" aria-label="Выберите размер кирпича"
+                data-custom-select-dropdown>
+                <!-- Скролл только тут -->
+                <div class="custom-select__list" data-custom-select-list>
+                  <button class="custom-select__option is-selected" type="button" role="option"
+                    data-custom-select-option data-value="">
+                    Любой размер
+                  </button>
+
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="single">Одинарный (250×120×65 мм)</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="one-and-a-half">Полуторный (250×120×88 мм)</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="double">Двойной (250×120×138 мм)</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="euro">Евро (250×85×65 мм)</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="modular">Модульный (288×138×65 мм)</button>
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="thin">Тонкий (250×60×65 мм)</button>
+                </div>
               </div>
+
+              <!-- Для форм (опционально) -->
+              <input type="hidden" name="size" value="" data-custom-select-input />
             </div>
           </div>
           <div class="category-sorter__col">
-            <div class="custom-select">
-              <label for="sort-option">Сортировка:</label>
-              <div class="custom-select__wrapper">
-                <select id="sort-option" name="sort">
-                  <option value="price_asc">по возрастанию цены</option>
-                  <option value="price_desc">по убыванию цены</option>
-                </select>
+            <div class="custom-select" data-custom-select>
+              <button class="custom-select__control" type="button" aria-haspopup="listbox" aria-expanded="false"
+                data-custom-select-control>
+                <span class="custom-select__label" data-custom-select-label>Сортировка:</span>
+
+                <span class="custom-select__icon" aria-hidden="true">
+                  <svg class="custom-select__chevron" viewBox="0 0 24 24">
+                    <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </button>
+
+              <div class="custom-select__dropdown" role="listbox" tabindex="-1" aria-label="Сортировка товаров"
+                data-custom-select-dropdown>
+                <div class="custom-select__list" data-custom-select-list>
+                  <button class="custom-select__option is-selected" type="button" role="option"
+                    data-custom-select-option data-value="price_asc">
+                    по возрастанию цены
+                  </button>
+
+                  <button class="custom-select__option" type="button" role="option" data-custom-select-option
+                    data-value="price_desc">по убыванию цены</button>
+                </div>
               </div>
+
+              <!-- Для форм (опционально) -->
+              <input type="hidden" name="sort" value="price_asc" data-custom-select-input />
             </div>
           </div>
         </div>

@@ -1,86 +1,248 @@
+:root {
+  --cs-bg: #f6f0ee;
+  --cs-muted: #777;
+  --cs-panel: #fff;
+  --cs-line: #e7e1df;
+  --cs-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+  --cs-radius-pill: 999px;
+
+  // --cs-dropdown-gap: 10px;
+  --cs-list-max: 282px;
+}
+
+// * { box-sizing: border-box; }
+
+// body {
+//   margin: 0;
+//   padding: 36px;
+//   background: var(--cs-bg);
+//   color: var(--dark);
+//   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+// }
+
 .custom-select {
-  label {
-    display: block;
-    margin-bottom: 12px;
-    margin-top: 0;
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--dark-70);
-  }
+  position: relative;
+  width: 100%;
+  z-index: 9;
+}
 
-  &__wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    &::after {
-      content: "";
-      position: absolute;
-      display: flex;
-      top: 8px;
-      right: 8px;
-      bottom: 8px;
-      width: 40px;
-      height: 40px;
-      background-color: var(--brand-color-1);
-      pointer-events: none; /* Чтобы не мешала клику */
-      z-index: 2;
-      border-radius: 50%;
-      background-image: url(../svg/custom-select-button.svg);
-      background-repeat: no-repeat;
+/* control */
+.custom-select__control {
+  width: 100%;
+  height: 48px;
+  padding: 4px;
+  padding-left: 24px;
+  border: none;
+  border-radius: 24px;
+  background-color: transparent;
+  color: var(--dark);
+  cursor: pointer;
 
-    }
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 
-  select {
-    border-radius: 32px;
-    padding: 0 24px;
-    width: 100%;
-    height: 56px;
-    background-color: var(--white);
-    border: none;
-    color: var(--dark-90);
-    cursor: pointer;
-    appearance: none; /* Убираем стандартную стрелку */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    @media (max-width: 767px) {
-      height: 50px;
-    }
-  }
-
-  /* Кастомная стрелка */
-
-  /* Для фокуса */
-  select:focus {
+  &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    box-shadow: none;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid var(--orange);
+    border-radius: 24px;
+    transition: var(--transition);
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+.custom-select__label {
+  font-size: 16px;
+  line-height: 1;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.custom-select__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: grid;
+  place-items: center;
+  flex: 0 0 40px;
+}
+
+.custom-select__chevron {
+  width: 22px;
+  height: 22px;
+  color: #fff;
+  transition: var(--transition);
+}
+
+/* open state */
+.custom-select.is-open .custom-select__chevron {
+  transform: rotate(180deg);
+}
+
+.custom-select__dropdown {
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  /* по умолчанию вниз */
+  top: calc(100% - 1px);
+  background: var(--cs-panel);
+  border-radius: 24px;
+  padding: 0;
+  /* скрыто */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: var(--transition);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 4px solid var(--orange);
+    border-top: 0;
+    border-radius: 0 0 24px 24px;
+    transition: var(--transition);
+    background-color: transparent;
+    pointer-events: none;
+    z-index: 2;
+
+  }
+}
+
+/* когда открыто */
+.custom-select.is-open .custom-select__dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* автопозиционирование вверх */
+.custom-select.is-top .custom-select__dropdown {
+  top: auto;
+  bottom: 100%;
+}
+
+/* анимация для случая "вверх": чуть меняем направление смещения */
+.custom-select.is-top .custom-select__dropdown {
+  transform: translateY(6px);
+}
+.custom-select.is-open.is-top .custom-select__dropdown {
+  transform: translateY(0);
+}
+
+/* внутренний список со скроллом */
+.custom-select__list {
+  max-height: var(--cs-list-max);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(224, 122, 31, 0.55) transparent;
+
+  /* Chrome/Edge/Safari */
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 12px 0; /* чтобы не упираться в радиусы */
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(224, 122, 31, 0.45);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(224, 122, 31, 0.65);
+    background-clip: content-box;
+  }
+}
+
+/* опции */
+.custom-select__option {
+  width: 100%;
+  padding: 10px 24px;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  font-size: 16px;
+  color: var(--dark);
+  cursor: pointer;
+
+  /* плавность появления опций */
+  opacity: 0;
+  transform: translateY(6px);
+  transition: var(--transition);
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--cs-line);
   }
 
-  /* Стили для опций в выпадающем списке */
-  select option {
-    padding: 12px 24px;
-    font-size: 16px;
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    background: rgba(224, 122, 31, 0.1);
   }
 
-  /* Для выделенных опций (если multiple) */
-  select option:checked {
-    background-color: var(--brand-color-1);
-    color: white;
+  &.is-selected {
+    background: #f8f2f1;
   }
 
-  /* Ховер состояние */
-  select:hover {
-    background-color: var(--light-bg, #f8f9fa);
-  }
+}
 
-  /* Если нужно скрыть стандартную стрелку в IE */
-  select::-ms-expand {
-    display: none;
-  }
+/* когда открыто — "проявляем" опции */
+.custom-select.is-open .custom-select__option {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  option {
-    display: flex;
-    align-items: center;
+/* небольшая каскадность (приятнее, но не обязательно) */
+.custom-select.is-open .custom-select__option {
+  transition-delay: var(--cs-option-delay, 0ms);
+}
+
+.custom-select.is-open {
+  .custom-select__control {
+    border-radius: 24px 24px 0 0;
+  }
+  .custom-select__control::before {
+    border: 4px solid var(--orange);
+    border-bottom: 4px solid transparent;
+    border-radius: 24px 24px 0 0;
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+
+  }
+  .custom-select__dropdown {
+    border-radius: 0 0 24px 24px;
+  }
+  .custom-select__dropdown::before {
+    right: -2px;
+    // bottom: -2px;
+    left: -2px;
   }
 }
