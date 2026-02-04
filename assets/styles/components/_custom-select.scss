@@ -34,7 +34,7 @@
   padding-left: 24px;
   border: none;
   border-radius: 24px;
-  background-color: transparent;
+  background-color: var(--white);
   color: var(--dark);
   cursor: pointer;
 
@@ -101,7 +101,7 @@
 
   /* по умолчанию вниз */
   top: calc(100% - 1px);
-  background: var(--cs-panel);
+  background-color: var(--white);
   border-radius: 24px;
   padding: 0;
   /* скрыто */
@@ -154,7 +154,7 @@
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
 
   /* Firefox */
   scrollbar-width: thin;
