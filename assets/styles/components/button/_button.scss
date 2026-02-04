@@ -81,6 +81,30 @@
     }
   }
 
+  &.-big {
+    min-width: 737px;
+    text-align: center;
+    justify-content: center;
+    min-height: 72px;
+    font-weight: 400;
+    @media (max-width: 1379px) {
+      min-width: 610px;
+    }
+    @media (max-width: 1023px) {
+      min-width: 448px;
+    }
+    @media (max-width: 767px) {
+      min-width: initial;
+      width: 100%;
+      max-width: 100%;
+      min-height: 60px;
+    }
+  }
+  &.-big &__text {
+    @media (max-width: 767px) {
+      text-align: left;
+    }
+  }
 
   &.-prev &__icon {
     order: -1;
@@ -218,7 +242,6 @@
     width: 100%;
     text-align: center;
     justify-content: center;
-
   }
 
   &:hover,

@@ -1,0 +1,41 @@
+.add-button {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--brand-color-1);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: max-content;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  &:hover &__text {
+    text-decoration: underline;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+  }
+
+  &__text {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  &.-red {
+    color: var(--accent-color-1);
+  }
+  &.-reverse &__icon {
+    order: 10;
+    margin-right: 0;
+    margin-left: 12px;
+  }
+}
