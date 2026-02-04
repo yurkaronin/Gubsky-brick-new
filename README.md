@@ -9,6 +9,10 @@ npm start
 
 Локальный сервер: http://localhost:3000
 
+## Требования
+
+- Node.js >= 14.0.0
+
 ## Команды (кратко)
 
 ```bash
@@ -25,7 +29,15 @@ npm run build:prod:continue
 
 npm run clean             # удалить сгенерированные HTML
 
+npm run test:build         # проверить dev-сборку
+npm run test:prod          # проверить production-сборку
+
 ```
+
+## Куда пишется сборка
+
+- `npm run build` — HTML в корень проекта (с сохранением подкаталогов из `html/pages/**`)
+- `npm run build:prod` — HTML в `dist/`, статика копируется в `dist/assets/`
 
 ## Деплой и base href
 
@@ -59,6 +71,19 @@ npm run build:prod:base
 - Компоненты/секции: html/components, html/sections
 - Готовые HTML пишутся в корень проекта
 - В production включена минификация HTML/CSS/JS
+- В production `assets/` копируется в `dist/assets/` без `.scss` и `.map`
+
+## Watch (отслеживание)
+
+- Следит только за `html/**/*.html`
+- Изменения в `assets/` не триггерят пересборку (файлы просто отдаются сервером)
+- Если менялись `tasks/*.js`, перезапусти `npm start`
+
+## Что делает clean
+
+- Удаляет `dist/` целиком
+- Удаляет сгенерированные `.html` в корне и в созданных подкаталогах
+- Не трогает `html/`, `assets/`, `tasks/`, `node_modules/`
 
 ## Если что-то пошло не так
 
