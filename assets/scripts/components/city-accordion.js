@@ -1,5 +1,5 @@
 (() => {
-  const OPEN_FIRST_IN_FILTER_GROUP = true;
+  const OPEN_FIRST_IN_FILTER_GROUP = false;
 
   const accordions = document.querySelectorAll('.city-accordion');
   if (!accordions.length) return;
@@ -37,6 +37,8 @@
       const all = checkboxes.find((cb) => cb.value === 'all');
       const cities = checkboxes.filter((cb) => cb !== all);
 
+      itemControllers.push({ setOpen, trigger, panel });
+
       if (!all) return;
 
       const setCitiesChecked = (checked) => {
@@ -52,8 +54,6 @@
           setCitiesChecked(all.checked);
         }
       });
-
-      itemControllers.push({ setOpen, trigger, panel });
     });
 
     if (!itemControllers.length) return;
