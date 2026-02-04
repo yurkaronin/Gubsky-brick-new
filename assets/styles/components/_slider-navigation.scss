@@ -6,6 +6,9 @@
     align-items: center;
     max-width: max-content;
   }
+  &__center {
+    min-width: 0;
+  }
 
   .swiper-button {
     position: relative;

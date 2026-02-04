@@ -1,0 +1,70 @@
+.home-hero-sub-slider {
+
+  .swiper {
+    width: calc(3 * (64px + 16px));
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  .swiper-slide {
+    padding: 6px;
+  }
+
+  .swiper-slide:hover &__button::before {
+    border: 2px solid var(--white);
+  }
+
+  &__button {
+    display: block;
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    padding: 0;
+    cursor: pointer;
+    @media (max-width: 767px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      bottom: -6px;
+      left: -6px;
+      transition: var(--transition);
+      @media (max-width: 767px) {
+        top: -4px;
+        right: -4px;
+        bottom: -4px;
+        left: -4px;
+      }
+    }
+  }
+  .swiper-slide-thumb-active &__button::before {
+    border: 2px solid var(--white);
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

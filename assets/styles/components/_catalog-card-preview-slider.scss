@@ -1,0 +1,47 @@
+.catalog-card-preview-slider {
+  width: 100%;
+  background-color: #f2f1ef;
+  // border: 1px solid;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  margin-bottom: 16px;
+  height: 248px;
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    height: 100%;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .swiper-pagination {
+    max-width: max-content;
+    margin-right: auto;
+    margin-left: 16px;
+  }
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+    background: var(--dark);
+    border: 4px solid #fff;
+    width: 16px;
+    height: 16px;
+    margin: 0 8px;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    outline: 2px solid transparent;
+    transition: var(--transition);
+  }
+  .swiper-pagination-bullet-active {
+    outline: 2px solid var(--brand-color-1);
+    outline-offset: 0px;
+  }
+}
