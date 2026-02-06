@@ -126,6 +126,7 @@
 
 
 @use "components/custom-select";
+@use "components/dropdown";
 
 @use "components/catalog-products-preview";
 @use "components/catalog-card-preview";
@@ -211,3 +212,4 @@
 
 @media (max-width: 374px) {
 }
+

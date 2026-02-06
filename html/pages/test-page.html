@@ -5,6 +5,64 @@
 <section class="section tech-section">
   <div class="wrapper">
 
+    <!-- Dropdown (BEM) -->
+    <div class="dropdown" data-dropdown>
+      <!-- Кнопка-триггер -->
+      <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="dropdown__value" data-dropdown-value>Выберите кирпич</span>
+        <span class="dropdown__icon" aria-hidden="true">
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- Выпадающий список -->
+      <div class="dropdown__menu" hidden>
+        <ul class="dropdown__list" role="listbox" tabindex="-1">
+          <li class="dropdown__option" role="option" tabindex="0" data-value="brick-1">
+            Название кирпича
+          </li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="brick-2">
+            Название кирпича
+          </li>
+          <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true" tabindex="-1"
+            data-value="brick-3">
+            Название кирпича
+          </li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="brick-4">
+            Название кирпича
+          </li>
+        </ul>
+      </div>
+
+      <!-- (опционально) скрытое поле для формы -->
+      <input class="dropdown__input" type="hidden" name="brick" value="brick-3">
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
     <div class="simple-flex">
 
       <div class="simple-flex__item">
@@ -158,7 +216,9 @@
           <span class="button__text">Телеграм</span>
           <span class="button__icon">
             <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M2.10237 7.96758L12.8265 3.21938C13.8844 2.72497 17.4739 1.14097 17.4739 1.14097C17.4739 1.14097 19.1315 0.448796 18.9918 2.13168C18.9458 2.82385 18.5796 5.24835 18.2098 7.8706L17.0599 15.6366C17.0599 15.6366 16.9679 16.7737 16.186 16.9715C15.4041 17.1693 14.1144 16.2793 13.8844 16.0797C13.7004 15.9313 10.4347 13.7065 9.23706 12.6188C8.91332 12.3222 8.54712 11.727 9.28306 11.0348C10.9407 9.40326 11.9185 8.37429 13.1126 7.08884C13.6664 6.49365 14.2165 5.10931 11.9167 6.79219L6.42953 10.4929C6.42953 10.4929 5.6936 10.9873 4.31195 10.5404C2.93207 10.0973 1.32221 9.50215 1.32221 9.50215C1.32221 9.50215 0.216533 8.75863 2.10237 7.96758Z" stroke="#039BE5" stroke-width="2"></path>
+              <path
+                d="M2.10237 7.96758L12.8265 3.21938C13.8844 2.72497 17.4739 1.14097 17.4739 1.14097C17.4739 1.14097 19.1315 0.448796 18.9918 2.13168C18.9458 2.82385 18.5796 5.24835 18.2098 7.8706L17.0599 15.6366C17.0599 15.6366 16.9679 16.7737 16.186 16.9715C15.4041 17.1693 14.1144 16.2793 13.8844 16.0797C13.7004 15.9313 10.4347 13.7065 9.23706 12.6188C8.91332 12.3222 8.54712 11.727 9.28306 11.0348C10.9407 9.40326 11.9185 8.37429 13.1126 7.08884C13.6664 6.49365 14.2165 5.10931 11.9167 6.79219L6.42953 10.4929C6.42953 10.4929 5.6936 10.9873 4.31195 10.5404C2.93207 10.0973 1.32221 9.50215 1.32221 9.50215C1.32221 9.50215 0.216533 8.75863 2.10237 7.96758Z"
+                stroke="#039BE5" stroke-width="2"></path>
             </svg>
           </span>
         </a>
