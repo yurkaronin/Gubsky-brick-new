@@ -36,6 +36,7 @@
 @use "components/phone";
 @use "components/contacts-card";
 @use "components/contacts-block";
+@use "components/label";
 
 
 @use "components/portfolio-list";
@@ -48,7 +49,6 @@
 @use "components/slider-thumbnails";
 
 @use "components/contact-form/contact-form";
-@use "components/contact-form/label";
 @use "components/contact-form/form-agree";
 @use "components/contact-form/input";
 

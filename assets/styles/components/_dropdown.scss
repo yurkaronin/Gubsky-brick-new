@@ -8,19 +8,14 @@
   --dd-border: #ffffff;
   --dd-accent: #f37a21;
 
-  --dd-radius: 22px;
+  --dd-radius: 24px;
   --dd-border-w: 2px;
-  --dd-control-h: 52px;
+  --dd-control-h: 56px;
+  --dd-control-h-mod: 48px;
 
   position: relative;
   width: 420px;
-  font-family:
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Arial,
-    sans-serif;
+  font-family: var(--font-family);
 
   // ===============================
   // CONTROL
@@ -34,7 +29,7 @@
     justify-content: space-between;
     gap: 16px;
 
-    padding: 0 6px 0 20px;
+    padding: 0 4px 0 20px;
 
     background: var(--dd-bg);
     border: var(--dd-border-w) solid var(--dd-border);
@@ -51,12 +46,15 @@
       outline: none;
       border-color: var(--dd-accent);
     }
+
     &:hover {
       border-color: var(--dd-accent);
+
       .dropdown__icon::before {
         scale: 1.1;
       }
     }
+
   }
 
   &__value {
@@ -85,22 +83,6 @@
       max-width: 100%;
       max-height: 100%;
     }
-
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   left: 50%;
-    //   top: 50%;
-
-    //   width: 10px;
-    //   height: 10px;
-
-    //   border-right: 2px solid #fff;
-    //   border-bottom: 2px solid #fff;
-
-    //   transform: translate(-50%, -55%) rotate(45deg);
-    //   transition: transform 0.15s ease;
-    // }
   }
 
   // ===============================
@@ -140,12 +122,12 @@
   // OPTION
   // ===============================
   &__option {
-    padding: 7px 20px;
+    padding: 10px 20px;
     font-size: 16px;
     color: var(--dd-text);
     cursor: pointer;
 
-    & + & {
+    &+& {
       border-top: 1px solid var(--dark-20);
     }
 
@@ -184,6 +166,7 @@
     .dropdown__icon::before {
       transform: translate(-50%, -45%) rotate(-135deg);
     }
+
     .dropdown__icon::before {
       scale: 1.1;
     }
@@ -198,5 +181,20 @@
     .dropdown__control {
       border-color: #e04b4b;
     }
+  }
+
+  // модификация высоты полей
+  &.-mod-height &__control {
+    height: var(--dd-control-h-mod);
+  }
+
+  &.-mod-height &__option {
+    padding: 7px 20px;
+  }
+
+  // модификация ширины
+  &.-full-w {
+    max-width: 100%;
+    width: 100%;
   }
 }

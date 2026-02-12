@@ -42,6 +42,42 @@
     </div>
     <br>
     <br>
+
+    <!-- Dropdown (BEM) -->
+    <div class="dropdown -mod-height" data-dropdown>
+      <!-- Кнопка-триггер -->
+      <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+        <span class="dropdown__value" data-dropdown-value>Выберите кирпич</span>
+        <span class="dropdown__icon" aria-hidden="true">
+          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+
+      <!-- Выпадающий список -->
+      <div class="dropdown__menu" hidden>
+        <ul class="dropdown__list" role="listbox" tabindex="-1">
+          <li class="dropdown__option" role="option" tabindex="0" data-value="brick-1">
+            Название кирпича
+          </li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="brick-2">
+            Название кирпича
+          </li>
+          <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true" tabindex="-1"
+            data-value="brick-3">
+            Название кирпича
+          </li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="brick-4">
+            Название кирпича
+          </li>
+        </ul>
+      </div>
+
+      <!-- (опционально) скрытое поле для формы -->
+      <input class="dropdown__input" type="hidden" name="brick" value="brick-3">
+    </div>
     <br>
     <br>
     <br>

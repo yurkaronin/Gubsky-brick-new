@@ -13,7 +13,7 @@
 {% include "sections/hero-inner-page.html" %}
 
 <!-- Стены  -->
-<section class="section -bg-color-grey">
+<section class="section ">
   <div class="wrapper">
 
     <div class="calculator">
@@ -212,6 +212,67 @@
 
         <div class="calculator-options">
           <div class="calculator-options__grid">
+            <!-- Вид кирпича -->
+            <div class="calculator-options__item">
+              <div class="calculator-select-item">
+                <div class="calculator-select-item__grid">
+                  <div class="calculator-select-item__col"><span class="calculator-field__label">Кирпич из
+                      каталога:</span>
+                  </div>
+                  <div class="calculator-select-item__col">
+                    <!-- Dropdown (BEM) для выбора кирпича из каталога -->
+                    <div class="dropdown -mod-height -full-w" data-dropdown>
+                      <!-- Кнопка-триггер -->
+                      <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dropdown__value" data-dropdown-value>Выберите кирпич</span>
+                        <span class="dropdown__icon" aria-hidden="true">
+                          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                      </button>
+
+                      <!-- Выпадающий список -->
+                      <div class="dropdown__menu" hidden>
+                        <ul class="dropdown__list" role="listbox" tabindex="-1">
+                          <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
+                            tabindex="-1" data-value="braer-standard">
+                            Braer Кирпич стандартный красный полнотелый М150 1НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="0" data-value="braer-rica">
+                            Braer Рига пустотелый терракот М150 1.4НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="lode-liepa">
+                            Lode Liepa лицевой солома пустотелый М125 1НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="wienerberger-porotherm">
+                            Wienerberger Porotherm 38 керамический блок М100 2.1НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="kerma-granit">
+                            KERMA Гранит клинкерный темно-серый М300 0.5НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="revada-engelska">
+                            Revada Английский красный полнотелый М200 1НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="terca-romus">
+                            Terca Romus коричневый пустотелый М150 1.4НФ
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="zakamensk-sand">
+                            Закаменский кирпич песочный полнотелый М125 1НФ
+                          </li>
+                        </ul>
+                      </div>
+
+                      <!-- Скрытое поле для формы -->
+                      <input class="dropdown__input" type="hidden" name="catalog-brick" value="braer-standard">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
             <!-- Цвет кирпича -->
             <div class="calculator-options__item">
               <div class="calculator-select-item">
@@ -219,63 +280,45 @@
                   <div class="calculator-select-item__col"><span class="calculator-field__label">Цвет кирпича</span>
                   </div>
                   <div class="calculator-select-item__col">
-                    <div class="custom-select" data-custom-select>
-                      <button class="custom-select__control" type="button" aria-haspopup="listbox" aria-expanded="false"
-                        data-custom-select-control>
-                        <span class="custom-select__label" data-custom-select-label>Выберите цвет</span>
-
-                        <span class="custom-select__icon" aria-hidden="true">
-                          <svg class="custom-select__chevron" viewBox="0 0 24 24">
-                            <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"
-                              stroke-linecap="round" />
+                    <!-- Dropdown (BEM) для выбора цвета кирпича -->
+                    <div class="dropdown -mod-height -full-w -full-w" data-dropdown>
+                      <!-- Кнопка-триггер -->
+                      <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="dropdown__value" data-dropdown-value>Любой цвет</span>
+                        <span class="dropdown__icon" aria-hidden="true">
+                          <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
                           </svg>
                         </span>
                       </button>
 
-                      <div class="custom-select__dropdown" role="listbox" tabindex="-1" aria-label="Выберите цвет"
-                        data-custom-select-dropdown>
-                        <!-- Скролл только тут -->
-                        <div class="custom-select__list" data-custom-select-list>
-                          <button class="custom-select__option is-selected" type="button" role="option"
-                            data-custom-select-option data-value="">
+                      <!-- Выпадающий список -->
+                      <div class="dropdown__menu" hidden>
+                        <ul class="dropdown__list" role="listbox" tabindex="-1">
+                          <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
+                            tabindex="0" data-value="any">
                             Любой цвет
-                          </button>
-
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="black">Чёрный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="red">Красный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="brown">Коричневый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="sand">Песочный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="gray">Серый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="graphite">Графит</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="beige">Бежевый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="yellow">Жёлтый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="blue">Синий</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="green">Зелёный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="olive">Оливковый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="terracotta">Терракотовый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="coffee">Кофейный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="chocolate">Шоколад</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="mint">Мятный</button>
-                        </div>
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="0" data-value="red">
+                            Красный
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="brown">Коричневый</li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="terracotta">
+                            Терракотовый
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="yellow">
+                            Желтый
+                          </li>
+                          <li class="dropdown__option" role="option" tabindex="-1" data-value="gray">
+                            Серый
+                          </li>
+                        </ul>
                       </div>
 
-                      <!-- Для форм (опционально) -->
-                      <input type="hidden" name="color" value="" data-custom-select-input />
+                      <!-- Скрытое поле для формы -->
+                      <input class="dropdown__input" type="hidden" name="brick-color" value="any">
+
                     </div>
                   </div>
                 </div>
@@ -283,70 +326,7 @@
               </div>
             </div>
 
-            <!-- Вид кирпича -->
-            <div class="calculator-options__item">
-              <div class="calculator-select-item">
-                <div class="calculator-select-item__grid">
-                  <div class="calculator-select-item__col"><span class="calculator-field__label">Вид кирпича</span>
-                  </div>
-                  <div class="calculator-select-item__col">
-                    <div class="custom-select" data-custom-select>
-                      <button class="custom-select__control" type="button" aria-haspopup="listbox" aria-expanded="false"
-                        data-custom-select-control>
-                        <span class="custom-select__label" data-custom-select-label>Выберите вид кирпича:</span>
 
-                        <span class="custom-select__icon" aria-hidden="true">
-                          <svg class="custom-select__chevron" viewBox="0 0 24 24">
-                            <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"
-                              stroke-linecap="round" />
-                          </svg>
-                        </span>
-                      </button>
-
-                      <div class="custom-select__dropdown" role="listbox" tabindex="-1"
-                        aria-label="Выберите вид кирпича" data-custom-select-dropdown>
-                        <!-- Скролл только тут -->
-                        <div class="custom-select__list" data-custom-select-list>
-                          <button class="custom-select__option is-selected" type="button" role="option"
-                            data-custom-select-option data-value="">
-                            Любой вид
-                          </button>
-
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="ceramic">Керамический (красный)</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="clinker">Клинкерный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="silicate">Силикатный (белый)</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="hyperpressed">Гиперпрессованный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="fireclay">Шамотный (огнеупорный)</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="facing">Облицовочный (фасадный)</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="hollow">Пустотелый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="solid">Полнотелый</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="hand-molded">Ручной формовки</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="glazed">Глазурованный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="paving">Тротуарный</button>
-                          <button class="custom-select__option" type="button" role="option" data-custom-select-option
-                            data-value="facing-textured">Фактурный</button>
-                        </div>
-                      </div>
-
-                      <!-- Для форм (опционально) -->
-                      <input type="hidden" name="brick_type" value="" data-custom-select-input />
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
 
 
           </div>
@@ -381,6 +361,11 @@
     </div>
 
 
+  </div>
+</section>
+<section class="section -bg-color-grey">
+  <div class="wrapper">
+    <h2 class="title-two">Результаты расчета</h2>
   </div>
 </section>
 
