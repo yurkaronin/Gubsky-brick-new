@@ -45,8 +45,8 @@
     // работает пока placeholder есть (у тебя есть)
     &:focus,
     &:focus-visible {
-      border: 4px solid var(--brand-color-1);
-      box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+      border: 2px solid var(--brand-color-1);
+      // box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
     }
   }
 
