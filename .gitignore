@@ -40,6 +40,9 @@ yarn-error.log*
 assets/styles/**/*.css
 assets/styles/**/*.css.map
 
+# Исключаем папку со скринами из макета
+previews/
+
 # Исключаем все HTML файлы кроме исходников
 *.html
 !html/**/*.html
