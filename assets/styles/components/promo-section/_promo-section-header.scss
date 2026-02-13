@@ -1,5 +1,5 @@
 .promo-section-header {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   @media (max-width: 1379px) {
     margin-bottom: 24px;
   }
@@ -37,7 +37,7 @@
   &__text {
     font-size: 20px;
     color: inherit;
-    opacity: 0.7;
+    opacity: 0.8;
     margin: 0;
     @media (max-width: 1023px) {
       padding-left: calc(208px + 32px);

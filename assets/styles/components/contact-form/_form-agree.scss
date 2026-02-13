@@ -1,66 +1,55 @@
 .form-agree {
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.2;
-  // color: var(--white-70);
+  display: flex;
+  align-items: center;
 
 
   a {
-    // color: var(--white);
     text-decoration: underline;
+
     &:hover {
       color: var(--brand-color-1);
     }
   }
 
-  label {
-    position: relative;
-    padding-left: calc(16px + 24px);
-    cursor: pointer;
-    display: block;
-    opacity: 0.7;
-  }
 
-  label:before {
-    content: "";
-    display: block;
-    // background-color: var(--white);
+  &__control {
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
     width: 24px;
     height: 24px;
-    border-radius: 6px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 16px;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--white);
 
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  label:hover:before,
-  label:active:before,
-  label:focus:before {
-    border: 2px solid var(--brand-color-1);
+    &:hover {
+      border: 2px solid var(--orange);
+    }
   }
 
-  label:after {
-    content: "";
-    display: block;
-    background-image: url("../svg/icon-form-agree.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  &__control-icon {
+    background-image: url(../svg/icon-checked.svg);
     width: 14px;
     height: 10px;
-    position: absolute;
-    left: 6px;
-    top: 7px;
+    background-repeat: no-repeat;
+    background-size: contain;
     opacity: 0;
     transition: var(--transition);
   }
 
-  input:checked + label::after {
-    opacity: 1;
+  input:checked+&__control {
+    background-color: var(--brand-color-1);
+    border-color: var(--brand-color-1);
   }
 
-  input:checked + label::before {
-    background-color: var(--brand-color-1);
+  input:checked+&__control &__control-icon {
+    opacity: 1;
   }
 }

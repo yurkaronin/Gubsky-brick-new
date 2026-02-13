@@ -2,12 +2,12 @@
   display: block;
   font-family: var(--second-family);
   font-weight: 400;
-  font-size: 56px;
+  font-size: 48px;
   line-height: 1.2;
   color: var(--title-color);
   margin: 0;
   @media (max-width: 1379px) {
-    font-size: 48px;
+    // font-size: 48px;
   }
   @media (max-width: 767px) {
     font-size: 30px;
