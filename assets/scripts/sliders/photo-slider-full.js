@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       1023: {
         centeredSlides: true,
+      },
+      1379: {
+        centeredSlides: false,
       }
     },
 
