@@ -9,6 +9,9 @@
   min-height: 320px;
   display: grid;
   align-items: center;
+  @media (max-width: 1365px) {
+    padding: 56px 48px 64px;
+  }
   @media (max-width: 767px) {
     min-height: initial;
     padding: 20px;
@@ -59,8 +62,8 @@
   &__container {
     position: relative;
     z-index: 2;
-    max-width: calc(100% - 312px);
-    @media (max-width: 1379px) {
+    max-width: calc(100% - 275px);
+    @media (max-width: 1365px) {
       max-width: calc(100% - 350px);
     }
     @media (max-width: 1023px) {

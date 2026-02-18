@@ -16,7 +16,7 @@ input[type="radio"].visually-hidden {
 
 // скрываем на ширине от 1380 и больше
 .desktop-hide {
-  @media (min-width: 1380px) {
+  @media (min-width: 1366px) {
     display: none !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -26,7 +26,7 @@ input[type="radio"].visually-hidden {
 
 // скрываем на ширине от 1024 до 1379px
 .laptop-hide {
-  @media (min-width: 1024px) and (max-width: 1379px) {
+  @media (min-width: 1024px) and (max-width: 1365px) {
     display: none !important;
     padding: 0 !important;
     margin: 0 !important;

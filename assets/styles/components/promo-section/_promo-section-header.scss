@@ -1,6 +1,6 @@
 .promo-section-header {
   // margin-bottom: 10px;
-  @media (max-width: 1379px) {
+  @media (max-width: 1365px) {
     margin-bottom: 24px;
   }
   @media (max-width: 1023px) {
@@ -23,7 +23,7 @@
     position: relative;
     z-index: 2;
     transform: translateY(30px);
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       transform: none;
     }
     @media (max-width: 1023px) {
@@ -58,7 +58,7 @@
     font-weight: 400;
     font-size: 48px;
     line-height: 117%;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       font-size: 40px;
     }
     @media (max-width: 767px) {

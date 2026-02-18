@@ -10,7 +10,7 @@
   .form-agree {
     max-width: 282px;
     align-items: center;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       max-width: 100%;
     }
     label {
@@ -26,14 +26,14 @@
   .form-agree label:before {
     top: 15px;
     background-color: #ffffff;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       top: 6px;
     }
   }
 
   .form-agree label:after {
     top: 23px;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       top: 14px;
     }
   }

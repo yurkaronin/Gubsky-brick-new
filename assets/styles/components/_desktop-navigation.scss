@@ -7,7 +7,7 @@
     gap: 24px 32px;
     grid-template-columns: 2fr 2fr 2fr 3fr;
 
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto auto auto; // 3 строки
 
@@ -19,7 +19,7 @@
     }
   }
   &__group {
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       &.-catalog-group {
         grid-area: area1;
       }

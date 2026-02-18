@@ -6,7 +6,7 @@
     overflow: visible;
     width: 100%;
     padding-inline: calc(64px + 47px);
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       padding-inline: calc(64px + 80px);
     }
     @media (max-width: 1023px) {
@@ -18,7 +18,7 @@
   .swiper-slide {
     width: 640px;
     height: 496px;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       height: 480px;
     }
     @media (max-width: 767px) {

@@ -4,7 +4,7 @@
     display: grid;
     gap: 32px;
     grid-template-columns: 11fr 1fr;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       display: block;
     }
   }
@@ -20,7 +20,7 @@
 
   .swiper-button-next {
     right: 0;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       right: -32px;
     }
     @media (max-width: 767px) {
@@ -29,7 +29,7 @@
   }
   .swiper-button-prev {
     left: 0;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       left: -32px;
     }
     @media (max-width: 767px) {

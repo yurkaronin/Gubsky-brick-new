@@ -7,7 +7,7 @@
   align-items: center;
   z-index: 2;
 
-  @media (max-width: 1379px) {
+  @media (max-width: 1365px) {
     position: initial;
     max-width: max-content;
     margin: 0 auto;
@@ -16,7 +16,7 @@
     height: 100%;
     width: fit-content;
     margin: 0 auto;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       height: initial;
     }
   }
@@ -26,7 +26,7 @@
   }
   .swiper-slide {
     width: 96px;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       width: 96px;
       flex: 0 0 auto;
     }

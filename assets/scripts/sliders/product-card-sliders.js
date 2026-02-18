@@ -74,7 +74,7 @@
         direction: 'horizontal',
         slidesPerView: 'auto',
       },
-      1380: {
+      1366: {
         direction: 'vertical',
         slidesPerView: 5,
       }

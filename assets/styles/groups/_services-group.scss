@@ -3,7 +3,7 @@
     display: grid;
     gap: 0;
     grid-template-columns: repeat(4, 1fr);
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       grid-template-columns: repeat(2, 1fr);
     }
     @media (max-width: 767px) {
@@ -17,7 +17,7 @@
   &:hover {
     scale: 1.05;
   }
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       &:nth-child(4n + 1) {
         // 1, 5, 9, 13...
         border-radius: 40px 40px 0 40px;

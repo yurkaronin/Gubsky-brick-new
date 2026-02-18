@@ -12,7 +12,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       margin: 0;
       display: grid;
       gap: 32px;
@@ -34,18 +34,18 @@
     gap: 6px;
     grid-template-columns: repeat(1, 1fr);
     flex-grow: 1;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       margin: 0;
     }
   }
   &__item.-big {
     flex-grow: 2;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       flex-grow: 1;
     }
   }
   &__item.-button {
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       grid-column: span 2;
     }
     @media (max-width: 1023px) {
@@ -59,7 +59,7 @@
       padding: 10px 32px;
       text-align: center;
       justify-content: center;
-      @media (max-width: 1379px) {
+      @media (max-width: 1365px) {
         max-width: max-content;
       }
     }

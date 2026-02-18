@@ -1,6 +1,6 @@
 .product-card-main-slider {
   // height: 560px;
-  @media (max-width: 1379px) {
+  @media (max-width: 1365px) {
     margin-bottom: 36px;
   }
   @media (max-width: 767px) {
@@ -11,7 +11,7 @@
     // height: 560px;
     padding-inline: calc(97px + 96px);
     overflow: visible;
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       padding: 0;
     }
   }
@@ -24,7 +24,7 @@
     justify-content: center;
     overflow: hidden;
     background-color: var(--hero-bg, #dfe5eb);
-    @media (max-width: 1379px) {
+    @media (max-width: 1365px) {
       height: 524px;
     }
     @media (max-width: 1023px) {
