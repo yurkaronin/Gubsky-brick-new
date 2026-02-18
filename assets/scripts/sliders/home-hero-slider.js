@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     breakpoints: {
       320: {
         spaceBetween: 5,
-        centeredSlides: false,
+        centeredSlides: true,
       },
       768: {
         spaceBetween: 7,

@@ -2,13 +2,15 @@
 
   .swiper {
     width: calc(3 * (64px + 16px));
-    @media (max-width: 767px) {
+    @media (max-width: 450px) {
       width: 100%;
+
     }
   }
 
   .swiper-slide {
     padding: 6px;
+    @media (max-width: 767px) {}
   }
 
   .swiper-slide:hover &__button::before {

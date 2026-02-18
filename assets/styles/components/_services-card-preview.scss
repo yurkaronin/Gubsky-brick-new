@@ -103,5 +103,8 @@
   }
   &:hover &__icon::before {
     scale: 1.5;
+    @media (max-width: 767px) {
+      scale: 1.2;
+    }
   }
 }

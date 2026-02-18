@@ -30,6 +30,9 @@
   .slider-navigation {
     margin-left: auto;
     max-width: max-content;
+     @media (max-width: 767px) {
+      margin-right: auto;
+    }
   }
 
   .home-hero-card__details {
