@@ -26,4 +26,20 @@
       display: contents;
     }
   }
+
+  .navigation-sub-menu__link {
+    font-size: 16px;
+  }
+
+  .desktop-navigation__grid {
+    @media (max-width: 1023px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+        "area1 area2"
+        "area4 area5"
+        "area3 area6"
+        "area7 area8";
+    }
+  }
 }
