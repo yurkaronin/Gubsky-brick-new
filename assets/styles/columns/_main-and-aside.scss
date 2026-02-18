@@ -8,6 +8,7 @@
   }
   @media (max-width: 555px) {
     grid-template-columns: repeat(1, 1fr);
+    gap: 18px;
   }
 
   &__large {
@@ -54,5 +55,8 @@
 
   & + * {
     margin-top: 2em;
+    @media (max-width: 767px) {
+      margin-top: 1.3em;
+    }
   }
 }

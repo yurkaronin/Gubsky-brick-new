@@ -1,6 +1,16 @@
 .category-preview-section {
   padding-top: 64px;
   padding-bottom: 64px;
+
+  @media (max-width: 1365px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
   &.-gray {
     background-color: rgba(176, 163, 147, 0.15);
   }

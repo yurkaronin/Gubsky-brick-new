@@ -23,7 +23,7 @@
   }
 
   @media (max-width: 767px) {
-    padding: 12px 20px;
+    padding: 17px 20px;
   }
 
   &__body {
@@ -68,13 +68,15 @@
     }
   }
   &__description {
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 6px;
     font-weight: 600;
     font-size: 12px;
     line-height: 133%;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--white-70);
+
   }
   &__icon {
     position: relative;

@@ -105,6 +105,9 @@
   &__details {
     padding-inline: 18px;
     position: relative;
+    @media (max-width: 767px) {
+      padding-inline: 10px;
+    }
   }
 
   &__category-name {
@@ -137,6 +140,9 @@
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 4px;
+    @media (max-width: 767px) {
+      font-size: 25px;
+    }
   }
   &__button {
     margin-top: 10px;
