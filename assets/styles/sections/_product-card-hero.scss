@@ -48,4 +48,16 @@
       margin-top: 0;
     }
   }
+
+  .button-favorite {
+    width: 48px;
+    height: 48px;
+    @media (max-width: 767px) {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  .button-favorite::before {
+    border: none !important;
+  }
 }

@@ -6,6 +6,9 @@
   grid-template-columns: repeat(1, 1fr);
   margin-top: 32px;
   margin-bottom: 32px;
+  @media (max-width: 767px) {
+    margin-top: 12px;
+  }
   gap: 0;
   &__item {
     & + & {

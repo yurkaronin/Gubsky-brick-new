@@ -19,6 +19,9 @@
     @media (max-width: 1365px) {
       margin-bottom: 32px;
     }
+    @media (max-width: 1365px) {
+      margin-bottom: 16px;
+    }
   }
   &__grid {
     display: grid;
@@ -51,7 +54,6 @@
 
   .navigation-accordion::before {
     border-bottom: 1px solid var(--border-color-2);
-
   }
 
   .navigation-accordion.is-open::before {

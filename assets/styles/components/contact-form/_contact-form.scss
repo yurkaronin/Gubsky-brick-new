@@ -37,4 +37,10 @@
       }
     }
   }
+
+  .button {
+    min-height: 56px;
+    @media (max-width: 767px) {
+    }
+  }
 }
