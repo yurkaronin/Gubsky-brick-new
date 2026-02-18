@@ -1,0 +1,76 @@
+.form-checkbox-item {
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: transparent;
+  transition: var(--transition);
+  position: relative;
+  &:hover {
+    background-color: rgba(176, 163, 147, 0.2);
+  }
+  @media (max-width: 767px) {
+    align-items: baseline;
+    line-height: 1.3;
+  }
+  &__control {
+    position: relative;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 16px;
+    transition: var(--transition);
+    border: 2px solid var(--white);
+    @media (max-width: 767px) {
+      top: 1px;
+    }
+
+    &:hover {
+      border: 2px solid var(--orange);
+    }
+  }
+
+  &__control-icon {
+    background-image: url(../svg/icon-checked.svg);
+    width: 14px;
+    height: 10px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: var(--transition);
+  }
+
+  &__label {
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--dark);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+    }
+  }
+
+  input:checked + &__control {
+    background-color: var(--brand-color-1);
+    border-color: var(--brand-color-1);
+  }
+
+  input:checked + &__control &__control-icon {
+    opacity: 1;
+  }
+}

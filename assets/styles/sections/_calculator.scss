@@ -313,16 +313,23 @@
 
   &__grid {
     display: grid;
-    gap: 32px;
+    gap: 32px 110px;
     grid-template-columns: 1fr auto;
     align-items: center;
+    @media (max-width: 1365px) {
+      gap: 32px;
+    }
   }
 
   &__item {
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
     font-weight: 400;
     font-size: 16px;
     color: rgba(38, 40, 42, 0.7);
+    padding: 7px 0;
+  }
+  &__item + &__item {
+    border-top: 1px solid var(--dark-10);
   }
 
   b:not([class]) {

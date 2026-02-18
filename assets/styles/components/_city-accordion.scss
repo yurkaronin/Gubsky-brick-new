@@ -1,19 +1,12 @@
 .city-accordion {
   display: grid;
-  // gap: 12px;
 }
 
 /* item */
 .city-accordion__item {
   overflow: hidden;
 
-  & + & {
-    // border-top: 1px solid var(--border-color);
-  }
-
   &--open {
-    // border-color: rgba(230, 121, 23, 0.35);
-
     .city-accordion__icon::before {
       transform: rotate(-135deg);
     }
@@ -27,21 +20,40 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-
   padding: 14px 16px;
   border: 0;
   background: transparent;
   cursor: pointer;
-
   color: var(--dark);
   font: inherit;
   text-align: left;
 
-  &:focus-visible {
-    outline: 2px solid var(--orange);
-    outline-offset: 2px;
-    border-radius: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 8px;
+    background-color: transparent;
+    transition: var(--transition);
   }
+
+  &:hover::before {
+    background-color: rgba(176, 163, 147, 0.2);
+    right: -16px;
+    left: -16px;
+  }
+
+  // &:focus-visible {
+  //   outline: 2px solid var(--orange);
+  //   outline-offset: 2px;
+  //   border-radius: 10px;
+  // }
 }
 
 .city-accordion__title {
@@ -74,11 +86,6 @@
   }
 }
 
-/* panel/content */
-.city-accordion__panel {
-  // border-top: 1px solid rgba(93, 104, 115, 0.15);
-}
-
 .city-accordion__content {
   padding: 10px 10px 14px;
 }
@@ -90,65 +97,65 @@
   list-style: none;
 
   display: grid;
-  gap: 6px;
+  gap: 0;
 }
 
-.city-accordion__option {
-  margin: 0;
-}
+// .city-accordion__option {
+//   margin: 0;
+// }
 
 /* label row */
-.city-accordion__label {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+// .city-accordion__label {
+//   display: flex;
+//   align-items: center;
+//   gap: 16px;
 
-  padding: 10px 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  user-select: none;
+//   padding: 10px 8px;
+//   border-radius: 8px;
+//   cursor: pointer;
+//   user-select: none;
 
-  color: var(--dark);
+//   color: var(--dark);
 
-  &:hover {
-    background: rgba(176, 163, 147, 0.2);
-  }
-}
+//   &:hover {
+//     background: rgba(176, 163, 147, 0.2);
+//   }
+// }
 
-.city-accordion__text {
-  line-height: 1.2;
-}
+// .city-accordion__text {
+//   line-height: 1.2;
+// }
 
 /* checkbox base */
-.city-accordion__checkbox {
-  position: absolute;
-  opacity: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+// .city-accordion__checkbox {
+//   position: absolute;
+//   opacity: 0;
+//   width: 1px;
+//   height: 1px;
+//   overflow: hidden;
 
-  &:focus-visible + .city-accordion__checkmark {
-    outline: 2px solid var(--orange);
-    outline-offset: 2px;
-  }
+//   &:focus-visible + .city-accordion__checkmark {
+//     outline: 2px solid var(--orange);
+//     outline-offset: 2px;
+//   }
 
-  &:checked + .city-accordion__checkmark {
-    border-color: var(--orange);
-    background: var(--orange);
+//   &:checked + .city-accordion__checkmark {
+//     border-color: var(--orange);
+//     background: var(--orange);
 
-    &::after {
-      content: "";
-      position: absolute;
-      left: 10px;
-      top: 5px;
-      width: 5px;
-      height: 10px;
-      border-right: 2px solid var(--white);
-      border-bottom: 2px solid var(--white);
-      transform: rotate(45deg);
-    }
-  }
-}
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       left: 10px;
+//       top: 5px;
+//       width: 5px;
+//       height: 10px;
+//       border-right: 2px solid var(--white);
+//       border-bottom: 2px solid var(--white);
+//       transform: rotate(45deg);
+//     }
+//   }
+// }
 
 /* custom checkmark */
 .city-accordion__checkmark {
@@ -157,7 +164,7 @@
   flex: 0 0 24px;
 
   border-radius: 6px;
-  // border: 2px solid rgba(93, 104, 115, 0.35);
+  border: 2px solid rgba(93, 104, 115, 0.35);
   background: var(--white);
   position: relative;
 }

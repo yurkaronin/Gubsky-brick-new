@@ -41,6 +41,10 @@
       color: var(--dark);
     }
   }
+  &__list-item + &__list-item {
+    border-top: 1px solid var(--dark-10);
+  }
+
 
   &__cost {
     display: block;
@@ -63,7 +67,6 @@
   }
 
   &__title {
-    font-size: 24px;
     font-family: var(--second-family);
     font-weight: 400;
     font-size: 24px;
