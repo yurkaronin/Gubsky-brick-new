@@ -4,6 +4,9 @@
   width: 100%;
   grid-template-columns: 1fr auto;
   gap: 16px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 
   &__left {
   }

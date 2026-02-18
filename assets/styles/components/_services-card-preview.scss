@@ -57,12 +57,14 @@
       content: "";
       flex-shrink: 0;
       display: inline-block;
-      width: 10px;
+      width: 6px;
       height: 10px;
       margin-left: 10px;
       background-image: url(../svg/icon-button.svg);
       background-repeat: no-repeat;
+      background-position: left;
       vertical-align: middle;
+      transition: var(--transition);
     }
   }
   &__description {
@@ -106,5 +108,8 @@
     @media (max-width: 767px) {
       scale: 1.2;
     }
+  }
+  &:hover &__name::after {
+    width: 12px;
   }
 }
