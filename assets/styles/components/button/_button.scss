@@ -119,6 +119,9 @@
     &::before {
       background-color: #039be5;
     }
+    &:hover::before {
+      background-color: #039be5;
+    }
   }
   &.-telegram &__icon {
     color: inherit;

@@ -3,7 +3,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: transparent;
   color: var(--red);
   display: flex;
   align-items: center;
@@ -29,8 +29,8 @@
     bottom: 0;
     left: 0;
     transition: var(--transition);
+    background-color: var(--white);
     border-radius: 50%;
-    background-color: transparent;
     border: 1px solid var(--grey-30);
   }
 
@@ -44,17 +44,14 @@
 
   &:hover {
     color: var(--white);
-    &:hover {
-      color: var(--white);
 
-      &::before {
-        top: -4px;
-        right: -4px;
-        bottom: -4px;
-        left: -4px;
-        background-color: var(--red);
-        border: 1px solid var(--red);
-      }
+    &::before {
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+      background-color: var(--red) !important;
+      border: 1px solid var(--red) !important;
     }
   }
   &.-inActive {
@@ -74,10 +71,9 @@
   &.-selected {
     color: var(--white);
 
-      &::before {
-        background-color: var(--red);
-        border: 1px solid var(--red);
-      }
+    &::before {
+      background-color: var(--red);
+      border: 1px solid var(--red);
+    }
   }
-
 }

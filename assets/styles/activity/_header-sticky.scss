@@ -16,4 +16,32 @@
     background-color: var(--white);
     color: var(--dark);
   }
+
+  .header.-glass {
+    .button.-telegram::before {
+      border: 1px solid var(--grey-30);
+    }
+
+    .button.-telegram {
+      color: #039be5;
+    }
+    .button.-telegram:hover {
+      color: var(--white);
+    }
+
+    .button.-telegram .button__icon {
+      color: inherit;
+    }
+
+
+    .button-favorite {
+      color: var(--red);
+    }
+     .button-favorite:hover {
+      color: var(--white);
+    }
+    .button-favorite::before {
+      border: 1px solid var(--grey-30);
+    }
+  }
 }

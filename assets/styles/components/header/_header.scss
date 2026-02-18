@@ -99,10 +99,19 @@
       max-width: 100%;
     }
   }
+  .button.-telegram {
+    color: #039be5;
+  }
+  .button.-telegram .button__icon {
+    color: #039be5;
+  }
+  .button.-telegram::before {
+    background-color: var(--white);
+    border: 1px solid var(--grey-30);
+  }
 
   // модификатор шапки
   &.-glass {
-
     .phone {
       color: inherit;
     }
@@ -111,6 +120,35 @@
     }
     .navigation-sub-menu__link {
       color: inherit;
+    }
+
+    .button.-telegram {
+      color: #ffffff;
+    }
+    .button.-telegram .button__icon {
+      color: #ffffff;
+    }
+
+    .button.-telegram::before {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      // top: 0 !important;
+      // right: 0 !important;
+      // bottom: 0 !important;
+      // left: 0 !important;
+    }
+    .button-favorite {
+      color: #ffffff;
+    }
+    .button-favorite::before {
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .button.-telegram:hover::before {
+      background-color: #039be5;
+    }
+    .button.-telegram:hover {
+      color: var(--white);
     }
   }
   &.-glass &__body {
