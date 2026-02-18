@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function () {
     loopedSlides: mainSlidesCount,
     slidesPerView: 1,
     effect: 'fade',
+    autoplay: {
+      delay: 6000, // 6000 миллисекунд = 6 секунд
+      disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+    },
     pagination: {
       el: '.home-hero .swiper-pagination',
     },

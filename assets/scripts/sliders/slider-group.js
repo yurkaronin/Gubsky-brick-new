@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
-    // Инициализируем основной слайдер
+    // Инициализируем основной слайдер с автопрокруткой
     let mainSlider;
     try {
       mainSlider = new Swiper(mainSwiperEl, {
@@ -31,7 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 32,
         speed: 400,
         watchSlidesProgress: true,
-        loop: false
+        loop: false,
+        autoplay: {
+          delay: 6000, // 6000 миллисекунд = 6 секунд
+          disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+        }
         // Навигацию Swiper НЕ используем — делаем свою, с псевдо-loop
       });
     } catch (e) {
@@ -192,7 +196,11 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 1,
         spaceBetween: 32,
         speed: 400,
-        loop: false
+        loop: false,
+        autoplay: {
+          delay: 6000, // 6000 миллисекунд = 6 секунд
+          disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+        }
         // Навигацию Swiper не используем — делаем руками
       });
     } catch (e) {

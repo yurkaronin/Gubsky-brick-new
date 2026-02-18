@@ -6,7 +6,13 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 'auto',
     initialSlide: 1, // Слайд №2 (индексация с 0)
 
-     breakpoints: {
+    // Добавляем автопрокрутку
+    autoplay: {
+      delay: 6000, // 6000 миллисекунд = 6 секунд
+      disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+    },
+
+    breakpoints: {
       320: {
         centeredSlides: true,
       },
@@ -23,5 +29,5 @@ document.addEventListener('DOMContentLoaded', function () {
       nextEl: '.photo-slider-full .swiper-button-next',
       prevEl: '.photo-slider-full .swiper-button-prev',
     },
-  })
+  });
 });

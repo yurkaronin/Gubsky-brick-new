@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 32,
     autoHeight: true,
 
+    // Добавляем автопрокрутку
+    autoplay: {
+      delay: 6000, // 6000 миллисекунд = 6 секунд
+      disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+    },
+
     breakpoints: {
       320: {
         slidesPerView: 1,
