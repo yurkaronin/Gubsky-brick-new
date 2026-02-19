@@ -1,10 +1,30 @@
 .city-accordion {
   display: grid;
+  transition: var(--transition);
+  &:not(:first-of-type) {
+    border-top: 1px solid var(--border-color);
+  }
+  &:last-of-type {
+    border-bottom: 1px solid var(--border-color);
+  }
+  &:hover {
+    border-color: transparent;
+    z-index: 9;
+    position: relative;
+
+    .city-accordion__icon {
+      scale: 1.2;
+    }
+  }
+
+  &:hover + & {
+    border-color: transparent;
+  }
 }
 
 /* item */
 .city-accordion__item {
-  overflow: hidden;
+  // overflow: hidden;
 
   &--open {
     .city-accordion__icon::before {
@@ -45,7 +65,9 @@
 
   &:hover::before {
     background-color: rgba(176, 163, 147, 0.2);
+    top: -2px;
     right: -16px;
+    bottom: -2px;
     left: -16px;
   }
 
@@ -71,6 +93,7 @@
   height: 18px;
   flex: 0 0 18px;
   position: relative;
+  transition: var(--transition);
 
   &::before {
     content: "";
@@ -86,6 +109,11 @@
   }
 }
 
+.city-accordion__panel {
+  overflow: hidden;
+  // border-radius: 8px; // если по макету важно, чтобы контент внутри резался по радиусу
+}
+
 .city-accordion__content {
   padding: 10px 10px 14px;
 }
@@ -95,10 +123,11 @@
   margin: 0;
   padding: 0;
   list-style: none;
-
-  display: grid;
-  gap: 0;
+  // display: grid;
+  // gap: 0 32px;
+  // grid-template-columns: repeat(2, 1fr);
 }
+
 
 // .city-accordion__option {
 //   margin: 0;

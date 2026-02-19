@@ -41,562 +41,1053 @@
     <div class="filter-group">
       <div class="filter-group__body">
         <div class="filter-group__grid">
+          <!-- Accordion -->
+          <div class="city-accordion" role="region" aria-label="Выбор региона и города">
+            <!-- группа аккордеон -->
+            <div class="city-accordion__item city-accordion__item--open">
+              <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                aria-controls="city-accordion-panel-adigeya" id="city-accordion-trigger-adigeya">
+                <span class="city-accordion__title">Адыгея</span>
+                <span class="city-accordion__icon" aria-hidden="true"></span>
+              </button>
 
-          <div class="filter-group__col">
-            <!-- Accordion -->
-            <div class="city-accordion" role="region-mobile" aria-label="Выбор региона и города">
+              <div class="city-accordion__panel" id="city-accordion-panel-adigeya" role="region"
+                aria-labelledby="city-accordion-trigger-adigeya">
+                <div class="city-accordion__content">
+                  <!-- контент аккордеона  -->
+                  <ul class="city-accordion__list" role="list">
+                    <li class="city-accordion__option">
+                      <!-- Опция: Все -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-all-adygea" checked>
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-all-adygea">Все</label>
+                      </div>
+                    </li>
 
-              <div class="city-accordion__item">
-                <button class="city-accordion__trigger" type="button" aria-expanded="true"
-                  aria-controls="city-accordion-panel-krasnodar-krai-modal"
-                  id="city-accordion-trigger-krasnodar-krai-modal">
-                  <span class="city-accordion__title">Краснодарский край</span>
-                  <span class="city-accordion__icon" aria-hidden="true"></span>
-                </button>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Майкоп -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-maykop">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-maykop">Майкоп</label>
+                      </div>
+                    </li>
 
-                <div class="city-accordion__panel" id="city-accordion-panel-krasnodar-krai-modal" role="region"
-                  aria-labelledby="city-accordion-trigger-krasnodar-krai-modal">
-                  <div class="city-accordion__content">
-                    <ul class="city-accordion__list" role="list">
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="all" checked />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Все</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Адыгейск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-adygeysk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-adygeysk">Адыгейск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="anapa" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Анапа</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Энем -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-enem">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-enem">Энем</label>
+                      </div>
+                    </li>
 
-                      <!-- ...остальные города без изменений... -->
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="armavir" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Армавир</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Яблоновский -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-yablonovskiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-yablonovskiy">Яблоновский</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="belorechensk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Белореченск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Тульский -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-tulskiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-tulskiy">Тульский</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="krasnodar" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Краснодар</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Каменномостский -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kamennomostskiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-kamennomostskiy">Каменномостский</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="kurganinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Курганинск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Тлюстенхабль -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-tlyustenkhabl">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-tlyustenkhabl">Тлюстенхабль</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="labinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Лабинск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Гиагинская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-giaginskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-giaginskaya">Гиагинская</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="afipskiy" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">п. Афипский</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Кошехабль -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-koshekhabl">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-koshekhabl">Кошехабль</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="mostovskoy" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">п. Мостовской</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Красногвардейское -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-krasnogvardeyskoe">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-krasnogvardeyskoe">Красногвардейское</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="sochi" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Сочи</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Тахтамукай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-takhtamukay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-takhtamukay">Тахтамукай</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="ladogskaya" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">ст-ца Ладожская</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Понежукай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-ponezhukay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-ponezhukay">Понежукай</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="tbilisskaya" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">ст. Тбилисская</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Хакуринохабль -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-khakurinokhabl">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-khakurinokhabl">Хакуринохабль</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="ust-labinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Усть Лабинск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Абадзехская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-abadzekhskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-abadzekhskaya">Абадзехская</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[krasnodar-krai][]"
-                            value="krasnaya-polyana" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">х. Красная поляна</span>
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ханская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-khanskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-khanskaya">Ханская</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Кужорская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kuzhorskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-kuzhorskaya">Кужорская</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Дондуковская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-dondukovskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-dondukovskaya">Дондуковская</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Келермесская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kelermesskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-kelermesskaya">Келермесская</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Натырбово -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-natyrbovo">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-natyrbovo">Натырбово</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ходзь -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-khodz">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-khodz">Ходзь</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Хатукай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-khatukay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-khatukay">Хатукай</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Адамий -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-adamiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-adamiy">Адамий</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Даховская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-dakhovskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-dakhovskaya">Даховская</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новосвободная -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novosvobodnaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-novosvobodnaya">Новосвободная</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Афипсип -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-afipsip">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-afipsip">Афипсип</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Старобжегокай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-starobzhegokay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-starobzhegokay">Старобжегокай</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новая Адыгея -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novaya-adygeya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-novaya-adygeya">Новая
+                          Адыгея</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Вочепший -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-vochepshiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-vochepshiy">Вочепший</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Габукай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-gabukay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-gabukay">Габукай</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Джерокай -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-dzherokay">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-dzherokay">Джерокай</label>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-
             </div>
           </div>
 
-          <div class="filter-group__col">
-            <!-- Accordion -->
-            <div class="city-accordion" role="region-mobile" aria-label="Выбор региона и города">
+          <!-- Accordion -->
+          <div class="city-accordion" role="region" aria-label="Выбор региона и города">
+            <!-- группа аккордеон -->
+            <div class="city-accordion__item city-accordion__item--open">
+              <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                aria-controls="city-accordion-panel-krasnodar-krai" id="city-accordion-trigger-krasnodar-krai">
+                <span class="city-accordion__title">Краснодарский край</span>
+                <span class="city-accordion__icon" aria-hidden="true"></span>
+              </button>
 
-              <div class="city-accordion__item">
-                <button class="city-accordion__trigger" type="button" aria-expanded="true"
-                  aria-controls="city-accordion-panel-rostov-oblast-modal"
-                  id="city-accordion-trigger-rostov-oblast-modal">
-                  <span class="city-accordion__title">Ростовская область</span>
-                  <span class="city-accordion__icon" aria-hidden="true"></span>
-                </button>
+              <div class="city-accordion__panel" id="city-accordion-panel-krasnodar-krai" role="region"
+                aria-labelledby="city-accordion-trigger-krasnodar-krai">
+                <div class="city-accordion__content">
+                  <!-- контент аккордеона  -->
+                  <ul class="city-accordion__list" role="list">
+                    <li class="city-accordion__option">
+                      <!-- Опция: Все -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-all-krasnodar" checked>
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-all-krasnodar">Все</label>
+                      </div>
+                    </li>
 
-                <div class="city-accordion__panel" id="city-accordion-panel-rostov-oblast-modal" role="region"
-                  aria-labelledby="city-accordion-trigger-rostov-oblast-modal">
-                  <div class="city-accordion__content">
-                    <ul class="city-accordion__list" role="list">
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="all" checked />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Все</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Анапа -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-anapa">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-anapa">Анапа</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="rostov-on-don" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Ростов-на-Дону</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Армавир -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-armavir">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-armavir">Армавир</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="tagangrog" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Таганрог</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Белореченск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-belorechensk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-belorechensk">Белореченск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="shakhty" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Шахты</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Краснодар -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-krasnodar">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-krasnodar">Краснодар</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="volgodonsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Волгодонск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Курганинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kurganinsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-kurganinsk">Курганинск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="novocherkassk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Новочеркасск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Лабинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-labinsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-labinsk">Лабинск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="bataysk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Батайск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: п. Афипский -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-afipskiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-afipskiy">п. Афипский</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="novoshakhtinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Новошахтинск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: п. Мостовской -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-mostovskoy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-mostovskoy">п.
+                          Мостовской</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="kamensk-shahtinskiy" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Каменск-Шахтинский</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Сочи -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-sochi">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-sochi">Сочи</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="azov" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Азов</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: ст-ца Ладожская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-ladogskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-ladogskaya">ст-ца
+                          Ладожская</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="gukovo" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Гуково</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: ст. Тбилисская -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-tbilisskaya">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-tbilisskaya">ст.
+                          Тбилисская</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="salsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Сальск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Усть-Лабинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-ust-labinsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-ust-labinsk">Усть-Лабинск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="donetsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Донецк</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="belaya-kalitva" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Белая Калитва</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="morozovsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Морозовск</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="krasny-sulin" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Красный Сулин</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="semikarakorsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Семикаракорск</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="tsimlyansk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Цимлянск</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="zernograd" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Зерноград</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[rostov-oblast][]"
-                            value="proletarsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Пролетарск</span>
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
+                    <li class="city-accordion__option">
+                      <!-- Опция: х. Красная поляна -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-krasnaya-polyana">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-krasnaya-polyana">х. Красная
+                          поляна</label>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-
             </div>
           </div>
 
-          <div class="filter-group__col">
-            <div class="city-accordion" role="region-mobile" aria-label="Выбор региона и города">
+          <!-- Accordion -->
+          <div class="city-accordion" role="region" aria-label="Выбор региона и города">
+            <!-- группа аккордеон -->
+            <div class="city-accordion__item city-accordion__item--open">
+              <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                aria-controls="city-accordion-panel-stavropol-krai" id="city-accordion-trigger-stavropol-krai">
+                <span class="city-accordion__title">Ставропольский край</span>
+                <span class="city-accordion__icon" aria-hidden="true"></span>
+              </button>
 
-              <div class="city-accordion__item">
-                <button class="city-accordion__trigger" type="button" aria-expanded="true"
-                  aria-controls="city-accordion-panel-stavropol-krai-modal"
-                  id="city-accordion-trigger-stavropol-krai-modal">
-                  <span class="city-accordion__title">Ставропольский край</span>
-                  <span class="city-accordion__icon" aria-hidden="true"></span>
-                </button>
+              <div class="city-accordion__panel" id="city-accordion-panel-stavropol-krai" role="region"
+                aria-labelledby="city-accordion-trigger-stavropol-krai">
+                <div class="city-accordion__content">
+                  <ul class="city-accordion__list" role="list">
+                    <li class="city-accordion__option">
+                      <!-- Опция: Все -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-all-stavropol" checked>
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-all-stavropol">Все</label>
+                      </div>
+                    </li>
 
-                <div class="city-accordion__panel" id="city-accordion-panel-stavropol-krai-modal" role="region"
-                  aria-labelledby="city-accordion-trigger-stavropol-krai-modal">
-                  <div class="city-accordion__content">
-                    <ul class="city-accordion__list" role="list">
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="all" checked />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Все</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ставрополь -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-stavropol">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-stavropol">Ставрополь</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="stavropol" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Ставрополь</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Пятигорск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-pyatigorsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-pyatigorsk">Пятигорск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="pyatigorsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Пятигорск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Кисловодск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kislovodsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-kislovodsk">Кисловодск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="kislovodsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Кисловодск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ессентуки -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-essentuki">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-essentuki">Ессентуки</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="essentuki" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Ессентуки</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Невинномысск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-nevinnomyssk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-nevinnomyssk">Невинномысск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="nevinnomyssk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Невинномысск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Михайловск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-mikhaylovsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-mikhaylovsk">Михайловск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="mikhaylovsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Михайловск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Будённовск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-budennovsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-budennovsk">Будённовск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="budennovsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Будённовск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Георгиевск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-georgievsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-georgievsk">Георгиевск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="georgievsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Георгиевск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Минеральные Воды -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-mineralnye-vody">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-mineralnye-vody">Минеральные
+                          Воды</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="mineralnye-vody" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Минеральные Воды</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Изобильный -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-izobilny">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-izobilny">Изобильный</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="izobilny" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Изобильный</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Светлоград -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-svetlograd">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-svetlograd">Светлоград</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="svetlograd" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Светлоград</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Зеленокумск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-zelenokumsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-zelenokumsk">Зеленокумск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="zelenokumsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Зеленокумск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Благодарный -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-blagodarny">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-blagodarny">Благодарный</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="blagodarny" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Благодарный</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новоалександровск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novoaleksandrovsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-novoaleksandrovsk">Новоалександровск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="novoaleksandrovsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Новоалександровск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новопавловск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novopavlovsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-novopavlovsk">Новопавловск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="novopavlovsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Новопавловск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Кропоткин -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kropotkin">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-kropotkin">Кропоткин</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="kropotkin" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Кропоткин</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ейск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-yeysk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-yeysk">Ейск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="yeysk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Ейск</span>
-                        </label>
-                      </li>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Курганинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kurganinsk-stavropol">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-kurganinsk-stavropol">Курганинск</label>
+                      </div>
+                    </li>
 
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="kurganinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Курганинск</span>
-                        </label>
-                      </li>
-
-                      <li class="city-accordion__option">
-                        <label class="city-accordion__label">
-                          <input class="city-accordion__checkbox" type="checkbox" name="cities[stavropol-krai][]"
-                            value="labinsk" />
-                          <span class="city-accordion__checkmark" aria-hidden="true"></span>
-                          <span class="city-accordion__text">Лабинск</span>
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
+                    <li class="city-accordion__option">
+                      <!-- Опция: Лабинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-labinsk-stavropol">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-labinsk-stavropol">Лабинск</label>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
-
             </div>
           </div>
 
+          <!-- Accordion -->
+          <div class="city-accordion" role="region" aria-label="Выбор региона и города">
+            <!-- группа аккордеон -->
+            <div class="city-accordion__item city-accordion__item--open">
+              <button class="city-accordion__trigger" type="button" aria-expanded="true"
+                aria-controls="city-accordion-panel-rostov-oblast" id="city-accordion-trigger-rostov-oblast">
+                <span class="city-accordion__title">Ростовская область</span>
+                <span class="city-accordion__icon" aria-hidden="true"></span>
+              </button>
+
+              <div class="city-accordion__panel" id="city-accordion-panel-rostov-oblast" role="region"
+                aria-labelledby="city-accordion-trigger-rostov-oblast">
+                <div class="city-accordion__content">
+                  <ul class="city-accordion__list" role="list">
+                    <li class="city-accordion__option">
+                      <!-- Опция: Все -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-all-rostov" checked>
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-all-rostov">Все</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Ростов-на-Дону -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-rostov-on-don">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-rostov-on-don">Ростов-на-Дону</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Таганрог -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-tagangrog">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-tagangrog">Таганрог</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Шахты -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-shakhty">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-shakhty">Шахты</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Волгодонск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-volgodonsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-volgodonsk">Волгодонск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новочеркасск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novocherkassk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-novocherkassk">Новочеркасск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Батайск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-bataysk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-bataysk">Батайск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Новошахтинск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-novoshakhtinsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-novoshakhtinsk">Новошахтинск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Каменск-Шахтинский -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-kamensk-shahtinskiy">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-kamensk-shahtinskiy">Каменск-Шахтинский</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Азов -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-azov">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-azov">Азов</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Гуково -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-gukovo">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-gukovo">Гуково</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Сальск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-salsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-salsk">Сальск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Донецк -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-donetsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-donetsk">Донецк</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Белая Калитва -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-belaya-kalitva">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-belaya-kalitva">Белая
+                          Калитва</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Морозовск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-morozovsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-morozovsk">Морозовск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Красный Сулин -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-krasny-sulin">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-krasny-sulin">Красный
+                          Сулин</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Семикаракорск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-semikarakorsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label"
+                          for="mobile-form-options-semikarakorsk">Семикаракорск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Цимлянск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-tsimlyansk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-tsimlyansk">Цимлянск</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Зерноград -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-zernograd">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-zernograd">Зерноград</label>
+                      </div>
+                    </li>
+
+                    <li class="city-accordion__option">
+                      <!-- Опция: Пролетарск -->
+                      <div class="form-checkbox-item">
+                        <input class="visually-hidden" type="checkbox" id="mobile-form-options-proletarsk">
+                        <span class="form-checkbox-item__control" aria-hidden="true">
+                          <span class="form-checkbox-item__control-icon"></span>
+                        </span>
+                        <label class="form-checkbox-item__label" for="mobile-form-options-proletarsk">Пролетарск</label>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
