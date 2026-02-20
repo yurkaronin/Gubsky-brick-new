@@ -5,20 +5,23 @@
     background-color: rgba(176, 163, 147, 0.2);
     @media (max-width: 1365px) {
       background-color: transparent;
-      border-radius: none;
+      border-radius: 0;
       padding: 0;
     }
   }
+
   &__grid {
     display: grid;
     gap: 24px;
     grid-template-columns: 1fr auto;
     align-items: center;
+
     @media (max-width: 1365px) {
       gap: 16px;
       grid-template-columns: 1fr;
     }
   }
+
   &__label {
     margin: 0;
     font-family: var(--second-family);
@@ -27,33 +30,66 @@
     line-height: 133%;
     color: var(--dark);
     padding-left: 20px;
+
     @media (max-width: 1365px) {
       padding-left: 0;
     }
   }
-  // &__options {
-  //   max-width: max-content;
-  //   margin-left: auto;
-  // }
+
+  // === ОБЁРТКА ДЛЯ ПРОКРУТКИ ===
+  &__options {
+    @media (max-width: 1365px) {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch; // плавность на iOS
+      scrollbar-width: thin;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      // Важно: предотвратить flex/padding схлопывание
+      display: block;
+      margin: 0 -20px;
+      padding: 0 20px;
+
+      // Скрываем полосу прокрутки (опционально)
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  // === СПИСОК — КОНТЕНТ С ФОНОМ ===
   &__list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
     margin-right: -12px;
     margin-bottom: -12px;
+
     @media (max-width: 1365px) {
-      padding: 12px;
-      padding-bottom: 0;
-      border-radius: 40px;
+      // 🔥 Главное: делаем так, чтобы список растягивался под контент
+      flex-wrap: nowrap;
+      min-width: max-content; // ← ЭТО КЛЮЧ!
+      gap: 12px;
+
+      // Фон и стили — остаются на списке
       background-color: rgba(176, 163, 147, 0.2);
-      max-width: max-content;
-      // justify-content: space-between;
+      border-radius: 40px;
+      padding: 12px;
+
+      // Убираем внешние отступы, используем gap
+      margin: 0;
     }
   }
+
   &__list-item {
     margin-right: 12px;
     margin-bottom: 12px;
+
+    @media (max-width: 1365px) {
+      margin: 0; // gap управляет отступами
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
   }
 }
