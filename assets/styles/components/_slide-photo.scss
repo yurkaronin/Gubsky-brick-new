@@ -2,10 +2,24 @@
   max-width: 100%;
   width: 100%;
   position: relative;
-  border: 8px;
-  border-radius: 20px;
-  border: 8px solid var(--white);
-  overflow: hidden;
+border-radius: 20px;
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    transition: var(--transition);
+    border-radius: 20px;
+    border: 8px solid var(--white);
+
+  }
+  &:hover::before {
+    border-color: var(--brand-color-1);
+  }
+
   &__link {
     display: flex;
     justify-content: center;
@@ -13,16 +27,17 @@
     text-decoration: none !important;
     width: 100%;
     position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: transparent;
   }
   img {
     width: 100%;
     max-width: 100%;
-
   }
 
   .button-play {
     position: absolute;
     z-index: 5;
   }
-
 }

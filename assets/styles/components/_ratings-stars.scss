@@ -1,0 +1,30 @@
+.ratings-stars {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    max-width: max-content;
+    gap: 4px;
+  }
+}
+
+.star {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #BFB6B1;
+
+  svg {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  path {
+    fill: currentColor;
+  }
+
+  &.-active {
+    color: #C4161C;
+  }
+}

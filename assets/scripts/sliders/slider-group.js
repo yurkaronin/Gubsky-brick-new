@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     try {
       thumbSlider = new Swiper(thumbSwiperEl, {
         slidesPerView: 5,
-        spaceBetween: 6,
+        spaceBetween: 8,
         speed: 400,
         watchSlidesProgress: true,
         loop: false,

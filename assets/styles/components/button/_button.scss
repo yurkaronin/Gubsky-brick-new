@@ -16,13 +16,12 @@
   position: relative;
   background: transparent;
   border: none;
-  min-height: var(--button-size-small);
+  min-height: var(--button-size-middle);
   z-index: 2;
-  // line-height: 1;
-  // margin: auto;
 
   @media (max-width: 1365px) {
     font-size: 12px;
+
   }
   @media (max-width: 767px) {
     min-height: 50px;
@@ -78,6 +77,16 @@
       path:nth-child(2) {
         opacity: initial;
       }
+    }
+  }
+  &.-middle {
+    min-height: var(--button-size-middle);
+  }
+
+  &.-biz-size {
+    min-height: 64px;
+    @media (max-width: 767px) {
+      min-height: 50px;
     }
   }
 
