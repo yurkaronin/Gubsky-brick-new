@@ -70,10 +70,6 @@
       transition: var(--transition);
     }
     &.-mod {
-      // width: initial;
-      // height: initial;
-      // justify-content: center;
-      // align-items: center;
       path:nth-child(2) {
         opacity: initial;
       }
@@ -83,7 +79,7 @@
     min-height: var(--button-size-middle);
   }
 
-  &.-biz-size {
+  &.-big-size {
     min-height: 64px;
     @media (max-width: 767px) {
       min-height: 50px;

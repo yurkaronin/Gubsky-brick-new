@@ -4,7 +4,7 @@
   }
   &__top-grid {
     display: grid;
-    gap: 32px;
+    gap: 16px 32px;
     grid-template-columns: repeat(2, 1fr);
   }
   &__bottom {
@@ -13,7 +13,7 @@
   }
   &__bottom-grid {
     display: grid;
-    gap: 32px;
+    gap: 16px 32px;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -22,7 +22,7 @@
       margin-bottom: 48px;
     }
     &__top-grid {
-      gap: 32px;
+      gap: 16px 32px;
       grid-template-columns: repeat(1, 1fr);
     }
     &__bottom-grid {
@@ -30,6 +30,12 @@
     }
     .contacts-block {
       margin-top: 32px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__top {
+      margin-bottom: 29px;
     }
   }
 }
