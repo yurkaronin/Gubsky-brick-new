@@ -1,52 +1,49 @@
 .input {
+  position: relative;
+  border-radius: 32px;
+  background-color: transparent;
+  height: 56px;
+  transition: var(--transition);
+
+  &::before {
+    content: "";
+    border-radius: 32px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--brand-color-1);
+    transition: var(--transition);
+    opacity: 0;
+  }
+
   input,
   textarea {
     max-width: 100%;
     width: 100%;
     display: flex;
-
+    position: relative;
+    z-index: 2;
     border-radius: 32px;
     padding: 16px 24px;
-
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 16px;
-
-    color: var(--text-color-70);
-
-    border: 2px solid transparent; // чтобы не прыгало при focus
-    background: #fff; // если фон нужен белый
+    color: var(--black);
+    border: none;
+    background-color: var(--white);
     outline: none;
-
-    height: 56px;
-
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease,
-      color 0.2s ease,
-      background-color 0.2s ease;
-    box-shadow: none;
+    height: 100%;
+    transition: var(--transition);
 
     @media (max-width: 767px) {
       height: 50px;
-      padding: 10px 20px;
+      padding: 10px 20px !important;
     }
 
     &::placeholder {
       color: var(--text-color-70);
-    }
-
-    // ACTIVE / FOCUS
-    &:hover {
-      border-color: var(--brand-color-1);
-    }
-
-    // “состояние ввода” (не пустое поле)
-    // работает пока placeholder есть (у тебя есть)
-    &:focus,
-    &:focus-visible {
-      border: 2px solid var(--brand-color-1);
-      // box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
     }
   }
 
@@ -54,14 +51,44 @@
     height: 104px;
     @media (max-width: 767px) {
       height: 120px;
-      padding: 10px 20px;
     }
   }
 
-  // Ошибка (опционально): красная рамка если поле невалидно после ввода
-  // Чтобы не подсвечивало пустое required-поле сразу, используем :not(:placeholder-shown)
-  input:invalid:not(:placeholder-shown),
-  textarea:invalid:not(:placeholder-shown) {
-    border-color: var(--accent-color-1);
+  &:has(input:hover),
+  &:has(textarea:hover) {
+    &::before {
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      opacity: 1;
+    }
+  }
+
+  // Состояние FOCUS (когда поле в фокусе)
+  &:has(input:focus),
+  &:has(textarea:focus) {
+    &::before {
+      opacity: 1;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
+    input,
+    textarea {
+      box-shadow: inset 2px 2px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // Состояние ACTIVE (когда поле активно/нажато)
+  &:active {
+    &::before {
+      opacity: 1;
+      top: -4px; // Меньше отступ для эффекта нажатия
+      right: -4px;
+      bottom: -4px;
+      left: -4px;
+    }
   }
 }
