@@ -64,6 +64,7 @@
     text-overflow: ellipsis;
     min-width: 0;
     flex: 1 1 auto;
+    text-align-last: left;
   }
 
   // ===============================
@@ -81,6 +82,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: var(--transition);
 
     svg {
       max-width: 100%;
@@ -170,6 +172,9 @@
       transform: translate(-50%, -45%) rotate(-135deg);
     }
 
+    .dropdown__icon {
+      transform: rotate(180deg);
+    }
     .dropdown__icon::before {
       scale: 1.1;
     }
