@@ -45,11 +45,11 @@
   }
 
   &.-bg-color-grey {
-    background-color: var(--grey-15);
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 48px;
+    padding-bottom: 24px;
+    background-color: rgba(176, 163, 147, 0.15);
 
     @media (max-width: 1365px) {
       margin-top: 0;

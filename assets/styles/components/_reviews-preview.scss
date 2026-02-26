@@ -1,4 +1,8 @@
 .reviews-preview {
+  margin: 0 !important;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  background-color: rgba(176, 163, 147, 0.15);
   &__list {
     display: grid;
     gap: 32px;

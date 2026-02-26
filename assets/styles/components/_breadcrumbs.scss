@@ -7,6 +7,19 @@
     margin-right: -8px;
     margin-bottom: -8px;
     overflow-x: auto;
+
+    /* Скрываем скроллбар для WebKit браузеров (Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    /* Скрываем скроллбар для Firefox */
+    scrollbar-width: none;
+
+    /* Скрываем скроллбар для IE и Edge старых версий */
+    -ms-overflow-style: none;
   }
 
   &__item {
@@ -14,8 +27,6 @@
     margin-right: 8px;
     margin-bottom: 8px;
     flex-shrink: 0;
-
-
   }
   &__item:last-of-type {
     margin-right: 0;
@@ -27,7 +38,6 @@
     &:after {
       display: none;
     }
-
   }
 
   &__link {
@@ -42,7 +52,6 @@
     align-items: center;
     padding-right: calc(12px + 5px);
 
-
     &:after {
       content: "";
       display: block;
@@ -55,14 +64,11 @@
       background-image: url("../svg/icon-breadcrumb-link.svg");
     }
 
-
     &[href]:hover {
       color: var(--brand-color-1);
       text-decoration: underline;
     }
-
   }
-
 }
 
 * + .breadcrumbs {

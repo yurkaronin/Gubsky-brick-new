@@ -7,16 +7,24 @@
   color: var(--title-color);
   margin: 0;
   @media (max-width: 1365px) {
-    // font-size: 48px;
+    font-size: 40px;
   }
   @media (max-width: 767px) {
-    font-size: 30px;
+    font-size: 25px;
   }
   & + * {
     margin-top: 1em;
   }
 
-
+  &.-big {
+    font-size: 56px;
+    @media (max-width: 1365px) {
+      font-size: 48px;
+    }
+    @media (max-width: 767px) {
+      font-size: 30px;
+    }
+  }
 }
 
 .title-two {
@@ -36,7 +44,6 @@
   & + * {
     margin-top: 1em;
   }
-
 }
 
 .title-three {
@@ -56,7 +63,6 @@
   & + * {
     margin-top: 1em;
   }
-
 }
 
 .title-four {
@@ -76,5 +82,4 @@
   & + * {
     margin-top: 1em;
   }
-
 }
