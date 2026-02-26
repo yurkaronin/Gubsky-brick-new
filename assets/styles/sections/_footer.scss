@@ -19,8 +19,8 @@
     @media (max-width: 1365px) {
       margin-bottom: 32px;
     }
-    @media (max-width: 1365px) {
-      margin-bottom: 16px;
+    @media (max-width: 767px) {
+      margin-bottom: 0;
     }
   }
   &__grid {
@@ -60,7 +60,7 @@
   }
 
   .navigation-accordion.is-open::before {
-    background-color: var(--white);
+    background-color: #F8F2F1;
     border-top: 1px solid var(--border-color-2);
   }
 }

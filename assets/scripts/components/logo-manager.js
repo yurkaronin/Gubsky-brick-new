@@ -4,8 +4,8 @@ class LogoManager {
     this.logoImage = document.querySelector('.js-change-logo img');
     if (!this.logoImage) return;
 
-    this.stickyLogoPath = "./assets/svg/logo.svg";
-    this.inverseLogoPath = "./assets/svg/logo-inverse.svg";
+    this.stickyLogoPath = "./assets/svg/logo.svg";        // обычный (основной)
+    this.inverseLogoPath = "./assets/svg/logo-inverse.svg"; // инверсный (на белом фоне)
 
     this.init();
   }
@@ -32,19 +32,25 @@ class LogoManager {
     const isSticky = scrollTop > 60 || document.body.classList.contains('header-sticky');
     const isMobileOpen = document.body.classList.contains('mobile-navigation-menu-open');
 
-    // Логика приоритетов:
-    // 1. Если открыто мобильное меню - ВСЕГДА обычный логотип
-    // 2. Если меню закрыто, но шапка прилипла - обычный логотип
-    // 3. Если меню закрыто и шапка не прилипла - инверсный логотип
+    // 🔥 НОВОЕ УСЛОВИЕ: десктопное подменю открыто + промо-малая шапка
+    const isPromoSmall = document.body.classList.contains('promo-small');
+    const isDesktopSubNavOpen = document.body.classList.contains('desktop-sub-navigation-open');
 
+    // === Приоритеты (по порядку) ===
+    // 1. Если открыто мобильное меню → всегда обычный логотип
     if (isMobileOpen) {
-      // Приоритет 1: мобильное меню открыто
       this.logoImage.src = this.stickyLogoPath;
-    } else if (isSticky) {
-      // Приоритет 2: шапка прилипла
+    }
+    // 2. Если активна промо-малая шапка И открыто десктопное подменю → тоже обычный
+    else if (isPromoSmall && isDesktopSubNavOpen) {
       this.logoImage.src = this.stickyLogoPath;
-    } else {
-      // Приоритет 3: обычное состояние
+    }
+    // 3. Если шапка прилипла (но меню закрыто) → обычный логотип
+    else if (isSticky) {
+      this.logoImage.src = this.stickyLogoPath;
+    }
+    // 4. В остальных случаях — инверсный (например, вверху страницы, без прокрутки)
+    else {
       this.logoImage.src = this.inverseLogoPath;
     }
   }

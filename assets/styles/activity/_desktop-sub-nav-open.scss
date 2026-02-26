@@ -21,4 +21,18 @@
     pointer-events: initial;
     display: block;
   }
+  &.promo-small {
+    .header.-glass {
+      .header__body {
+        background: var(--white);
+        color: var(--dark);
+        backdrop-filter: initial;
+      }
+    }
+    .header.-glass .header__footer {
+      background-color: var(--white);
+      backdrop-filter: initial;
+      color: var(--dark);
+    }
+  }
 }
