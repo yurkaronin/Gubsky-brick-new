@@ -2,7 +2,6 @@
   position: relative;
   border-radius: 32px;
   background-color: transparent;
-  height: 56px;
   transition: var(--transition);
 
   &::before {
@@ -34,7 +33,7 @@
     border: none;
     background-color: var(--white);
     outline: none;
-    height: 100%;
+    height: 56px;
     transition: var(--transition);
 
     @media (max-width: 767px) {
