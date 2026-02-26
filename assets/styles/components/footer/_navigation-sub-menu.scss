@@ -1,4 +1,9 @@
 .navigation-sub-menu {
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
   &__link {
     text-decoration: none;
     font-family: var(--font-family);
