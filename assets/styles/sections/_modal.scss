@@ -176,4 +176,30 @@
       padding: 10px 0 14px;
     }
   }
+
+  .category-filter__options {
+    margin: 0;
+    overflow: initial;
+    padding: 0;
+    margin-bottom: 40px;
+  }
+  .category-filter__list {
+    background-color: transparent;
+    min-width: initial;
+    max-width: 100%;
+    border-radius: 0;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+  }
+
+  .category-sorter {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  .category-filter__grid {
+    gap: 24px;
+  }
 }

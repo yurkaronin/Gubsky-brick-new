@@ -1,6 +1,10 @@
 .reviews-rating {
   margin-top: 48px;
   margin-bottom: 48px;
+  @media (max-width: 767px) {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
   &__grid {
     display: grid;
     gap: 16px 32px;

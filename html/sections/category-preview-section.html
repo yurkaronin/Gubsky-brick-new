@@ -2,215 +2,236 @@
   <div class="wrapper">
 
     <div class="category-preview-section__header">
+      <!-- этот блок фильтров скрывается на мобильных и вместо него показывается кнопка вызова мобильного фильтра  -->
+      <div class="mobile-hide">
+        <div class="category-sorter">
+          <div class="category-sorter__grid">
+            <div class="category-sorter__col">
+              <span class="label">Цвет кирпича:</span>
+              <!-- Dropdown (BEM) для выбора цвета кирпича -->
+              <div class="dropdown -mod-height -full-w" data-dropdown>
+                <!-- Кнопка-триггер -->
+                <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="dropdown__value" data-dropdown-value>Любой цвет</span>
+                  <span class="dropdown__icon" aria-hidden="true">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
 
-      <div class="category-sorter">
-        <div class="category-sorter__grid">
-          <div class="category-sorter__col">
-            <span class="label">Цвет кирпича:</span>
-            <!-- Dropdown (BEM) для выбора цвета кирпича -->
-            <div class="dropdown -mod-height -full-w" data-dropdown>
-              <!-- Кнопка-триггер -->
-              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
-                <span class="dropdown__value" data-dropdown-value>Любой цвет</span>
-                <span class="dropdown__icon" aria-hidden="true">
-                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
+                <!-- Выпадающий список -->
+                <div class="dropdown__menu" hidden>
+                  <ul class="dropdown__list" role="listbox" tabindex="-1">
+                    <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
+                      tabindex="0" data-value="any">
+                      Любой цвет
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="0" data-value="red">
+                      Красный
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="brown">Коричневый</li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="terracotta">
+                      Терракотовый
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="yellow">
+                      Желтый
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="gray">
+                      Серый
+                    </li>
+                  </ul>
+                </div>
 
-              <!-- Выпадающий список -->
-              <div class="dropdown__menu" hidden>
-                <ul class="dropdown__list" role="listbox" tabindex="-1">
-                  <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
-                    tabindex="0" data-value="any">
-                    Любой цвет
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="0" data-value="red">
-                    Красный
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="brown">Коричневый</li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="terracotta">
-                    Терракотовый
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="yellow">
-                    Желтый
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="gray">
-                    Серый
-                  </li>
-                </ul>
+                <!-- Скрытое поле для формы -->
+                <input class="dropdown__input" type="hidden" name="brick-color" value="any">
+
               </div>
-
-              <!-- Скрытое поле для формы -->
-              <input class="dropdown__input" type="hidden" name="brick-color" value="any">
-
             </div>
-          </div>
-          <div class="category-sorter__col">
-            <span class="label">Типоразмер:</span>
-            <!-- Dropdown (BEM) для выбора типоразмера кирпича -->
-            <div class="dropdown -mod-height -full-w" data-dropdown>
-              <!-- Кнопка-триггер -->
-              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
-                <span class="dropdown__value" data-dropdown-value>Любой размер</span>
-                <span class="dropdown__icon" aria-hidden="true">
-                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
+            <div class="category-sorter__col">
+              <span class="label">Типоразмер:</span>
+              <!-- Dropdown (BEM) для выбора типоразмера кирпича -->
+              <div class="dropdown -mod-height -full-w" data-dropdown>
+                <!-- Кнопка-триггер -->
+                <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="dropdown__value" data-dropdown-value>Любой размер</span>
+                  <span class="dropdown__icon" aria-hidden="true">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
 
-              <!-- Выпадающий список -->
-              <div class="dropdown__menu" hidden>
-                <ul class="dropdown__list" role="listbox" tabindex="-1">
-                  <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
-                    tabindex="0" data-value="any">
-                    Любой размер
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="0" data-value="1-nf">
-                    1 НФ (250×120×65 мм)
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="1-4-nf">
-                    1,4 НФ (250×120×88 мм)
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="2-1-nf">
-                    2,1 НФ (250×120×138 мм)
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="0-5-nf">
-                    0,5 НФ (250×60×65 мм)
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="euro">
-                    Евро (250×85×65 мм)
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="modular">
-                    Модульный (288×138×65 мм)
-                  </li>
-                </ul>
+                <!-- Выпадающий список -->
+                <div class="dropdown__menu" hidden>
+                  <ul class="dropdown__list" role="listbox" tabindex="-1">
+                    <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true"
+                      tabindex="0" data-value="any">
+                      Любой размер
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="0" data-value="1-nf">
+                      1 НФ (250×120×65 мм)
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="1-4-nf">
+                      1,4 НФ (250×120×88 мм)
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="2-1-nf">
+                      2,1 НФ (250×120×138 мм)
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="0-5-nf">
+                      0,5 НФ (250×60×65 мм)
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="euro">
+                      Евро (250×85×65 мм)
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="modular">
+                      Модульный (288×138×65 мм)
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Скрытое поле для формы -->
+                <input class="dropdown__input" type="hidden" name="brick-size" value="any">
               </div>
-
-              <!-- Скрытое поле для формы -->
-              <input class="dropdown__input" type="hidden" name="brick-size" value="any">
             </div>
-          </div>
-          <div class="category-sorter__col">
-            <span class="label">Сортировка:</span>
-            <!-- Dropdown (BEM) для выбора сортировки (компактный) -->
-            <div class="dropdown -mod-height -full-w" data-dropdown>
-              <!-- Кнопка-триггер -->
-              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
-                <span class="dropdown__value" data-dropdown-value>По возрастанию цены</span>
-                <span class="dropdown__icon" aria-hidden="true">
-                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </span>
-              </button>
+            <div class="category-sorter__col">
+              <span class="label">Сортировка:</span>
+              <!-- Dropdown (BEM) для выбора сортировки (компактный) -->
+              <div class="dropdown -mod-height -full-w" data-dropdown>
+                <!-- Кнопка-триггер -->
+                <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="dropdown__value" data-dropdown-value>По возрастанию цены</span>
+                  <span class="dropdown__icon" aria-hidden="true">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13 1L7 7L1 0.999999" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
 
-              <!-- Выпадающий список -->
-              <div class="dropdown__menu" hidden>
-                <ul class="dropdown__list" role="listbox" tabindex="-1">
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="price-desc">
-                    По популярности
-                  </li>
-                  <li class="dropdown__option dropdown__option--selected" role="option" tabindex="0" data-value="price-asc">
-                    По возрастанию цены
-                  </li>
-                  <li class="dropdown__option" role="option" aria-selected="true" tabindex="-1" data-value="price-desc">
-                    По убыванию цены
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="name-asc">
-                    По алфавиту
-                  </li>
-                  <li class="dropdown__option" role="option" tabindex="-1" data-value="date-desc">
-                    По дате публикации
-                  </li>
-                </ul>
+                <!-- Выпадающий список -->
+                <div class="dropdown__menu" hidden>
+                  <ul class="dropdown__list" role="listbox" tabindex="-1">
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="price-desc">
+                      По популярности
+                    </li>
+                    <li class="dropdown__option dropdown__option--selected" role="option" tabindex="0"
+                      data-value="price-asc">
+                      По возрастанию цены
+                    </li>
+                    <li class="dropdown__option" role="option" aria-selected="true" tabindex="-1"
+                      data-value="price-desc">
+                      По убыванию цены
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="name-asc">
+                      По алфавиту
+                    </li>
+                    <li class="dropdown__option" role="option" tabindex="-1" data-value="date-desc">
+                      По дате публикации
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Скрытое поле для формы -->
+                <input class="dropdown__input" type="hidden" name="sort" value="price-desc">
               </div>
-
-              <!-- Скрытое поле для формы -->
-              <input class="dropdown__input" type="hidden" name="sort" value="price-desc">
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="category-filter">
-        <div class="category-filter__body">
-          <div class="category-filter__grid">
-            <p class="category-filter__label">Специально для Вас мы создали подборки</p>
 
-            <div class="category-filter__options">
-              <ul class="category-filter__list list-reset">
-                <li class="category-filter__list-item">
+        <div class="category-filter">
+          <div class="category-filter__body">
+            <div class="category-filter__grid">
+              <p class="category-filter__label">Специально для Вас мы создали подборки</p>
 
-                  <a href="#" class="button -small -white" data-target="modal-get-consultation">
-                    <span class="button__text">Серийные продукты <small>(28)</small></span>
-                    <span class="button__icon">
-                      <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                        <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                  </a>
+              <div class="category-filter__options">
+                <ul class="category-filter__list list-reset">
+                  <li class="category-filter__list-item">
 
-                </li>
+                    <a href="#" class="button -small -white" data-target="modal-get-consultation">
+                      <span class="button__text">Серийные продукты <small>(28)</small></span>
+                      <span class="button__icon">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                          <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                    </a>
 
-                <li class="category-filter__list-item">
-                  <a href="#" class="button -small -white" data-target="modal-get-consultation">
-                    <span class="button__text">Заказные продукты<small>(32)</small></span>
-                    <span class="button__icon">
-                      <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                        <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                  </a>
-                </li>
+                  </li>
 
-                <li class="category-filter__list-item">
-                  <a href="#" class="button -small -white" data-target="modal-get-consultation">
-                    <span class="button__text">Лидеры продаж<small>(10)</small></span>
-                    <span class="button__icon">
-                      <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                        <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                  </a>
+                  <li class="category-filter__list-item">
+                    <a href="#" class="button -small -white" data-target="modal-get-consultation">
+                      <span class="button__text">Заказные продукты<small>(32)</small></span>
+                      <span class="button__icon">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                          <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                    </a>
+                  </li>
 
-                </li>
+                  <li class="category-filter__list-item">
+                    <a href="#" class="button -small -white" data-target="modal-get-consultation">
+                      <span class="button__text">Лидеры продаж<small>(10)</small></span>
+                      <span class="button__icon">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                          <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                    </a>
 
-                <li class="category-filter__list-item">
+                  </li>
 
-                  <a href="#" class="button -small -white" data-target="modal-get-consultation">
-                    <span class="button__text">Модный выбор<small>(24)</small></span>
-                    <span class="button__icon">
-                      <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                        <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                  </a>
+                  <li class="category-filter__list-item">
 
-                </li>
-              </ul>
+                    <a href="#" class="button -small -white" data-target="modal-get-consultation">
+                      <span class="button__text">Модный выбор<small>(24)</small></span>
+                      <span class="button__icon">
+                        <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                          <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        </svg>
+                      </span>
+                    </a>
+
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
+    </div>
+
+    <!-- мобильный фильтр  -->
+    <div class="mobile-filter -full desktop-hide laptop-hide tablet-hide">
+      <!-- Кнопка вызова диалогового окна с параметрами фильтра  -->
+      <button class="mobile-filter-button" type="button" data-target="modal-mobile-brick-filter">
+        <span class="mobile-filter-button__icon">
+          <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 2.66087C17 2.07955 16.9996 1.78867 16.8906 1.56663C16.7948 1.37132 16.6423 1.21265 16.4542 1.11313C16.2403 1 15.9597 1 15.3996 1H2.59961C2.03956 1 1.75981 1 1.5459 1.11313C1.35774 1.21265 1.20487 1.37132 1.10899 1.56663C1 1.78867 1 2.07955 1 2.66087V3.42614C1 3.68002 1 3.80705 1.02763 3.92651C1.05213 4.03242 1.09263 4.13359 1.14746 4.22646C1.20928 4.33118 1.29591 4.4211 1.46875 4.6005L6.53149 9.85554C6.70443 10.0351 6.79044 10.1243 6.85228 10.2291C6.90711 10.3219 6.94816 10.4235 6.97266 10.5294C7 10.6476 7 10.7731 7 11.0219V15.9584C7 16.8481 7 17.2933 7.18054 17.5613C7.33819 17.7952 7.5814 17.9513 7.85352 17.993C8.16514 18.0408 8.54871 17.842 9.31543 17.4441L10.1154 17.0289C10.4365 16.8623 10.5966 16.7787 10.7139 16.6544C10.8176 16.5445 10.897 16.4125 10.9453 16.267C11 16.1025 11 15.9158 11 15.5432V11.0296C11 10.7757 11 10.6488 11.0276 10.5294C11.0521 10.4235 11.0926 10.3219 11.1475 10.2291C11.2089 10.125 11.2947 10.036 11.4653 9.85886L11.4688 9.85554L16.5315 4.6005C16.7044 4.42098 16.7904 4.33121 16.8523 4.22646C16.9071 4.13359 16.9482 4.03242 16.9727 3.92651C17 3.80827 17 3.6826 17 3.43386V2.66087Z"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+
+        <span class="mobile-filter-button__label">Фильтр кирпича</span>
+      </button>
     </div>
 
     <div class="catalog-products-preview">

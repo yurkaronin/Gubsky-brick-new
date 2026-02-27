@@ -1,0 +1,18 @@
+.reviews-and-services {
+  margin: 0;
+  padding-top: 48px;
+  padding-bottom: 64px;
+  background-color: rgba(176, 163, 147, 0.15);
+  @media (max-width: 1365px) {
+    padding-top: 44px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+  .services-group {
+    @media (max-width: 767px) {
+      margin-inline: -20px;
+    }
+  }
+}

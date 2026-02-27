@@ -87,10 +87,10 @@
     speed: DURATION,
 
     // Добавляем автопрокрутку
-    autoplay: {
-      delay: 6000, // 6000 миллисекунд = 6 секунд
-      disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
-    },
+    // autoplay: {
+    //   delay: 6000, // 6000 миллисекунд = 6 секунд
+    //   disableOnInteraction: false, // автослайдер продолжит работу после взаимодействия пользователя
+    // },
 
     pagination: {
       el: '.product-card-main-slider .swiper-pagination'

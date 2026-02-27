@@ -1,0 +1,13 @@
+.title-and-icon {
+  display: grid;
+  align-items: center;
+  gap: 10px;
+  grid-template-columns: auto 1fr;
+  max-width: max-content;
+  margin-bottom: 20px;
+
+  .title,
+  .title-two {
+    margin: 0 !important;
+  }
+}

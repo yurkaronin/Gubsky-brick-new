@@ -16,9 +16,16 @@
   }
   &__header {
     margin-bottom: 42px;
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
   }
 
   .text-and-button {
     margin-bottom: 36px;
+  }
+
+  .mobile-filter {
+    margin-bottom: 0;
   }
 }
