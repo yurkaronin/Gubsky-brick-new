@@ -1,72 +1,73 @@
 (() => {
-  const OPEN_FIRST_IN_FILTER_GROUP = false;
-
   const accordions = document.querySelectorAll('.city-accordion');
   if (!accordions.length) return;
 
-  accordions.forEach((accordion) => {
-    const items = accordion.querySelectorAll('.city-accordion__item');
-    if (!items.length) return;
+  const allItems = [];
 
-    const itemControllers = [];
+  const ensureId = (el, id) => {
+    if (!el.id) el.id = id;
+    return el.id;
+  };
 
-    items.forEach((item) => {
-      const trigger = item.querySelector('.city-accordion__trigger');
-      const panel = item.querySelector('.city-accordion__panel');
-      if (!trigger || !panel) return;
+  const initItem = (item, globalIndex) => {
+    const trigger = item.querySelector('.city-accordion__trigger');
+    const panel = item.querySelector('.city-accordion__panel');
+    if (!trigger || !panel) return null;
 
-      // -------- accordion --------
-      const setOpen = (open) => {
-        item.classList.toggle('city-accordion__item--open', open);
-        trigger.setAttribute('aria-expanded', String(open));
+    // Автогенерация связок aria
+    const triggerId = ensureId(trigger, `city-acc-trigger-${globalIndex}`);
+    const panelId = ensureId(panel, `city-acc-panel-${globalIndex}`);
 
-        if (open) panel.removeAttribute('hidden');
-        else panel.setAttribute('hidden', '');
-      };
+    trigger.setAttribute('aria-controls', panelId);
+    trigger.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('role', 'region');
+    panel.setAttribute('aria-labelledby', triggerId);
 
-      // init from markup
-      setOpen(trigger.getAttribute('aria-expanded') === 'true');
+    // Унифицированное закрытое состояние
+    item.classList.remove('city-accordion__item--open');
+    panel.setAttribute('hidden', '');
 
-      trigger.addEventListener('click', () => {
-        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-        setOpen(!isOpen);
-      });
+    const setOpen = (open) => {
+      item.classList.toggle('city-accordion__item--open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+      if (open) panel.removeAttribute('hidden');
+      else panel.setAttribute('hidden', '');
+    };
 
-      // -------- checkbox logic --------
-      const checkboxes = Array.from(panel.querySelectorAll('.city-accordion__checkbox'));
-      const all = checkboxes.find((cb) => cb.value === 'all');
-      const cities = checkboxes.filter((cb) => cb !== all);
-
-      itemControllers.push({ setOpen, trigger, panel });
-
-      if (!all) return;
-
-      const setCitiesChecked = (checked) => {
-        cities.forEach((c) => (c.checked = checked));
-      };
-
-      panel.addEventListener('change', (e) => {
-        const cb = e.target.closest('.city-accordion__checkbox');
-        if (!cb) return;
-
-        // Важно: "Все" меняет города, города "Все" НЕ трогают
-        if (cb === all) {
-          setCitiesChecked(all.checked);
-        }
-      });
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      setOpen(!isOpen);
     });
 
-    if (!itemControllers.length) return;
+    // ----- checkbox logic (чуть аккуратнее) -----
+    const checkboxes = Array.from(panel.querySelectorAll('input[type="checkbox"]'));
+    // "all" ищем только по "-all-" или началу, чтобы меньше ложных совпадений
+    const all = checkboxes.find((cb) => /(^all\b|[\-_]all[\-_])/.test(cb.id));
+    const cities = all ? checkboxes.filter((cb) => cb !== all) : [];
 
-    const isInFilterGroup = Boolean(accordion.closest('.filter-group'));
-    if (isInFilterGroup) {
-      if (OPEN_FIRST_IN_FILTER_GROUP) {
-        itemControllers.forEach((ctrl, index) => {
-          ctrl.setOpen(index === 0);
-        });
-      } else {
-        itemControllers.forEach((ctrl) => ctrl.setOpen(false));
-      }
+    if (all) {
+      const setCitiesChecked = (checked) => cities.forEach((c) => (c.checked = checked));
+
+      panel.addEventListener('change', (e) => {
+        const cb = e.target.closest('input[type="checkbox"]');
+        if (!cb) return;
+        if (cb === all) setCitiesChecked(all.checked);
+      });
     }
+
+    return { setOpen, trigger, panel, item };
+  };
+
+  // Собираем ВСЕ items со страницы (глобально), а не “первый в каждом аккордеоне”
+  let globalIndex = 0;
+  accordions.forEach((accordion) => {
+    const items = accordion.querySelectorAll('.city-accordion__item');
+    items.forEach((item) => {
+      const api = initItem(item, globalIndex++);
+      if (api) allItems.push(api);
+    });
   });
+
+  // Открываем только самый первый item на странице
+  if (allItems.length) allItems[0].setOpen(true);
 })();

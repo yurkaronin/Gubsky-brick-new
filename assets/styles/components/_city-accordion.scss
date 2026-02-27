@@ -1,36 +1,47 @@
 .city-accordion {
   display: grid;
   transition: var(--transition);
+
+  &:hover {
+    border-color: transparent;
+    z-index: 9;
+    position: relative;
+
+
+  }
+
+
+}
+
+/* item */
+.city-accordion__item {
+  transition: var(--transition);
   &:not(:first-of-type) {
     border-top: 1px solid var(--border-color);
   }
   &:last-of-type {
     border-bottom: 1px solid var(--border-color);
   }
-  &:hover {
-    border-color: transparent;
-    z-index: 9;
-    position: relative;
-
+  &:hover,
+  &:has(*:hover) {
+    border-color: transparent !important;
     .city-accordion__icon {
       scale: 1.2;
     }
   }
-
-  &:hover + & {
-    border-color: transparent;
+  &:hover + &,
+  &:has(*:hover) + & {
+    border-color: transparent !important;
+    position: relative;
+    z-index: 2;
   }
-}
-
-/* item */
-.city-accordion__item {
-  // overflow: hidden;
 
   &--open {
     .city-accordion__icon::before {
       transform: rotate(-135deg);
     }
   }
+
 }
 
 /* trigger */
@@ -71,11 +82,6 @@
     left: -16px;
   }
 
-  // &:focus-visible {
-  //   outline: 2px solid var(--orange);
-  //   outline-offset: 2px;
-  //   border-radius: 10px;
-  // }
 }
 
 .city-accordion__title {
@@ -111,7 +117,6 @@
 
 .city-accordion__panel {
   overflow: hidden;
-  // border-radius: 8px; // если по макету важно, чтобы контент внутри резался по радиусу
 }
 
 .city-accordion__content {
@@ -123,68 +128,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  // display: grid;
-  // gap: 0 32px;
-  // grid-template-columns: repeat(2, 1fr);
 }
-
-
-// .city-accordion__option {
-//   margin: 0;
-// }
-
-/* label row */
-// .city-accordion__label {
-//   display: flex;
-//   align-items: center;
-//   gap: 16px;
-
-//   padding: 10px 8px;
-//   border-radius: 8px;
-//   cursor: pointer;
-//   user-select: none;
-
-//   color: var(--dark);
-
-//   &:hover {
-//     background: rgba(176, 163, 147, 0.2);
-//   }
-// }
-
-// .city-accordion__text {
-//   line-height: 1.2;
-// }
-
-/* checkbox base */
-// .city-accordion__checkbox {
-//   position: absolute;
-//   opacity: 0;
-//   width: 1px;
-//   height: 1px;
-//   overflow: hidden;
-
-//   &:focus-visible + .city-accordion__checkmark {
-//     outline: 2px solid var(--orange);
-//     outline-offset: 2px;
-//   }
-
-//   &:checked + .city-accordion__checkmark {
-//     border-color: var(--orange);
-//     background: var(--orange);
-
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       left: 10px;
-//       top: 5px;
-//       width: 5px;
-//       height: 10px;
-//       border-right: 2px solid var(--white);
-//       border-bottom: 2px solid var(--white);
-//       transform: rotate(45deg);
-//     }
-//   }
-// }
 
 /* custom checkmark */
 .city-accordion__checkmark {

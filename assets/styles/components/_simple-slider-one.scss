@@ -3,6 +3,9 @@
   .swiper {
     padding: 20px; /* Добавляем воздух вокруг */
     margin: -20px; /* Компенсируем, чтобы слайдер не съехал */
+    @media (max-width: 767px) {
+      margin: 0;
+    }
   }
 
   .swiper-slide {
@@ -18,4 +21,5 @@
       opacity: 1;
     }
   }
+
 }

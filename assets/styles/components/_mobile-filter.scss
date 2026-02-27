@@ -18,6 +18,13 @@
   }
 }
 
+.mobile-filter-button {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--dark);
+}
+
 .mobile-filter-header {
   &__grid {
     display: grid;

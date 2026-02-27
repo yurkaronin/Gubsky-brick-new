@@ -21,7 +21,7 @@
 .shop-preview-card {
   max-width: max-content;
   border-radius: 20px;
-  padding: 26px 24px 20px;
+  padding: 18px 25px 20px;
   position: relative;
   background-color: var(--white);
   transition: var(--transition);
@@ -56,19 +56,22 @@
     font-size: 20px;
     line-height: 1.2;
     color: var(--dark);
+    padding-bottom: 16px;
+    margin-bottom: 0;
   }
   &__address {
     font-weight: 400;
     font-size: 16px;
-    line-height: 150%;
     color: var(--dark);
     margin: 0;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
   }
   &__icon {
     width: 14px;
     height: 18px;
-    margin-right: 6px;
+    margin-right: 12px;
     display: inline-block;
     svg {
       max-width: 100%;
@@ -85,9 +88,10 @@
     padding-bottom: 20px;
   }
   &__bottom {
-    padding-top: 20px;
+    padding-top: 17px;
     border-top: 1px solid var(--border-color);
     margin-top: auto;
+    width: 100%;
 
     // padding: 24px;
 

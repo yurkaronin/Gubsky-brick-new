@@ -1,0 +1,14 @@
+.calculation-results-section {
+  background-color: rgba(176, 163, 147, 0.15);
+  padding-top: 43px;
+  padding-bottom: 64px;
+  @media (max-width: 1365px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media (max-width: 1023px) {}
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
