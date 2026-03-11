@@ -1,0 +1,103 @@
+{% extends "layouts/promo-big-footer.html" %}
+
+{% set bodyClass = "promo-small" %}
+{% set title = "Кирпич хозяйственный керамический пустотелый" %}
+{% set pageTitle = "Кирпич хозяйственный керамический пустотелый" %}
+{% set breadcrumbs = [
+{url: '/', text: 'Главная'},
+{url: '/', text: 'Каталог продукции'},
+{url: '/ceramic-household-brick.html', text: 'Кирпич хозяйственный керамический пустотелый'}
+] %}
+
+{% block content %}
+
+{% include "sections/hero-inner-page.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="container">
+
+      <div class="alert">
+        <h3 class="alert__title lower-short-strip">
+          <span class="alert__icon">
+            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.5 8.76693V14.1003M13.5 25.5C6.87258 25.5 1.5 20.1274 1.5 13.5C1.5 6.87258 6.87258 1.5 13.5 1.5C20.1274 1.5 25.5 6.87258 25.5 13.5C25.5 20.1274 20.1274 25.5 13.5 25.5ZM13.5664 18.1003V18.2336L13.4336 18.2331V18.1003H13.5664Z"
+                stroke="#E67917" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </span>Важно:
+        </h3>
+        <p class="alert__text">Является отбраковкой от лицевого кирпича. <br>
+          Поверхность может быть рустированной, ангобированной или гладкой в зависимости от партии.<br>
+          Цвет не регламентируется и зависит от выпускаемой партии.
+        </p>
+      </div>
+
+
+      <div class="simple-card-group">
+        <div class="simple-card-group__grid">
+          <div class="simple-card-group__col">
+            <div class="simple-card">
+              <span class="simple-card__label">Розничная цена:</span>
+              <h3 class="simple-card__title">1NF — 8 ₽ с НДС </h3>
+
+              <a href="#" class="button -red -small">
+                <span class="button__text">Заказать</span>
+                <span class="button__icon">
+                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                    </path>
+                    <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                    </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="simple-card-group__col">
+            <div class="simple-card">
+              <span class="simple-card__label">Розничная цена:</span>
+              <h3 class="simple-card__title">1,4NF — 11 ₽ с НДС </h3>
+
+              <a href="#" class="button -red -small">
+                <span class="button__text">Заказать</span>
+                <span class="button__icon">
+                  <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                    </path>
+                    <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                    </path>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h4 class="title-four decorate">Предназначение</h4>
+      <ul>
+        <li>Для возведения внутренних стен и перегородок</li>
+        <li>Для строительства невысоких и ненагруженных конструкции, ограждений</li>
+        <li>Для отделки внутренних помещений в стиле лофт</li>
+      </ul>
+      <br>
+      <h4 class="title-four decorate">Преимущества наличия пустот</h4>
+      <ul>
+        <li>Снижение нагрузки на фундамент</li>
+        <li>Звукоизоляция</li>
+        <li>Низкая теплопроводность</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+{% include "sections/promo-brick.html" %}
+
+
+
+{% endblock %}

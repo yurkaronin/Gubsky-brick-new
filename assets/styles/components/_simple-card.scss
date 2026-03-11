@@ -1,0 +1,18 @@
+.simple-card {
+  &__title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-family: var(--second-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 125%;
+    color: var(--dark);
+    @media (max-width: 1023px) {
+      font-size: 24px;
+    }
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
+  }
+}
