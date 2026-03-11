@@ -20,6 +20,15 @@
     background-position: left;
 
   }
+  &.-brick {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/brick.jpg");
+    background-position: center;
+  }
+  &.-clay {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/clay.jpg");
+    background-position: center;
+  }
+
   &__grid {
     display: grid;
     gap: 32px;

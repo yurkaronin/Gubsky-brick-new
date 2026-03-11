@@ -1,0 +1,85 @@
+{% extends "layouts/promo-big-footer.html" %}
+
+{% set bodyClass = "promo-small" %}
+{% set title = "Крошка керамическая" %}
+{% set pageTitle = "Крошка керамическая" %}
+{% set breadcrumbs = [
+{url: '/', text: 'Главная'},
+{url: '/', text: 'Каталог продукции'},
+{url: '/ceramic-crumb.html', text: 'Крошка керамическая'}
+] %}
+
+{% block content %}
+
+{% include "sections/hero-inner-page.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="catalog-products-preview">
+      <ul class="catalog-products-preview__list list-reset">
+        <li class="catalog-products-preview__list-item">
+          {% include "components/catalog-card-preview/crumb-1.html" %}
+        </li>
+        <li class="catalog-products-preview__list-item">
+          {% include "components/catalog-card-preview/crumb-2.html" %}
+        </li>
+        <li class="catalog-products-preview__list-item">
+          {% include "components/catalog-card-preview/crumb-3.html" %}
+        </li>
+        <li class="catalog-products-preview__list-item">
+          {% include "components/catalog-card-preview/crumb-4.html" %}
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+{% include "sections/promo-ceramic-crumb.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="container">
+      <p>“Губский кирпичный завод” активно воплощает в жизнь стратегию развития и помимо развития
+        традиционной продуктовой линейки предлагает новую продукцию, в частности — керамическую крошку. Выходя на рынок
+        с керамической крошкой, мы видим среди её основных потребителей, в первую очередь, питомники, которые занимаются
+        выращиванием садовых и парковых культур для озеленения городских зон отдыха, а также частных владений.</p>
+      <p>Хорошо известно, что в процессе выращивания растений керамическая крошка способствует оптимальному
+        распределению влаги и воздухопроницаемости грунта, без которых невозможно вырастить качественный посадочный
+        материал для озеленения или ландшафтного дизайна.</p>
+      <p>Керамическая крошка производства “Губского кирпичного завода” — это долговечный, экологически чистый материал,
+        который не содержит вредных для человека или окружающей среды примесей. Также можно отметить её высокую
+        устойчивость к перепадам температур и механическим повреждениям.</p>
+      <p>Уверены, что качество нашей керамической крошки вам понравится также, как и её цена. Будем рады взаимовыгодному
+        сотрудничеству!</p>
+
+      <div class="author-article">
+        <div class="author-article__grid">
+          <div class="author-article__col -left">
+            <div class="author-article__avatar">
+              <img src="{{ assets }}/img/author-article/1.jpg" alt="" />
+            </div>
+          </div>
+          <div class="author-article__col -right">
+            <p class="author-article__text">
+              С уважением,<br>
+              Алексей Алексеевич Попов<br>
+              Первый заместитель генерального директора<br>
+              ООО “Губский кирпичный завод”
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

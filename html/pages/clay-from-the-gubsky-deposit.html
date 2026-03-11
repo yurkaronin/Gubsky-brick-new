@@ -1,0 +1,95 @@
+{% extends "layouts/promo-big-footer.html" %}
+
+{% set bodyClass = "promo-small" %}
+{% set title = "Глина Губского месторождения" %}
+{% set pageTitle = "Глина Губского месторождения" %}
+{% set breadcrumbs = [
+{url: '/', text: 'Главная'},
+{url: '/', text: 'Каталог продукции'},
+{url: '/clay-from-the-gubsky-deposit.html', text: 'Глина Губского месторождения'}
+] %}
+
+{% block content %}
+
+{% include "sections/hero-inner-page.html" %}
+
+<section class="section">
+  <div class="wrapper">
+    <div class="container">
+
+
+      <div class="simple-card">
+        <span class="simple-card__label">Предложение по цене (самовывоз):</span>
+        <h3 class="simple-card__title">1м3 — 575,00 ₽ с НДС</h3>
+
+        <a href="#" class="button -red -small">
+          <span class="button__text">Заказать</span>
+          <span class="button__icon">
+            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+              <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <br>
+      <h2 class="title-three">Информация по состоянию сырьевой базы ООО «ГКЗ» (глины Губского месторождения)</h2>
+      <br>
+      <h3 class="title-four">По данным детальной разведки, Южной комплексной геологической экспедицией, Губского
+        месторождения глин:</h3>
+      <ul>
+        <li>Гранулометрический состав: менее 0,001мм в основной массе 46,05-52,25%, что по ГОСТу 9169-75 соответствует
+          группе среднедисперсного сырья.</li>
+        <li>Число пластичности колеблется от 16,2 до 18,3, что соответствует группе среднепластичного глинистого сырья.
+        </li>
+        <li>Чувствительность к сушке. По минералогическому коэффициенту глина относится к среднечувствительной и
+          колеблется от 2,65 до 2,98%.</li>
+        <li>Хим. состав полезной толщи глин определён по 10 технологическим пробам.</li>
+      </ul>
+      <br>
+      <h3 class="title-four">По содержанию Al2O3 в прокаленном в-ве, глину можно отнести к группе полукислых глин
+      </h3>
+      <br>
+      <ul>
+        <li>Глина Губского месторождения характеризуется высоким содержанием минералов смектита и гидрослюд, что
+          обуславливает высокую способность к водопоглощению, набуханию глиняных частиц со значительным увеличением в
+          объёме, а также низкую способность к влагоотдаче при последующей сушке.</li>
+        <li>Отмечается выдержанность качественных показателей залежи глин, как по площади карьера, так и по разрезу.
+        </li>
+        <li>Глина Губского месторождения пригодна для производства кирпича керамического, изготовления тампонажных
+          растворов, может применяться для подготовки оснований гидроизолирующих конструкций и сооружений.</li>
+      </ul>
+
+      <ul class="documents-list list-reset">
+        <li class="documents-list__item">
+          <a class="document-preview-card" href="#">
+            <span class="document-preview-card__icon">
+              <img src="./assets/img/document-preview-card/doc.svg" alt="">
+            </span>
+            <p class="document-preview-card__name">Состав глины по данным лаборатории Lingl (Германия) <span>(cкачать DOC, 1.2 mb)</span></p>
+          </a>
+
+        </li>
+        <li class="documents-list__item">
+          <a class="document-preview-card" href="#">
+            <span class="document-preview-card__icon">
+              <img src="./assets/img/document-preview-card/pdf.svg" alt="">
+            </span>
+            <p class="document-preview-card__name">Паспорт качества
+              <span>(cкачать PDF, 1.2 mb)</span>
+            </p>
+          </a>
+
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+{% include "sections/promo-clay.html" %}
+
+
+
+{% endblock %}
