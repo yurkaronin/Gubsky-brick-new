@@ -38,4 +38,8 @@
   &:hover &__icon {
     color: var(--accent-color-1);
   }
+
+  strong, b {
+    color: var(--black);
+  }
 }

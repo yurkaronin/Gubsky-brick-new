@@ -17,78 +17,282 @@
   <div class="wrapper">
     <div class="container">
 
+      <h2 class="title">Дух ателье</h2>
+      <p>Наблюдая за работой нашей команды, вы не увидите конвейера. Здесь царит атмосфера ремесленной мастерской, где
+        ценятся интуиция, индивидуальный подход и одержимость своим делом. Именно поэтому мы назвали проект «Ателье» —
+        от французского atelier, что значит «мастерская».</p>
+      <p>А «Левша» — это не просто дань уважения герою Лескова, символу русской смекалки и трепетного отношения к
+        ремеслу. Это наш секрет и наша гордость: один из ключевых мастеров, создающих новые фактуры, действительно
+        левша.</p>
 
-      <div class="simple-card">
-        <span class="simple-card__label">Предложение по цене (самовывоз):</span>
-        <h3 class="simple-card__title">1м3 — 575,00 ₽ с НДС</h3>
-
-        <a href="#" class="button -red -small">
-          <span class="button__text">Заказать</span>
-          <span class="button__icon">
-            <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 1L5 5L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              </path>
-              <path d="M6 1L10 5L6 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              </path>
-            </svg>
-          </span>
-        </a>
-      </div>
-      <br>
-      <h2 class="title-three">Информация по состоянию сырьевой базы ООО «ГКЗ» (глины Губского месторождения)</h2>
-      <br>
-      <h3 class="title-four">По данным детальной разведки, Южной комплексной геологической экспедицией, Губского
-        месторождения глин:</h3>
-      <ul>
-        <li>Гранулометрический состав: менее 0,001мм в основной массе 46,05-52,25%, что по ГОСТу 9169-75 соответствует
-          группе среднедисперсного сырья.</li>
-        <li>Число пластичности колеблется от 16,2 до 18,3, что соответствует группе среднепластичного глинистого сырья.
-        </li>
-        <li>Чувствительность к сушке. По минералогическому коэффициенту глина относится к среднечувствительной и
-          колеблется от 2,65 до 2,98%.</li>
-        <li>Хим. состав полезной толщи глин определён по 10 технологическим пробам.</li>
-      </ul>
-      <br>
-      <h3 class="title-four">По содержанию Al2O3 в прокаленном в-ве, глину можно отнести к группе полукислых глин
-      </h3>
-      <br>
-      <ul>
-        <li>Керамическое ателье «Левша» характеризуется высоким содержанием минералов смектита и гидрослюд, что
-          обуславливает высокую способность к водопоглощению, набуханию глиняных частиц со значительным увеличением в
-          объёме, а также низкую способность к влагоотдаче при последующей сушке.</li>
-        <li>Отмечается выдержанность качественных показателей залежи глин, как по площади карьера, так и по разрезу.
-        </li>
-        <li>Керамическое ателье «Левша» пригодна для производства кирпича керамического, изготовления тампонажных
-          растворов, может применяться для подготовки оснований гидроизолирующих конструкций и сооружений.</li>
-      </ul>
-
-      <ul class="documents-list list-reset">
-        <li class="documents-list__item">
-          <a class="document-preview-card" href="#">
-            <span class="document-preview-card__icon">
-              <img src="./assets/img/document-preview-card/doc.svg" alt="">
-            </span>
-            <p class="document-preview-card__name">Состав глины по данным лаборатории Lingl (Германия) <span>(cкачать DOC, 1.2 mb)</span></p>
-          </a>
-
-        </li>
-        <li class="documents-list__item">
-          <a class="document-preview-card" href="#">
-            <span class="document-preview-card__icon">
-              <img src="./assets/img/document-preview-card/pdf.svg" alt="">
-            </span>
-            <p class="document-preview-card__name">Паспорт качества
-              <span>(cкачать PDF, 1.2 mb)</span>
+      <div class="author-article">
+        <div class="author-article__grid">
+          <div class="author-article__col -left">
+            <div class="author-article__avatar">
+              <img src="{{ assets }}/img/author-article/1.jpg" alt="" />
+            </div>
+          </div>
+          <div class="author-article__col -right">
+            <p class="author-article__text">
+              С уважением,<br>
+              Алексей Алексеевич Попов<br>
+              Первый заместитель генерального директора<br>
+              ООО “Губский кирпичный завод”
             </p>
-          </a>
 
-        </li>
-      </ul>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
 </section>
-{% include "sections/promo-clay.html" %}
+<section class="section -bg-color">
+  <div class="wrapper">
+    <div class="container">
+      <h2 class="title-three">История создания</h2>
+      <p>Наше ателье родилось не в тиши кабинетов, а на пересечении взглядов маркетологов, предвидящих тренд на
+        индивидуализацию, и технологов, ищущих новые формы выражения. Первые эксперименты с покрытиями — появление
+        фактур Галлерас и Бромо — стали прологом к новой эстетике Губского завода. Затем были жидкие составы, подарившие
+        миру Магму, Сиену Луч и Габбро. Но настоящая магия началась, когда две технологии соединились: так
+        родились Терра, Графит26, Розовый мрамор — кирпичи с характером.</p>
+      <h2 class="title-three">Философия создания Керамического ателье «Левша»</h2>
+      <p>Мы не штампуем кирпич. Мы создаем образы. Каждая новая фактура проходит путь от цифрового эскиза, созданного
+        совместно с дизайн-студиями, до материального воплощения. Архитекторы-эксперты вглядываются в поверхность,
+        оценивают игру света и тени, прежде чем дать обратную связь мастерам. Технологи, словно алхимики, подбирают
+        составы, экспериментируют с обжигом, чтобы поймать тот единственный оттенок, который задумал автор.</p>
+      <p>Со временем этот поиск перерос в систему. Так сформировалось особое подразделение — гибрид лаборатории и
+        творческой мастерской, где маркетологи и технологи работают в едином ритме, создавая то, чего раньше не
+        существовало.</p>
+      <br />
+
+      <!-- слайд с кнопкой просмотра видео -->
+      <div class="slide-photo image-hover -video">
+        <a class="slide-photo__link" href="{{ assets }}/video/video.mp4" title="Смотреть видео"
+          data-fslightbox="video-local" data-autoplay>
+          <img src="{{ assets }}/img/content/1.jpg" alt="#" />
+
+          <div class="button-play">
+            <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 18.2765V3.72445C1 2.52449 1 1.92385 1.25347 1.56881C1.47469 1.25894 1.81567 1.05549 2.19422 1.00685C2.62779 0.951142 3.15957 1.23368 4.22159 1.79797L17.9157 9.07402L17.9207 9.07621C19.0943 9.69981 19.6814 10.0118 19.874 10.4275C20.042 10.7902 20.042 11.2089 19.874 11.5716C19.6811 11.988 19.0927 12.3012 17.9157 12.9265L4.22159 20.2026C3.15881 20.7673 2.62795 21.0487 2.19422 20.993C1.81567 20.9444 1.47469 20.7409 1.25347 20.4311C1 20.076 1 19.4765 1 18.2765Z"
+                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+      </div>
+      <br />
+      <br />
+      <h2 class="title-three">Сегодня керамическое ателье «Левша» — это возможность создать кирпич, существующий в
+        единственном экземпляре.</h2>
+      <br />
+      <h3 class="title-four">Мы предлагаем полный цикл кастомизации для вашего проекта:</h3>
+
+      <ul>
+        <li><strong>Индивидуальный облик:</strong> Мы разрабатываем уникальные пигменты и ангобы, чтобы добиться точного
+          попадания в цвет и фактуру вашей мечты.</li>
+        <li><strong>Эксклюзивные формы:</strong> Создаем кирпич для сложных 3D-кладок, с утолщенной стенкой или
+          нестандартной геометрией.</li>
+        <li><strong>Архитектурное соответствие:</strong> Работаем как с серийными партиями, так и с эксклюзивными
+          заказами по техническому заданию архитектора.</li>
+        <li><strong>Совершенство в деталях:</strong> Выбор степени пустотности (пустотелый, полнотелый) и любого
+          типоразмера.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="category-preview-section -gray">
+  <div class="wrapper">
+    <h2 class="title">Мы создали</h2>
+    <br />
+
+    <div class="catalog-products-preview">
+      <ul class="catalog-products-preview__list list-reset">
+
+        {% include "components/catalog-card-preview/1.html" %}
+        {% include "components/catalog-card-preview/2.html" %}
+        {% include "components/catalog-card-preview/mini-slider.html" %}
+        {% include "components/catalog-card-preview/3.html" %}
+
+
+      </ul>
+      <br/>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrapper">
+    <div class="container">
+      <h2 class="title-two">Преимущества работы с бутиком «Левша»</h2>
+
+      <p>Мы не просто продаем кирпич. Мы обеспечиваем архитектурное совершенство вашего проекта.</p>
+
+      <div class="why-choose-us">
+        <ul class="why-choose-us__list list-reset">
+
+
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="48" height="44" viewBox="0 0 48 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M35 11.58V7.57999C30.278 7.57999 19.662 3.347 18.01 1C16.357 3.347 5.329 7.57999 1 7.57999C1 15.394 1 17.855 1 24.58C1 32.572 17.056 42.328 18 42.58C18.277 42.506 20.292 41.083 22.124 39.801"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M34 40.5801C41.1797 40.5801 47 34.7598 47 27.5801C47 20.4004 41.1797 14.5801 34 14.5801C26.8203 14.5801 21 20.4004 21 27.5801C21 34.7598 26.8203 40.5801 34 40.5801Z"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M39 21.5801L32 28.5801L29 25.5801L26 28.5801L32 34.5801L42 24.5801L39 21.5801Z"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Эксклюзивность и защита авторского замысла.</strong> Мы
+                гарантируем, что выбранное вами решение будет уникальным и подчеркнет статус объекта.</p>
+            </div>
+          </li>
+
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 5H40V8" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path
+                    d="M40.5 37L38.5 32.3C38.2 31.5 38 30.6 38 29.7V12C38 10.9 38.9 10 40 10H41C42.1 10 43 10.9 43 12V29.7C43 30.6 42.8 31.5 42.5 32.3L40.5 37Z"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M38 15H43" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M20 20V28H11V13H20V17" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M20 13H33V23H29" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M27 23H29V34H16V28" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M24 23H20" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M1 37C1 34.4 3 32 6 32V1C3 1 1 3.4 1 6V37Z" stroke="#E67917" stroke-width="2"
+                    stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M1 37C1 39.7 3.2 42 6 42H40V39" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Профессиональные референсы.</strong> Предоставляем текстуры,
+                фотореалистичные подборки и создаем микс кладок для идеальной визуальной разработки.</p>
+            </div>
+          </li>
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 21H1V11H16V21" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M16 11H32V21" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M32 11H47V21H39" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M8 11V1H24V11" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M24 1H39V11" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M24 21H8V31H24V21Z" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M24 31H39V21H24" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Кураторский подход.</strong> Мы подбираем материал под вашу
+                визуализацию, даже если речь идет об импортных аналогах, и обеспечиваем индивидуальное ценообразование в
+                рамках проекта.</p>
+            </div>
+          </li>
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="48" height="45" viewBox="0 0 48 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 45V20H20C23.018 20 24 18.219 24 16C22.437 16 7.84 16 6 16C4.125 16 1 17.512 1 22V29C1 31.145 2.855 33 5 33"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M5 22V45" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path
+                    d="M13 10C13 11.657 11.657 13 10 13H9C7.343 13 6 11.657 6 10V7C6 5.343 7.343 4 9 4H10C11.657 4 13 5.343 13 7V10Z"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M10 30V45" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M29 33H20V23" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M20 13V1H29" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M38 1H29V33H38V1Z" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M38 1H47V33H38" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" />
+                  <path d="M20 9H47" stroke="#E67917" stroke-width="2" />
+                  <path d="M29 17H47" stroke="#E67917" stroke-width="2" />
+                  <path d="M20 25H47" stroke="#E67917" stroke-width="2" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Привилегированный доступ.</strong> Мы проведем вас и ваших
+                клиентов в лучшие шоурумы, где продукция «Левша» представлена в атмосфере истинного комфорта и стиля.
+              </p>
+            </div>
+          </li>
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="46" height="39" viewBox="0 0 46 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 14L16 15" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M19 16L22 17" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M19 10L22 11" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M25 12L28 13" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M25 6L28 7" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M31 8L34 9" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M25 1L13 9L1 17L21 23L33 15L45 7L25 1Z" stroke="#E67917" stroke-width="2"
+                    stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M45 7V22L33 30L21 38L1 32V17" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M21 23V38" stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Тактильное утверждение.</strong> Организуем выкладку мокапов
+                на объекте, чтобы вы могли увидеть и потрогать будущий фасад до начала строительства.</p>
+            </div>
+          </li>
+          <li class="why-choose-us__item">
+            <div class="why-choose-us-card">
+              <span class="why-choose-us-card__icon">
+                <svg width="48" height="34" viewBox="0 0 48 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M36.7197 0.745117C36.7197 0.745117 33.1157 3.97112 32.7407 4.02812C31.6497 4.19812 26.7557 1.89911 25.7667 1.65411C24.7777 1.40911 14.9167 4.54011 14.1847 5.72711C13.4527 6.91511 16.3647 9.72111 19.1697 9.36511C21.9737 9.00911 26.1397 7.51711 27.3527 8.73111C29.3197 10.6991 35.0617 16.7201 37.7747 19.1151C40.0497 21.1241 46.7197 10.7451 46.7197 10.7451"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M24.6452 29.9091L21.4062 26.6201" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M30.0197 28.1331L24.3438 22.0061" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M34.8952 25.2901L28.1562 18.3081" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M13.222 29.8822C14.003 30.6632 15.269 30.6632 16.05 29.8822L17.827 28.1052C18.582 27.3492 18.389 26.1142 17.508 25.2332C16.627 24.3512 15.391 24.1582 14.635 24.9142C15.39 24.1582 15.197 22.9232 14.316 22.0422C13.435 21.1602 12.199 20.9672 11.444 21.7232C12.199 20.9672 12.006 19.7322 11.125 18.8512C10.244 17.9692 9.00797 17.7762 8.25297 18.5322C9.00797 17.7762 8.81497 16.5412 7.93397 15.6602C7.05297 14.7782 5.81696 14.5852 5.06196 15.3412L3.28497 17.1182C2.50397 17.8982 2.50397 19.1652 3.28497 19.9462L13.222 29.8822Z"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path
+                    d="M16.8633 29.0682L17.4863 29.6992L19.0143 31.2272C21.3473 33.5592 23.5233 31.8432 24.6463 29.9092C26.7823 31.0112 29.1703 29.7932 30.0203 28.1332C32.7233 29.4682 35.0903 26.7042 34.8963 25.2902C37.8163 25.1182 39.7783 21.7992 37.7743 19.1152"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M0.71875 11.7451L2.85475 13.9591C3.08275 14.7391 3.60775 15.5771 4.15675 16.2451"
+                    stroke="#E67917" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
+                  <path d="M14.3217 5.57312L10.7227 1.97412" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M8.25328 18.53L5.11328 21.772" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M8.25328 18.53L5.11328 21.772" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M11.4457 21.7222L8.30469 24.9642" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                  <path d="M14.6371 24.9131L11.4961 28.1551" stroke="#E67917" stroke-width="2" stroke-miterlimit="10"
+                    stroke-linejoin="round" />
+                </svg>
+              </span>
+              <p class="why-choose-us-card__text"><strong>Партнерство.</strong> Участвуем в совместных выставках,
+                семинарах и рекламных кампаниях, усиливая значимость вашего бренда.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% include "sections/promo.html" %}
 
 
 
