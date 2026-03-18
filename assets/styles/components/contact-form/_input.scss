@@ -52,6 +52,54 @@
       height: 120px;
     }
   }
+  input[type="date"] {
+    position: relative;
+
+    color: var(--text-color-70);
+
+    /* Chrome, Edge, Safari */
+    &::-webkit-datetime-edit {
+      color: var(--text-color-70);
+    }
+
+
+    /* Скрываем стандартную иконку */
+    &::-webkit-calendar-picker-indicator {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      z-index: 5;
+    }
+
+    /* Добавляем кастомную иконку через background или псевдоэлемент */
+    &::before {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="20" fill="%23E67917" /><path d="M16 13H15.2002C14.0801 13 13.5196 13 13.0918 13.218C12.7155 13.4097 12.4097 13.7155 12.218 14.0918C12 14.5196 12 15.0801 12 16.2002V17M16 13H24M16 13V11M24 13H24.8002C25.9203 13 26.4796 13 26.9074 13.218C27.2837 13.4097 27.5905 13.7155 27.7822 14.0918C28 14.5192 28 15.079 28 16.1969V17M24 13V11M12 17V25.8002C12 26.9203 12 27.4801 12.218 27.9079C12.4097 28.2842 12.7155 28.5905 13.0918 28.7822C13.5192 29 14.079 29 15.1969 29H24.8031C25.921 29 26.48 29 26.9074 28.7822C27.2837 28.5905 27.5905 28.2842 27.7822 27.9079C28 27.4805 28 26.9215 28 25.8036V17M12 17H28M24 25H24.002L24.002 25.002L24 25.002V25ZM20 25H20.002L20.002 25.002L20 25.002V25ZM16 25H16.002L16.002 25.002L16 25.002V25ZM24.002 21V21.002L24 21.002V21H24.002ZM20 21H20.002L20.002 21.002L20 21.002V21ZM16 21H16.002L16.002 21.002L16 21.002V21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Добавляем отступ справа, чтобы текст не заходил на иконку */
+    padding-right: 60px;
+  }
+
+  /* Для Firefox */
+  @-moz-document url-prefix() {
+    input[type="date"] {
+      padding-right: 60px;
+    }
+  }
 
   &:has(input:hover),
   &:has(textarea:hover) {

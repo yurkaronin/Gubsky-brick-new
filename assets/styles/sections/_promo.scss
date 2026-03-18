@@ -28,6 +28,10 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/clay.jpg");
     background-position: center;
   }
+  &.-tourism {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/tourism.jpg");
+    background-position: center;
+  }
 
   &__grid {
     display: grid;
