@@ -41,6 +41,8 @@
   .button {
     min-height: 56px;
     @media (max-width: 767px) {
+      min-height: 50px;
+      padding-inline: 32px;
     }
   }
 }

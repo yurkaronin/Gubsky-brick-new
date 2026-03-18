@@ -1,6 +1,24 @@
 .image {
   width: 100%;
   max-width: 100%;
+  position: relative;
+  border-radius: 20px;
+  &::before {
+    content: "";
+    z-index: 0;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    bottom: -8px;
+    left: -8px;
+    transition: var(--transition);
+    border-radius: 20px;
+    border: 8px solid var(--white);
+  }
+  &:hover::before {
+    border-color: var(--brand-color-1);
+  }
+
   & + * {
     margin-top: 3em;
     @media (max-width: 767px) {
@@ -8,7 +26,6 @@
     }
   }
   img {
-    border-radius: 20px;
     margin: 0 auto;
   }
   &.-full {
@@ -22,6 +39,6 @@
 * + .image {
   margin-top: 2.5em;
   @media (max-width: 767px) {
-      margin-top: 1.5em;
-    }
+    margin-top: 1.5em;
+  }
 }

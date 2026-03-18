@@ -1,0 +1,93 @@
+{% extends "layouts/promo-big-footer.html" %}
+
+{% set bodyClass = "promo-small" %}
+{% set title = "Акции" %}
+{% set pageTitle = "Акции" %}
+{% set breadcrumbs = [
+{url: '/', text: 'Главная'},
+{url: '/catalog.html', text: 'Акции'}
+] %}
+
+{% block content %}
+
+{% include "sections/hero-inner-page.html" %}
+<section class="section">
+  <div class="wrapper">
+    <ul class="portfolio-list list-reset">
+
+      <li class="portfolio-list__item">
+        <div class="portfolio-card">
+          <a class="portfolio-card__link" href="#">
+            <div class="portfolio-card__photo">
+              <img src="{{ assets }}/img/portfolio-card/1.jpg" alt="#" />
+            </div>
+            <div class="portfolio-card__info">
+              <h3 class="portfolio-card__title lower-short-strip">Архитектор! Бригадир! Дизайнер!</h3>
+              <p class="portfolio-card__text">18 \ 04 \ 2026</p>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="portfolio-list__item">
+        <div class="portfolio-card">
+          <a class="portfolio-card__link" href="#">
+            <div class="portfolio-card__photo">
+              <img src="{{ assets }}/img/portfolio-card/2.jpg" alt="#" />
+            </div>
+            <div class="portfolio-card__info">
+              <h3 class="portfolio-card__title lower-short-strip">Спецпредложение для инвестора</h3>
+              <p class="portfolio-card__text">18 \ 04 \ 2026</p>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="portfolio-list__item">
+        <div class="portfolio-card">
+          <a class="portfolio-card__link" href="#">
+            <div class="portfolio-card__photo">
+              <img src="{{ assets }}/img/portfolio-card/3.jpg" alt="#" />
+            </div>
+            <div class="portfolio-card__info">
+              <h3 class="portfolio-card__title lower-short-strip">Спецпредложение для частника</h3>
+              <p class="portfolio-card__text">18 \ 04 \ 2026</p>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="portfolio-list__item">
+        <div class="portfolio-card">
+          <a class="portfolio-card__link" href="#">
+            <div class="portfolio-card__photo">
+              <img src="{{ assets }}/img/portfolio-card/1.jpg" alt="#" />
+            </div>
+            <div class="portfolio-card__info">
+              <h3 class="portfolio-card__title lower-short-strip">Хозяйственный кирпич по лучшей цене</h3>
+              <p class="portfolio-card__text">18 \ 04 \ 2026</p>
+            </div>
+          </a>
+        </div>
+      </li>
+
+      <li class="portfolio-list__item">
+        <div class="portfolio-card">
+          <a class="portfolio-card__link" href="#">
+            <div class="portfolio-card__photo">
+              <img src="{{ assets }}/img/portfolio-card/2.jpg" alt="#" />
+            </div>
+            <div class="portfolio-card__info">
+              <h3 class="portfolio-card__title lower-short-strip">Рядовой кирпич по лучшей цене</h3>
+              <p class="portfolio-card__text">18 \ 04 \ 2026</p>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+
+{% endblock %}
