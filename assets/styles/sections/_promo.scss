@@ -32,6 +32,11 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/tourism.jpg");
     background-position: center;
   }
+  &.-partnership {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/partnership.jpg");
+    background-position: center;
+  }
+
 
   &__grid {
     display: grid;
