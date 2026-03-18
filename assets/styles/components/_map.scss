@@ -1,6 +1,7 @@
 .map {
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   position: relative;
   z-index: 10;
   border-radius: 20px;
@@ -9,8 +10,11 @@
 
   &__container {
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 552px;
     display: flex;
+    position: relative;
 
     @media (max-width: 1365px) {
       height: 400px;

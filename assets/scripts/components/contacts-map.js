@@ -1,40 +1,80 @@
- if (document.querySelector('.map')) {
-            let center = [45.030445, 39.066932];
+if (document.querySelector('.map')) {
+  let center = [45.030445, 39.066932];
+  let map = null;
+  let resizeTimeout = null;
+  let fullscreenTimeout = null;
 
+  function init() {
+    if (map) {
+      map.destroy();
+      map = null;
+    }
 
-            function init() {
+    map = new ymaps.Map('map', {
+      center: center,
+      zoom: 17
+    });
 
-                let map = new ymaps.Map("map", {
-                    center: center, // ваши данные
-                    zoom: 17
-                });
+    let placemarkElement = new ymaps.Placemark(
+      [45.030445, 39.066932],
+      {},
+      {
+        iconLayout: 'default#image',
+        iconImageHref: './assets/svg/icon-map-mark.svg',
+        iconImageSize: [52, 64],
+        iconImageOffset: [-25, -32]
+      }
+    );
 
-                let placemarkElement = new ymaps.Placemark([45.030445, 39.066932], {}, {
-                    iconLayout: 'default#image', /* говорим что будем отображать на карте в качестве геометки  */
-                    iconImageHref: './assets/svg/icon-map-mark.svg', /* указываем пусть к картинке на нашем сайте  */
-                    iconImageSize: [52, 64], /* размеры картинки  */
-                    iconImageOffset: [-25, -32] /* отступ от центра  */
-                });
+    map.controls.remove('geolocationControl');
+    map.controls.remove('searchControl');
+    map.controls.remove('trafficControl');
+    map.controls.remove('typeSelector');
+    // map.controls.remove('fullscreenControl');
+    // map.controls.remove('zoomControl');
+    map.controls.remove('rulerControl');
+    map.behaviors.disable(['scrollZoom']);
 
-                map.controls.remove('geolocationControl'); // удаляем геолокацию
-                map.controls.remove('searchControl'); // удаляем поиск
-                map.controls.remove('trafficControl'); // удаляем контроль трафика
-                map.controls.remove('typeSelector'); // удаляем тип
-                // map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
-                // map.controls.remove('zoomControl'); // удаляем контрол зуммирования
-                map.controls.remove('rulerControl'); // удаляем контрол правил
-                map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+    map.geoObjects.add(placemarkElement);
 
-                map.geoObjects.add(placemarkElement);
+    placemarkElement.events
+      .add('mouseenter', function (e) {
+        e.get('target').options.set(
+          'iconImageHref',
+          './assets/svg/icon-map-mark-hover.svg'
+        );
+      })
+      .add('mouseleave', function (e) {
+        e.get('target').options.set(
+          'iconImageHref',
+          './assets/svg/icon-map-mark.svg'
+        );
+      });
 
-                placemarkElement.events
-                    .add('mouseenter', function (e) {
-                        e.get('target').options.set('iconImageHref', './assets/svg/icon-map-mark-hover.svg');
-                    })
-                    .add('mouseleave', function (e) {
-                        e.get('target').options.set('iconImageHref', './assets/svg/icon-map-mark.svg');
-                    });
-            }
+    // Только при выходе из fullscreen
+    map.container.events.add('fullscreenexit', handleFullscreenExit);
+  }
 
-            ymaps.ready(init);
-        };
+  function reinitMap() {
+    clearTimeout(resizeTimeout);
+
+    resizeTimeout = setTimeout(function () {
+      init();
+    }, 200);
+  }
+
+  function handleFullscreenExit() {
+    clearTimeout(fullscreenTimeout);
+
+    fullscreenTimeout = setTimeout(function () {
+      init();
+    }, 300);
+  }
+
+  ymaps.ready(function () {
+    init();
+
+    window.addEventListener('resize', reinitMap);
+    window.addEventListener('orientationchange', reinitMap);
+  });
+}
