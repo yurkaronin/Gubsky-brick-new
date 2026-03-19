@@ -36,6 +36,10 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/partnership.jpg");
     background-position: center;
   }
+  &.-project {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/promo/project.jpg");
+    background-position: center;
+  }
 
 
   &__grid {
