@@ -1,5 +1,5 @@
 .project-preview-card {
-  --card-padding: 16px;
+  --card-padding: 8px;
 
   @media (max-width: 767px) {
     --card-padding: 8px;
@@ -38,7 +38,7 @@
     bottom: -80px;
     left: -8px;
     @media (max-width: 767px) {
-      bottom: --130px;
+      bottom: -130px;
     }
   }
 
