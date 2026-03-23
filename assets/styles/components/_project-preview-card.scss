@@ -57,12 +57,14 @@
 
   &__body {
     padding: var(--card-padding);
+    padding-bottom: calc(var(--card-padding) + 6px);
     background-color: transparent;
     color: var(--dark);
     font-family: var(--font-family);
     font-weight: 400;
     font-size: 14px;
     position: relative;
+
   }
   &__footer {
     position: absolute;
@@ -108,7 +110,7 @@
     padding-inline: var(--card-padding);
     position: relative;
     @media (max-width: 767px) {
-      padding-inline: 10px;
+      padding-inline: 16px;
     }
   }
 

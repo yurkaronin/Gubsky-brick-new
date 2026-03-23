@@ -1,9 +1,10 @@
 .alert {
-  padding: 22px 32px 26px;
+  padding: 20px 32px 26px;
   border-radius: 20px;
   margin-top: 40px;
   margin-bottom: 40px;
   position: relative;
+  background-color: var(--white);
   @media (max-width: 767px) {
     margin-top: 16px;
     margin-bottom: 16px;
@@ -44,6 +45,7 @@
     margin-bottom: 12px;
     position: relative;
     z-index: 2;
+    padding-bottom: 17px;
   }
   &__text {
     display: block;
