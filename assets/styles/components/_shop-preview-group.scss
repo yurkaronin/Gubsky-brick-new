@@ -51,12 +51,12 @@
   &__title {
     display: block;
     font-weight: 400;
-    margin-top: 0;
     font-family: var(--second-family);
     font-size: 20px;
     line-height: 1.2;
     color: var(--dark);
     padding-bottom: 16px;
+    margin-top: 8px;
     margin-bottom: 0;
   }
   &__address {
@@ -64,7 +64,8 @@
     font-size: 16px;
     color: var(--dark);
     margin: 0;
-    margin-bottom: 12px;
+    // margin-bottom: 12px;
+    margin-bottom: 0;
     display: flex;
     align-items: center;
   }
@@ -146,5 +147,18 @@
         left: -20px;
       }
     }
+  }
+  &__route {
+    color: var(--Orange, #e67917);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 8px;
+
+
   }
 }
