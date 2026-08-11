@@ -12,13 +12,6 @@
   background-color: #AD691B;
 }
 
-@media (max-width: 767px) {
-  .services-card-preview.-mod-color-4 .services-card-preview__name br,
-  .services-card-preview.-mod-color-5 .services-card-preview__name br {
-    display: none;
-  }
-}
-
 .category-sorter__col[data-advanced-search-item],
 .category-sorter__grid[data-visible-items="0"]:not([data-advanced-search-ready]) > .category-sorter__col:nth-child(n + 1),
 .category-sorter__grid[data-visible-items="1"]:not([data-advanced-search-ready]) > .category-sorter__col:nth-child(n + 2),

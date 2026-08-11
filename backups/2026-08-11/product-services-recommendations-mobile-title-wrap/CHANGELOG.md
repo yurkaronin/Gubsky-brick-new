@@ -4,8 +4,6 @@
 
 - Перед корректировкой заголовков сохранены копии `html/components/services-group-product.html` и `CHANGELOG.md` в `backups/2026-08-11/product-services-recommendations-title-wrap/`.
 - В обоих новых заголовках после слова «Рекомендуем» добавлен фиксированный перенос строки, как в макете.
-- Перед мобильной корректировкой сохранены копии `assets/styles/custom.css` и `CHANGELOG.md` в `backups/2026-08-11/product-services-recommendations-mobile-title-wrap/`.
-- При ширине `767px` и меньше принудительный перенос отключается: заголовок переносится браузером только при необходимости.
 - До изменений сохранены копии исходных файлов в `backups/2026-08-11/product-services-recommendations/`.
 - Добавлен отдельный шаблон `html/components/services-group-product.html` для страницы товара. В нём две последние карточки заменены на «Рекомендуем строителей» (`REMONTIER`) и «Рекомендуем архитектора» (`Седая Ксения Вячеславовна`); исходные изображения сохранены.
 - В `html/pages/product-page.html` задана переменная, выбирающая новый шаблон только для страницы товара. `html/sections/reviews-and-services.html` использует этот шаблон при наличии переменной, а на остальных страницах продолжает подключать исходный `components/services-group.html`.
