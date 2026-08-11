@@ -42,6 +42,7 @@ yarn-error.log*
 # CSS файлы в папке assets/css (генерируются из SCSS)
 assets/styles/**/*.css
 assets/styles/**/*.css.map
+!assets/styles/custom.css
 
 # Исключаем папку со скринами из макета
 previews/

@@ -1285,6 +1285,71 @@
               <input class="dropdown__input" type="hidden" name="sort" value="price-desc">
             </div>
           </div>
+          <div class="category-sorter__col">
+            <span class="label">Фаска:</span>
+            <div class="dropdown -mod-height -full-w" data-dropdown>
+              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown__value" data-dropdown-value>Любая фаска</span>
+                <span class="dropdown__icon" aria-hidden="true">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown__menu" hidden>
+                <ul class="dropdown__list" role="listbox" tabindex="-1">
+                  <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true" tabindex="0" data-value="any">Любая фаска</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="with-chamfer">С фаской</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="without-chamfer">Без фаски</li>
+                </ul>
+              </div>
+              <input class="dropdown__input" type="hidden" name="mobile-brick-chamfer" value="any">
+            </div>
+          </div>
+          <div class="category-sorter__col">
+            <span class="label">Структура:</span>
+            <div class="dropdown -mod-height -full-w" data-dropdown>
+              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown__value" data-dropdown-value>Любая структура</span>
+                <span class="dropdown__icon" aria-hidden="true">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown__menu" hidden>
+                <ul class="dropdown__list" role="listbox" tabindex="-1">
+                  <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true" tabindex="0" data-value="any">Любая структура</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="smooth">Гладкая</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="rustic">Рустикальная</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="relief">Рельефная</li>
+                </ul>
+              </div>
+              <input class="dropdown__input" type="hidden" name="mobile-brick-texture" value="any">
+            </div>
+          </div>
+          <div class="category-sorter__col">
+            <span class="label">Марка прочности:</span>
+            <div class="dropdown -mod-height -full-w" data-dropdown>
+              <button class="dropdown__control" type="button" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown__value" data-dropdown-value>Любая марка</span>
+                <span class="dropdown__icon" aria-hidden="true">
+                  <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L7 7L1 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown__menu" hidden>
+                <ul class="dropdown__list" role="listbox" tabindex="-1">
+                  <li class="dropdown__option dropdown__option--selected" role="option" aria-selected="true" tabindex="0" data-value="any">Любая марка</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="m125">М125</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="m150">М150</li>
+                  <li class="dropdown__option" role="option" tabindex="-1" data-value="m200">М200</li>
+                </ul>
+              </div>
+              <input class="dropdown__input" type="hidden" name="mobile-brick-strength" value="any">
+            </div>
+          </div>
         </div>
       </div>
 
